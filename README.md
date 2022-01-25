@@ -1,19 +1,121 @@
-# MATH-115-Discrete-Mathematics
-Collection of course work for discrete mathematics course
+### name: kevin wong
+### filename: Math115 homework1
+### date: 1/24/2022
+### desc: https://courses.csail.mit.edu/6.042/spring18/mcs.pdf (Links to an external site.) Please do these problems: 3.5, 3.14, 3.26, 3.27, 3.28. x/c 3.29, 3.31, 3.33
 
-| Col 1 |
-| :--   |
-| a     |
-| b     |
-| c     |
+___
+### 3.5
 
-| Tables   |      Are      |  Cool |
-|----------|:-------------:|------:|
-| col 1 is |  left-aligned | $1600 |
-| col 2 is |    centered   |   $12 |
-| col 3 is | right-aligned |    $1 |
+| P | Q | R | P -> Q | Q -> R | R -> P | P -> Q ^ Q -> R ^ R -> P | P ^ Q ^ R |
+|---|---|---|  :---:   |   :---:  |  :---:   | :---: | :---: |
+| T | T | T | T | T | T | T | T |
+| T | T | F | T | F | T | F | F |
+| T | F | F | F | T | T | F | F |
+| T | F | T | F | T | T | F | F |
+| F | F | F | T | T | T | T | F |
+| F | F | T | T | T | F | F | F |
+| F | T | T | T | T | F | F | F |
+| F | T | F | T | F | T | F | F |
 
-| dfdsf  |   |   |   |   |   |   |   |   |   |
-|---|---|---|---|---|---|---|---|---|---|
-|   |   |   |   |   |   |   |   |   |   |
-|   |   |   |   |   |   |   |   |   |   |
+```
+Sloppy Joe is incorrect when he concluded "all three of P, Q and R are true," 
+because "P -> Q ^ Q -> R ^ R -> P" is also true when P, Q and R are all false.
+```
+___
+### 3.14
+Problem 3.14.
+Prove by truth table that OR distributes over AND, namely,
+P OR (Q AND R) is equivalent to (P OR Q) AND (P OR R) 
+
+| P | Q | R | Q ^ R | P v Q | P v R | P v (Q ^ R) | (P v Q) ^ (P v R) |
+|---|---|---| :---:|   :---:  |  :---:   | :---: | :---: |
+| T | T | T | T     | T | T | T | T | 
+| T | T | F | F     | T | T | T | T |
+| T | F | F | F     | T | T | T | T |
+| T | F | T | F     | T | T | T | T |
+| F | F | F | F     | F | F | F | F |
+| F | F | T | F     | F | T | F | F |
+| F | T | T | T     | T | T | T | T |
+| F | T | F | F     | T | F | F | F |
+
+```
+Base on the truth table we can conclude that "P v (Q ^ R)" ≡ "(P v Q) ^ (P v R)" 
+```
+___
+### 3.26
+For each of the following propositions:\
+(i) ⱯxƎy.2x-y=0\
+(ii) ⱯxƎy.x-2y=0\
+(iii) Ɐx.x < 10 -> (Ɐy.y < x -> y < 9)\
+(iv) ⱯxƎy.[y > x ^ Ǝz.y + z = 100]
+
+indicate which propositions are False when the variables range over:
+
+(a) the nonnegative integers\
+(b) the integers\
+(c) the real numbers
+
+* (i)\
+   (a) True\
+   (b) True\
+   (c) True
+- (ii)\
+   (a) False\
+   (b) False\
+   (c) True
+- (iii)\
+   (a) True\
+   (b) True\
+   (c) True
+- (iv)\
+   (a) False\
+   (b) True\
+   (c) True
+
+___
+### 3.27
+Let Q(x, y) be the statement "x has been a contestant on television show y."
+
+The domain of discourse for x is the set of all students at your school and for y is
+the set of all quiz shows that have ever been on television.
+
+Indicate which of the following expressions are logically equivalent to the sentence:
+“No student at your school has ever been a contestant on a television quiz show.”
+
+(a) ⱯxⱯy.¬(Q(x,y)) Yes\
+(b) ƎxƎy.¬(Q(x,y)) No\
+(c) ¬(ⱯxⱯy.Q(x,y)) No\
+(d) ¬(ƎxƎy.Q(x,y)) No
+
+___
+### 3.28
+Express each of the following statements using quantifiers, logical connectives,
+and/or the following predicates
+
+P(x): x is a monkey,\
+Q(x): x is a 6.042 TA,\
+R(x): x comes from the 23rd century,\
+S(x): x likes to eat pizza\
+
+where x ranges over all living things.
+
+(a) No monkeys like to eat pizza\
+Ɐx(P(x)¬S(x))\
+(b) Nobody from the 23rd century dislikes eating pizza.\
+Ɐx(R(x)S(x))\
+(c) All 6.042 TAs are monkeys.\
+Ɐx(Q(x) -> P(x))\
+(d) No 6.042 TA comes from the 23rd century.\
+Ɐx(Q(x)¬R(x))\
+(e) "d" doesn't conflict with a, b, or c\
+(f) All living things from the 23rd century or living things that like to eat pizza are a 6.042 TA\
+(g) There exist a living thing from the 23rd century that is not a 6.042 TA where all living things are monkeys and might like eating pizza.
+
+___
+### 3.29
+
+___
+### 3.31
+
+___
+### 3.33
