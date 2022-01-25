@@ -64,9 +64,9 @@ indicate which propositions are False when the variables range over:
    (b) False, ⱯxƎy ∈ ℤ.x-2y=0\
    (c) True, ⱯxƎy ∈ ℝ.x-2y=0
 - (iii)\
-   (a) True, ⱯxⱯy ∈ ℤ+.x < 10 -> y < x -> y < 9\
-   (b) True, ⱯxⱯy ∈ ℤ.x < 10 -> y < x -> y < 9\
-   (c) True, ⱯxƎy ∈ ℝ.x < 10 -> y < x -> y < 9
+   (a) True, ⱯxⱯy ∈ ℤ+.x < 10 -> (y < x -> y < 9)\
+   (b) True, ⱯxⱯy ∈ ℤ.x < 10 -> (y < x -> y < 9)\
+   (c) True, ⱯxƎy ∈ ℝ.x < 10 -> (y < x -> y < 9)
 - (iv)\
    (a) False, ⱯxƎyƎz ∈ ℤ+.[y > x ^ y + z = 100]\
    (b) True, ⱯxƎyƎz ∈ ℤ.[y > x ^ y + z = 100]\
@@ -113,6 +113,8 @@ where x ranges over all living things.
 
 (e) Does part (d) follow logically from parts (a), (b), (c)? If so, give a proof. If not, give a counterexample.\
 "d" doesn't conflict with a, b, or c.
+A counter-example would be if the 6.042 TAs came from the 23rd century. This means (b) Nobody from the 23rd century dislikes 
+eating pizza, which conflicts with (a) No monkeys like to eat pizza, and we know 6.042 TAs are monkeys from (c). 
 
 (f) Translate into English: (Ɐx)(R(x) OR S(x) IMPLIES Q(x)).\
 All living things come from the 23rd century or like to eat pizza are a 6.042 TA
@@ -122,9 +124,26 @@ If some living things from the 23rd century are not a 6.042 TA, then if they are
 
 ___
 ### 3.29
+Show that\
+(ⱯxƎy.P(x,y)) -> Ɐz.P(z,z)\
+is not valid by describing a counter-model.
 
+```
+Let P(x,y) = x > y
+Let x,y,z ∈ ℤ
+(ⱯxƎy.x > y) -> Ɐz.z > z
+Under this interpretation hypothesis is true, but the conclusion is false.
+```
 ___
 ### 3.31
+Find a counter-model showing the following is not valid.
+[Ǝx.P(x) ^ Ǝx.Q(x)] -> Ǝx.[P(x) ^ Q(x)]
+(Just define your counter-model. You do not need to verify that it is correct.)
 
-___
-### 3.33
+```
+Let x ∈ ℤ
+Let P(x) = x > 10
+and 
+Let Q(x) = x <= 10
+```
+
