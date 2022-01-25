@@ -51,26 +51,26 @@ For each of the following propositions:\
 
 indicate which propositions are False when the variables range over:
 
-(a) the nonnegative integers\
-(b) the integers\
-(c) the real numbers
+(a) the nonnegative integers(ℤ+)\
+(b) the integers(ℤ)\
+(c) the real numbers(ℝ)
 
 * (i)\
-   (a) True\
-   (b) True\
-   (c) True
+   (a) True, ⱯxƎy ∈ ℤ+\
+   (b) True, ⱯxƎy ∈ ℤ\
+   (c) True, ⱯxƎy ∈ ℝ 
 - (ii)\
-   (a) False\
-   (b) False\
-   (c) True
+   (a) False, ⱯxƎy ∉ ℤ+\
+   (b) False, ⱯxƎy ∉ ℤ\
+   (c) True, ⱯxƎy ∈ ℝ
 - (iii)\
-   (a) True\
-   (b) True\
-   (c) True
+   (a) True, ⱯxⱯy ∈ ℤ+\
+   (b) True, ⱯxⱯy ∈ ℤ\
+   (c) True, ⱯxƎy ∈ ℝ
 - (iv)\
-   (a) False\
-   (b) True\
-   (c) True
+   (a) False, ⱯxƎyƎz ∉ ℤ+\
+   (b) True, ⱯxƎyƎz ∈ ℤ\
+   (c) True, ⱯxƎyƎz ∈ ℝ
 
 ___
 ### 3.27
@@ -101,15 +101,25 @@ where x ranges over all living things.
 
 (a) No monkeys like to eat pizza\
 Ɐx(P(x)¬S(x))\
+
 (b) Nobody from the 23rd century dislikes eating pizza.\
 Ɐx(R(x)S(x))\
+
 (c) All 6.042 TAs are monkeys.\
 Ɐx(Q(x) -> P(x))\
+
 (d) No 6.042 TA comes from the 23rd century.\
 Ɐx(Q(x)¬R(x))\
-(e) "d" doesn't conflict with a, b, or c\
-(f) All living things from the 23rd century or living things that like to eat pizza are a 6.042 TA\
-(g) There exist a living thing from the 23rd century that is not a 6.042 TA where all living things are monkeys and might like eating pizza.
+
+(e) Does part (d) follow logically from parts (a), (b), (c)? If so, give a proof. If
+not, give a counterexample\
+"d" doesn't conflict with a, b, or c\
+
+(f) Translate into English: (Ɐx)(R(x) OR S(x) IMPLIES Q(x)).\
+All living things from the 23rd century or living things that like to eat pizza are a 6.042 TA\
+
+(g) Translate into English: [Ǝx.R(x) AND NOT(Q(x))] IMPLIES Ɐx.(P(x) IMPLIES S(s)).
+There exist a living thing from the 23rd century that is not a 6.042 TA where all monkeys and might like eating pizza.
 
 ___
 ### 3.29
