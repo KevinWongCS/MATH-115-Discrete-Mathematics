@@ -1,7 +1,7 @@
-### name: kevin wong
-### filename: Math115 homework1
-### date: 1/24/2022
-### desc: https://courses.csail.mit.edu/6.042/spring18/mcs.pdf (Links to an external site.) Please do these problems: 3.5, 3.14, 3.26, 3.27, 3.28. x/c 3.29, 3.31, 3.33
+name: kevin wong\
+filename: Math115 homework1\
+date: 1/24/2022\
+desc: https://courses.csail.mit.edu/6.042/spring18/mcs.pdf (Links to an external site.) Please do these problems: 3.5, 3.14, 3.26, 3.27, 3.28. x/c 3.29, 3.31, 3.33
 
 ___
 ### 3.5
@@ -115,10 +115,10 @@ where x ranges over all living things.
 "d" doesn't conflict with a, b, or c.
 
 (f) Translate into English: (Ɐx)(R(x) OR S(x) IMPLIES Q(x)).\
-All living things from the 23rd century or living things that like to eat pizza are a 6.042 TA
+All living things come from the 23rd century or like to eat pizza are a 6.042 TA
 
 (g) Translate into English: [Ǝx.R(x) AND NOT(Q(x))] IMPLIES Ɐx.(P(x) IMPLIES S(s)).\
-There exist a living thing from the 23rd century that is not a 6.042 TA where all monkeys and might like eating pizza.
+If some living things from the 23rd century are not a 6.042 TA, then if they are all monkeys then they like eating pizza.
 
 ___
 ### 3.29
