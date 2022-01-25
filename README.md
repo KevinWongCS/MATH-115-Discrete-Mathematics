@@ -56,21 +56,21 @@ indicate which propositions are False when the variables range over:
 (c) the real numbers(ℝ)
 
 * (i)\
-   (a) True, ⱯxƎy ∈ ℤ+\
-   (b) True, ⱯxƎy ∈ ℤ\
-   (c) True, ⱯxƎy ∈ ℝ 
+   (a) True, ⱯxƎy ∈ ℤ+.2x-y=0\
+   (b) True, ⱯxƎy ∈ ℤ.2x-y=0\
+   (c) True, ⱯxƎy ∈ ℝ.2x-y=0
 - (ii)\
-   (a) False, ⱯxƎy ∉ ℤ+\
-   (b) False, ⱯxƎy ∉ ℤ\
-   (c) True, ⱯxƎy ∈ ℝ
+   (a) False, ⱯxƎy ∈ ℤ+.x-2y=0\
+   (b) False, ⱯxƎy ∈ ℤ.x-2y=0\
+   (c) True, ⱯxƎy ∈ ℝ.x-2y=0
 - (iii)\
-   (a) True, ⱯxⱯy ∈ ℤ+\
-   (b) True, ⱯxⱯy ∈ ℤ\
-   (c) True, ⱯxƎy ∈ ℝ
+   (a) True, ⱯxⱯy ∈ ℤ+.x < 10 -> y < x -> y < 9\
+   (b) True, ⱯxⱯy ∈ ℤ.x < 10 -> y < x -> y < 9\
+   (c) True, ⱯxƎy ∈ ℝ.x < 10 -> y < x -> y < 9
 - (iv)\
-   (a) False, ⱯxƎyƎz ∉ ℤ+\
-   (b) True, ⱯxƎyƎz ∈ ℤ\
-   (c) True, ⱯxƎyƎz ∈ ℝ
+   (a) False, ⱯxƎyƎz ∈ ℤ+.[y > x ^ y + z = 100]\
+   (b) True, ⱯxƎyƎz ∈ ℤ.[y > x ^ y + z = 100]\
+   (c) True, ⱯxƎyƎz ∈ ℝ.[y > x ^ y + z = 100]
 
 ___
 ### 3.27
@@ -100,25 +100,24 @@ S(x): x likes to eat pizza\
 where x ranges over all living things.
 
 (a) No monkeys like to eat pizza\
-Ɐx(P(x)¬S(x))\
+Ɐx(P(x)¬S(x))
 
 (b) Nobody from the 23rd century dislikes eating pizza.\
-Ɐx(R(x)S(x))\
+Ɐx(R(x)S(x))
 
 (c) All 6.042 TAs are monkeys.\
-Ɐx(Q(x) -> P(x))\
+Ɐx(Q(x) -> P(x))
 
 (d) No 6.042 TA comes from the 23rd century.\
-Ɐx(Q(x)¬R(x))\
+Ɐx(Q(x)¬R(x))
 
-(e) Does part (d) follow logically from parts (a), (b), (c)? If so, give a proof. If
-not, give a counterexample\
-"d" doesn't conflict with a, b, or c\
+(e) Does part (d) follow logically from parts (a), (b), (c)? If so, give a proof. If not, give a counterexample.\
+"d" doesn't conflict with a, b, or c.
 
 (f) Translate into English: (Ɐx)(R(x) OR S(x) IMPLIES Q(x)).\
-All living things from the 23rd century or living things that like to eat pizza are a 6.042 TA\
+All living things from the 23rd century or living things that like to eat pizza are a 6.042 TA
 
-(g) Translate into English: [Ǝx.R(x) AND NOT(Q(x))] IMPLIES Ɐx.(P(x) IMPLIES S(s)).
+(g) Translate into English: [Ǝx.R(x) AND NOT(Q(x))] IMPLIES Ɐx.(P(x) IMPLIES S(s)).\
 There exist a living thing from the 23rd century that is not a 6.042 TA where all monkeys and might like eating pizza.
 
 ___
