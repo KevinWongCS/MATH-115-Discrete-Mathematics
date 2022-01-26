@@ -55,22 +55,24 @@ indicate which propositions are False when the variables range over:
 (b) the integers(ℤ)\
 (c) the real numbers(ℝ)
 
-* (i)\
-   (a) True, ⱯxƎy ∈ ℤ+.2x-y=0\
-   (b) True, ⱯxƎy ∈ ℤ.2x-y=0\
+```
+- (i)
+   (a) True, ⱯxƎy ∈ ℤ+.2x-y=0
+   (b) True, ⱯxƎy ∈ ℤ.2x-y=0
    (c) True, ⱯxƎy ∈ ℝ.2x-y=0
-- (ii)\
-   (a) False, ⱯxƎy ∈ ℤ+.x-2y=0\
-   (b) False, ⱯxƎy ∈ ℤ.x-2y=0\
+- (ii)
+   (a) False, ⱯxƎy ∈ ℤ+.x-2y=0
+   (b) False, ⱯxƎy ∈ ℤ.x-2y=0
    (c) True, ⱯxƎy ∈ ℝ.x-2y=0
-- (iii)\
-   (a) True, ⱯxⱯy ∈ ℤ+.x < 10 -> (y < x -> y < 9)\
-   (b) True, ⱯxⱯy ∈ ℤ.x < 10 -> (y < x -> y < 9)\
+- (iii)
+   (a) True, ⱯxⱯy ∈ ℤ+.x < 10 -> (y < x -> y < 9)
+   (b) True, ⱯxⱯy ∈ ℤ.x < 10 -> (y < x -> y < 9)
    (c) True, ⱯxƎy ∈ ℝ.x < 10 -> (y < x -> y < 9)
-- (iv)\
-   (a) False, ⱯxƎyƎz ∈ ℤ+.[y > x ^ y + z = 100]\
-   (b) True, ⱯxƎyƎz ∈ ℤ.[y > x ^ y + z = 100]\
+- (iv)
+   (a) False, ⱯxƎyƎz ∈ ℤ+.[y > x ^ y + z = 100]
+   (b) True, ⱯxƎyƎz ∈ ℤ.[y > x ^ y + z = 100]
    (c) True, ⱯxƎyƎz ∈ ℝ.[y > x ^ y + z = 100]
+```
 
 ___
 ### 3.27
@@ -82,10 +84,12 @@ the set of all quiz shows that have ever been on television.
 Indicate which of the following expressions are logically equivalent to the sentence:
 “No student at your school has ever been a contestant on a television quiz show.”
 
-(a) ⱯxⱯy.¬(Q(x,y)) Yes\
-(b) ƎxƎy.¬(Q(x,y)) No\
-(c) ¬(ⱯxⱯy.Q(x,y)) No\
+```
+(a) ⱯxⱯy.¬(Q(x,y)) Yes
+(b) ƎxƎy.¬(Q(x,y)) No
+(c) ¬(ⱯxⱯy.Q(x,y)) No
 (d) ¬(ƎxƎy.Q(x,y)) No
+```
 
 ___
 ### 3.28
@@ -99,28 +103,33 @@ S(x): x likes to eat pizza
 
 where x ranges over all living things.
 
-(a) No monkeys like to eat pizza\
-Ɐx(P(x)¬S(x))
+```
+(a) No monkeys like to eat pizza
+Ɐx(P(x)^¬S(x))
 
-(b) Nobody from the 23rd century dislikes eating pizza.\
-Ɐx(R(x)S(x))
+(b) Nobody from the 23rd century dislikes eating pizza.
+Ɐx(R(x)^S(x))
 
-(c) All 6.042 TAs are monkeys.\
+(c) All 6.042 TAs are monkeys.
 Ɐx(Q(x) -> P(x))
 
-(d) No 6.042 TA comes from the 23rd century.\
-Ɐx(Q(x)¬R(x))
+(d) No 6.042 TA comes from the 23rd century. 
+Ɐx(Q(x)^¬R(x))  
 
-(e) Does part (d) follow logically from parts (a), (b), (c)? If so, give a proof. If not, give a counterexample.\
-"d" doesn't conflict with a, b, or c.\
-A counter-example would be if there exist 6.042 TAs that come from the 23rd century. Recall (b) Nobody from the 23rd century dislikes 
-eating pizza, which conflicts with (a) No monkeys like to eat pizza, and we know 6.042 TAs are all monkeys from (c). 
+(e) Does part (d) follow logically from parts (a), (b), (c)? If so, give a proof. If not, give a counterexample.
+"d" doesn't conflict with a, b, or c.
 
-(f) Translate into English: (Ɐx)(R(x) OR S(x) IMPLIES Q(x)).\
+A counter-example would be if there P(x) ^ Q(x) ^ R(x) ^ S(x) are all true. Recall (b) Nobody from 
+the 23rd century dislikes eating pizza, which conflicts with (a) No monkeys like to eat pizza, and we know 
+6.042 TAs are all monkeys from (c). 
+
+(f) Translate into English: (Ɐx)(R(x) OR S(x) IMPLIES Q(x)).
 All living things come from the 23rd century or like to eat pizza are a 6.042 TA
 
-(g) Translate into English: [Ǝx.R(x) AND NOT(Q(x))] IMPLIES Ɐx.(P(x) IMPLIES S(s)).\
-If some living things from the 23rd century are not a 6.042 TA, then if they are all monkeys then they like eating pizza.
+(g) Translate into English: [Ǝx.R(x) AND NOT(Q(x))] IMPLIES Ɐx.(P(x) IMPLIES S(s)).
+If some living things from the 23rd century are not a 6.042 TA, then if they are all monkeys then they like 
+eating pizza.
+```
 
 ___
 ### 3.29
@@ -131,8 +140,8 @@ is not valid by describing a counter-model.
 ```
 Let P(x,y) = x > y
 Let x,y,z ∈ ℤ
-(ⱯxƎy.x > y) -> Ɐz.z > z
-Under this interpretation hypothesis is true, but the conclusion is false.
+Therefore
+[(ⱯxƎy.P(x,y)) -> (Ɐz.P(x,y))] = [(ⱯxƎy.x > y) -> (Ɐz.z > z)] = [T -> F] = F
 ```
 ___
 ### 3.31
@@ -145,5 +154,12 @@ Let x ∈ ℤ
 Let P(x) = x > 10
 and 
 Let Q(x) = x < 10
+Therefore
+{[Ǝx.P(x) ^ Ǝx.Q(x)] -> Ǝx.[x > 10 ^ x < 10]} = {[Ǝx.x > 10 ^ Ǝx.x < 10] -> Ǝx.[x > 10 ^ x < 10]} =
+{(T ^ T) -> F} = F
 ```
+
+___
+### 3.33
+No attempt
 
