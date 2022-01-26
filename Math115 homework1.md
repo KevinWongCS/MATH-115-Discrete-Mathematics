@@ -112,9 +112,9 @@ where x ranges over all living things.
 Ɐx(Q(x)¬R(x))
 
 (e) Does part (d) follow logically from parts (a), (b), (c)? If so, give a proof. If not, give a counterexample.\
-"d" doesn't conflict with a, b, or c.
-A counter-example would be if the 6.042 TAs came from the 23rd century. This means (b) Nobody from the 23rd century dislikes 
-eating pizza, which conflicts with (a) No monkeys like to eat pizza, and we know 6.042 TAs are monkeys from (c). 
+"d" doesn't conflict with a, b, or c.\
+A counter-example would be if there exist 6.042 TAs that come from the 23rd century. Recall (b) Nobody from the 23rd century dislikes 
+eating pizza, which conflicts with (a) No monkeys like to eat pizza, and we know 6.042 TAs are all monkeys from (c). 
 
 (f) Translate into English: (Ɐx)(R(x) OR S(x) IMPLIES Q(x)).\
 All living things come from the 23rd century or like to eat pizza are a 6.042 TA
