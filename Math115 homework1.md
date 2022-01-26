@@ -95,7 +95,7 @@ and/or the following predicates
 P(x): x is a monkey,\
 Q(x): x is a 6.042 TA,\
 R(x): x comes from the 23rd century,\
-S(x): x likes to eat pizza\
+S(x): x likes to eat pizza
 
 where x ranges over all living things.
 
