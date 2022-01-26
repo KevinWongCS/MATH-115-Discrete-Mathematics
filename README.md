@@ -144,6 +144,6 @@ Find a counter-model showing the following is not valid.
 Let x ∈ ℤ
 Let P(x) = x > 10
 and 
-Let Q(x) = x <= 10
+Let Q(x) = x < 10
 ```
 
