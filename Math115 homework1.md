@@ -119,16 +119,13 @@ where x ranges over all living things.
 (e) Does part (d) follow logically from parts (a), (b), (c)? If so, give a proof. If not, give a counterexample.
 "d" doesn't conflict with a, b, or c.
 
-A counter-example would be if there P(x) ^ Q(x) ^ R(x) ^ S(x) are all true. Recall (b) Nobody from 
-the 23rd century dislikes eating pizza, which conflicts with (a) No monkeys like to eat pizza, and we know 
-6.042 TAs are all monkeys from (c). 
+A counter-example would be if there P(x) ^ Q(x) ^ R(x) ^ S(x) are all true. Recall Nobody from the 23rd century dislikes eating pizza (b), which conflicts with no monkeys like to eat pizza (a), and we know 6.042 TAs are all monkeys from (c). 
 
 (f) Translate into English: (Ɐx)(R(x) OR S(x) IMPLIES Q(x)).
-All living things come from the 23rd century or like to eat pizza are a 6.042 TA
+If all living things from the 23rd century or that like to eat pizza then they are a 6.042 TA
 
 (g) Translate into English: [Ǝx.R(x) AND NOT(Q(x))] IMPLIES Ɐx.(P(x) IMPLIES S(s)).
-If some living things from the 23rd century are not a 6.042 TA, then if they are all monkeys then they like 
-eating pizza.
+If some living things from the 23rd century are not a 6.042 TA, then if they are all monkeys then they like eating pizza.
 ```
 
 ___
@@ -155,8 +152,7 @@ Let P(x) = x > 10
 and 
 Let Q(x) = x < 10
 Therefore
-{[Ǝx.P(x) ^ Ǝx.Q(x)] -> Ǝx.[x > 10 ^ x < 10]} = {[Ǝx.x > 10 ^ Ǝx.x < 10] -> Ǝx.[x > 10 ^ x < 10]} =
-{(T ^ T) -> F} = F
+{[Ǝx.P(x) ^ Ǝx.Q(x)] -> Ǝx.[x > 10 ^ x < 10]} = {[Ǝx.x > 10 ^ Ǝx.x < 10] -> Ǝx.[x > 10 ^ x < 10]} = {(T ^ T) -> F} = F
 ```
 
 ___
