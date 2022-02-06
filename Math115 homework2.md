@@ -22,6 +22,7 @@ Conclusion: ¬P ∨ (R → ¬Q) ≡ ¬(P ⋀ Q ⋀ R) is plausible
 ___
 ### 1.3
 Identify exactly where the bugs are in each of the following bogus proofs.
+
 (a) Bogus Claim: 1/8 > 1/4
 
 Bogus proof:\
@@ -31,10 +32,12 @@ log<sub>10</sub>(1/2)<sup>3</sup> > log<sub>10</sub>(1/2)<sup>2</sup>\
 (1/2)<sup>3</sup> > (1/2)<sup>2</sup>
 
 ```
-It is a mathematical role to flip the inequality sign when you multiply or divide both sides by a negative number. log(1/2) is a negative number, so the inequality symbol ">" should have flipped to "<" in step 2.
+It is a mathematical rule to flip the inequality sign when you multiply or divide both sides by a negative number. 
+log(1/2) is a negative number, so the inequality symbol ">" should have flipped to "<" in step 2.
 
-Also the log property in the last step I don't believe is a property of log.
+Also the math manipulation in the last step I don't believe is correct.
 ```
+
 (b) Bogus proof : 
 1¢ = $0.01 = ($0.1)<sup>2</sup> = (10¢)<sup>2</sup> = 100¢ = $1: 
 ```
@@ -145,7 +148,7 @@ let a, b, c = 2x, 2y, 2z\
 where x, y, z ∈ ℤ<sup>+</sup>\
 2x + 2y + 2z = 2m\
 2(x + y + z) = 2m\
-Conclusion: Based on the above equation we know d is some multiple of 2 which implies d is a positive integer satisfying assertion P.
+Conclusion: Based on the above equation I don't believe P → R is true.
 ___
 ___
 (b) Now suppose that
@@ -162,7 +165,7 @@ P ↔ R
 ___
 ___
 * case 1: P → R\
-Proof by contradiction\
+Proof by case\
 Let P be true, so z is even\
 Let z = 2x\
 where x ∈ ℤ<sup>+</sup>\
@@ -172,7 +175,7 @@ so, we get\
 By substituting the hint given in the problem we get\
 2x = $\sqrt{4(w^2 + w) + 1 + 4(x^2 + x) + 1 + 4(y^2 + y) + 1}$\
 2x = $\sqrt{4(w^2 + w) + 4(x^2 + x) + 4(y^2 + y) + 3}$\
-Using the above equation we know $\sqrt{4(w^2 + w) + 4(x^2 + x) + 4(y^2 + y) + 3}$ will solve to an odd number.
+Using the above equation we know $\sqrt{4(w^2 + w) + 4(x^2 + x) + 4(y^2 + y) + 3}$ won't always solve to a rational number.
    * case 1 subcase 2: w, x are odd and y is even.\
 By substituting the hint given in the problem we get\
 2x = $\sqrt{4(w^2 + w) + 1 + 4(x^2 + x) + 1 + (2y)^2}$\
@@ -186,23 +189,30 @@ Using the above equation we know $\sqrt{2}$ is an irrational number so anything 
 By substituting the hint given in the problem we get\
 2x = $\sqrt{4(w^2 + w) + 1 + (2x)^2 + (2y)^2}$\
 2x = $\sqrt{4(w^2 + w) + (2x)^2 + (2y)^2  + 1}$\
-Using the above equation we know $\sqrt{4(w^2 + w) + (2x)^2 + (2y)^2  + 1}$ will solve to an odd number.
+Using the above equation we know $\sqrt{4(w^2 + w) + (2x)^2 + (2y)^2  + 1}$ won't always solve to a rational number.
 
-   * Conclusion: Using case 1 and it's subcases P would imply R would have to be true in other words, if z is even then w, x, and y would all have to be even.
+    * case 1 subcase 4: w, x, y are all even.\
+By substituting the hint given in the problem we get\
+let 2w, 2x, 2y represent even numbers\
+2x = $\sqrt{4w^2 + 4x^2 + 4y^2}$\
+2x = $\sqrt{4(w^2 + x^2 + y^2)}$\
+2x = $\sqrt{2}$ $\sqrt{4(w^2 + x^2 + y^2)}$\
+Using the above equation we know $\sqrt{2}$ $\sqrt{4(w^2 + x^2 + y^2)}$ will not solve to a rational number.
+
+    * Conclusion: Based on case 1, I wouldn't say P → R. 
 
 * case 2: R → P\
 Let R be true, so w, x, y are even.\
 let w, x, y = 2x, 2y, 2z\
 where w, x, y, z ∈ ℤ<sup>+</sup>\
 2x<sup>2</sup> + 2y<sup>2</sup> + 2z<sup>2</sup> = z<sup>2</sup>\
-2x = $\sqrt{(2w)^2 + 1 + (2x)^2 + (2y)^2}$\
+2x = $\sqrt{(2w)^2 + (2x)^2 + (2y)^2}$\
 2x = $\sqrt{4w^2 + 4x^2 + 4y^2}$\
 2x = $\sqrt{4(w^2 + x^2 + y^2)}$\
 2x = $\sqrt{4}$ * $\sqrt{w^2 + x^2 + y^2}$\
 2x = 2 * $\sqrt{w^2 + x^2 + y^2}$\
-Based on the equation above we can conclude that there does exist an w, x, y where R → P would be true. For example 2 * $\sqrt{4^2 + 4^2 + 2^2}$ would equal to 2 * 6 = 12.
+Based on the equation above we can conclude that there does exist an w, x, y where R → P would be true. For example 2 * $\sqrt{4^2 + 4^2 + 2^2}$ would equal to 2 * 6 = 12. But it's not true in every case. 
+
+** Based on my line of reasoning I would have to say P ↔ R isn't true in every case, but there does exist cases were it is true.
 ___
 ___
-
-
-

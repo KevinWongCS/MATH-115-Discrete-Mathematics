@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Math115 homework2.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<p>name: kevin wong<br>
+filename: Math115 homework2<br>
+date: 1/27/2022<br>
+desc: https://courses.csail.mit.edu/6.042/spring18/mcs.pdf (Links to an external site.) please do these problems:  1.3, 1.7, 1.8, 1.10. x/c: 1.1, 1.4, 1.5</p>
+<hr>
+<h3 id="first-problem">first problem</h3>
+<p>Please do this problem first: 1. Prove ¬P ∨ (R → ¬Q) ≡ ¬(P ⋀ Q ⋀ R) without using a truth table.</p>
+<pre class="hljs"><code><div>Proof by equivalence chains (Patterns of Proof)
+¬P ∨ (R → ¬Q)
+¬P ∨ (¬R ∨ ¬Q))    Logical equivalency R → Q ≡ ¬R ∨ Q
+¬P ∨ ¬(R ⋀ Q))     De Morgan's 2nd law
+¬(P ⋀ (R ⋀ Q))     De Morgan's 2nd law
+¬(P ⋀ R ⋀ Q)       Associative law
+
+Conclusion: ¬P ∨ (R → ¬Q) ≡ ¬(P ⋀ Q ⋀ R) is plausible
+ 
+</div></code></pre>
+<hr>
+<h3 id="13">1.3</h3>
+<p>Identify exactly where the bugs are in each of the following bogus proofs.
+(a) Bogus Claim: 1/8 &gt; 1/4</p>
+<p>Bogus proof:<br>
+3 &gt; 2<br>
+3log<sub>10</sub>(1/2) &gt; 2log<sub>10</sub>(1/2)<br>
+log<sub>10</sub>(1/2)<sup>3</sup> &gt; log<sub>10</sub>(1/2)<sup>2</sup><br>
+(1/2)<sup>3</sup> &gt; (1/2)<sup>2</sup></p>
+<pre class="hljs"><code><div>It is a mathematical role to flip the inequality sign when you multiply or divide both sides by a negative number. log(1/2) is a negative number, so the inequality symbol &quot;&gt;&quot; should have flipped to &quot;&lt;&quot; in step 2.
+
+Also the log property in the last step I don't believe is a property of log.
+</div></code></pre>
+<p>(b) Bogus proof :
+1¢ = $0.01 = ($0.1)<sup>2</sup> = (10¢)<sup>2</sup> = 100¢ = $1:</p>
+<pre class="hljs"><code><div>(10¢)^2 = (10¢)(10¢), this expression doesn't mean anything in terms of U.S currency. So saying (10¢)^2 = 100¢ doesn't hold.
+</div></code></pre>
+<p>(c) Bogus Claim: If a and b are two equal real numbers, then a = 0.</p>
+<p>Bogus proof:<br>
+a = b<br>
+a<sup>2</sup> = ab<br>
+a<sup>2</sup> - b<sup>2</sup> = ab - b<sup>2</sup><br>
+(a-b)(a+b) = (a-b)b<br>
+a + b = b<br>
+a = 0</p>
+<pre class="hljs"><code><div>if a = b then dividing both sides by (a-b) is dividing by zero. Which is done in step 4 and isn't defined. 
+</div></code></pre>
+<hr>
+<h3 id="17">1.7</h3>
+<p>Prove by cases that<br>
+max(r, s) + min(r, s) = r + s <br>
+for all real numbers r, s.</p>
+<pre class="hljs"><code><div>Prove by cases
+r, s ∈ ℝ
+case 1: r = s:
+    max(r, s) + min(r, s)
+    r + r = s + s = r + s
+case 2: r &gt; s:
+    max(r, s) + min(r, s)
+    r + s
+case 3: r &lt; s:
+    max(r, s) + min(r, s)
+    s + r
+    r + s     commutative law
+
+Based on the cases considered we can conclude that ∀r, ∀s ∈ ℝ.max(r, s) + min(r, s) = r + s 
+</div></code></pre>
+<hr>
+<h3 id="18">1.8</h3>
+<p>If we raise an irrational number to an irrational power, can the result be rational?
+Show that it can by considering $\sqrt{2}$<sup>$\sqrt{2}$</sup> and arguing by cases.</p>
+<hr>
+<p>Prove by cases<br>
+case 1:</p>
+<p>irrational_number <sup>irrational_number</sup> = irrational_number</p>
+<p>$\sqrt{2}$<sup>$\sqrt{2}$</sup> = 1.6325</p>
+<p>The above concludes an irrational number to the power of an irrational power can result in an irrational number.</p>
+<p>case 2:</p>
+<p>irrational_number <sup>irrational_number</sup> = rational_number</p>
+<p>($\sqrt{2}$<sup>$\sqrt{2}$</sup>)<sup>$\sqrt{2}$</sup> = 2<sup>1/2 *  $\sqrt{2}$ * $\sqrt{2}$</sup> = 2<sup>1/2 * 2<sup>1/2</sup> * 2<sup>1/2</sup></sup> = 2<sup>1/2 * 2<sup>1/2 + 1/2</sup></sup> = 2<sup>1/2 * 2<sup>2/2</sup></sup> = 2<sup>1/2 * 2</sup> = 2<sup>2/2</sup> = 2</p>
+<p>The above concludes an irrational number to the power of an irrational power can result in a rational number.</p>
+<hr>
+<hr>
+<h3 id="110">1.10</h3>
+<p>Hint: An odd number equals 2m + 1 for some integer m, so its square equals
+4(m<sup>2</sup> + m) + 1.</p>
+<p>(a) Suppose that</p>
+<p>a + b + c = d</p>
+<p>where a, b, c, d ∈ ℤ<sup>+</sup></p>
+<p>Let P be the assertion that d is even. Let W be the assertion that exactly one among
+a, b, c are even, and let T be the assertion that all three are even.</p>
+<p>Prove by cases that
+P IFF [W OR T]</p>
+<p>P ↔ W ∨ T</p>
+<hr>
+<hr>
+<p>proof by cases</p>
+<ul>
+<li>
+<p>case 1: P → W or P → T<br>
+Let P be True<br>
+This implies d is an even positive integer and some multiple of 2.<br>
+Let d = 2x, where x ∈ ℤ<sup>+</sup><br>
+2x = a + b + c<br>
+Conclusion: Based on the above equation we can conclude that either a + b + c are all even satisfying assertion T or either only one of a, b, or c is even satisfying W to solve to an even number.</p>
+</li>
+<li>
+<p>case 2: W → P<br>
+Let W be True<br>
+This implies only one of a, b, or c is even.<br>
+Let a, b, c = 2x, 2y + 1, 2z + 1<br>
+where x, y, z ∈ ℤ<sup>+</sup><br>
+2x + (2y + 1) + (2z + 1) = d<br>
+2(x + y + z) + 2 = d<br>
+Conclusion: Based on the above equation we know d is some multiple of 2 plus 2 which implies d is a positive integer satisfying assertion P.</p>
+</li>
+<li>
+<p>case 3: T → P<br>
+T is True
+T is True implies a, b, and c are all even.<br>
+a + b + c = d<br>
+let a, b, c = 2x, 2y, 2z<br>
+where x, y, z ∈ ℤ<sup>+</sup><br>
+2x + 2y + 2z = 2m<br>
+2(x + y + z) = 2m<br>
+Conclusion: Based on the above equation we know d is some multiple of 2 which implies d is a positive integer satisfying assertion P.</p>
+</li>
+</ul>
+<hr>
+<hr>
+<p>(b) Now suppose that</p>
+<p>w<sup>2</sup> + x<sup>2</sup> + y<sup>2</sup> = z<sup>2</sup></p>
+<p>where w, x, y, z ∈ ℤ<sup>+</sup></p>
+<p>Let P be the assertion that z is even, and
+let R be the assertion that all three of w, x, y are even.</p>
+<p>Prove by cases that P IFF R<br>
+P ↔ R</p>
+<hr>
+<hr>
+<ul>
+<li>
+<p>case 1: P → R<br>
+Proof by contradiction<br>
+Let P be true, so z is even<br>
+Let z = 2x<br>
+where x ∈ ℤ<sup>+</sup><br>
+so, we get<br>
+2x = $\sqrt{w^2 + x^2 + y^2}$</p>
+<ul>
+<li>
+<p>case 1 subcase 1: w, x, y are all odd.<br>
+By substituting the hint given in the problem we get<br>
+2x = $\sqrt{4(w^2 + w) + 1 + 4(x^2 + x) + 1 + 4(y^2 + y) + 1}$<br>
+2x = $\sqrt{4(w^2 + w) + 4(x^2 + x) + 4(y^2 + y) + 3}$<br>
+Using the above equation we know $\sqrt{4(w^2 + w) + 4(x^2 + x) + 4(y^2 + y) + 3}$ will solve to an odd number.</p>
+</li>
+<li>
+<p>case 1 subcase 2: w, x are odd and y is even.<br>
+By substituting the hint given in the problem we get<br>
+2x = $\sqrt{4(w^2 + w) + 1 + 4(x^2 + x) + 1 + (2y)^2}$<br>
+2x = $\sqrt{(4w^2 + 4w) + (4x^2 + 4x) + (2y)^2 + 2}$<br>
+2x = $\sqrt{(4w^2 + 4w) + (4x^2 + 4x) + 4y^2 + 2}$<br>
+2x = $\sqrt{2(2w^2 + 2w + 2x^2 + 2x + 2y^2 + 1)}$<br>
+2x = $\sqrt{2}$ $\sqrt{2w^2 + 2w + 2x^2 + 2x + 2y^2 + 1}$<br>
+Using the above equation we know $\sqrt{2}$ is an irrational number so anything multiplied by it will not be a perfect number.</p>
+</li>
+<li>
+<p>case 1 subcase 3: w is odd and x, y are even.<br>
+By substituting the hint given in the problem we get<br>
+2x = $\sqrt{4(w^2 + w) + 1 + (2x)^2 + (2y)^2}$<br>
+2x = $\sqrt{4(w^2 + w) + (2x)^2 + (2y)^2  + 1}$<br>
+Using the above equation we know $\sqrt{4(w^2 + w) + (2x)^2 + (2y)^2  + 1}$ will solve to an odd number.</p>
+</li>
+<li>
+<p>Conclusion: Using case 1 and it's subcases P would imply R would have to be true in other words, if z is even then w, x, and y would all have to be even.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>case 2: R → P<br>
+Let R be true, so w, x, y are even.<br>
+let w, x, y = 2x, 2y, 2z<br>
+where w, x, y, z ∈ ℤ<sup>+</sup><br>
+2x<sup>2</sup> + 2y<sup>2</sup> + 2z<sup>2</sup> = z<sup>2</sup><br>
+2x = $\sqrt{(2w)^2 + 1 + (2x)^2 + (2y)^2}$<br>
+2x = $\sqrt{4w^2 + 4x^2 + 4y^2}$<br>
+2x = $\sqrt{4(w^2 + x^2 + y^2)}$<br>
+2x = $\sqrt{4}$ * $\sqrt{w^2 + x^2 + y^2}$<br>
+2x = 2 * $\sqrt{w^2 + x^2 + y^2}$<br>
+Based on the equation above we can conclude that there does exist an w, x, y where R → P would be true. For example 2 * $\sqrt{4^2 + 4^2 + 2^2}$ would equal to 2 * 6 = 12.</p>
+</li>
+</ul>
+<hr>
+<hr>
+
+</body>
+</html>
