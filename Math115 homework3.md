@@ -112,3 +112,15 @@ product of sums expansion
 $\ G(x,y,z) = (\overline{x} + \overline{y} + \overline{z}) * (\overline{x} + y + \overline{z}) * (x + \overline{y} + z) * (x + y + z) $
 ___
 ___
+
+### x/c problem
+Prove or disprove that $\sqrt{3} - 3\sqrt{2}$ is irrational
+___
+___
+To the above equation is irrational I believe only $\sqrt{3}$ or $3\sqrt{2}$ needs to be proven irrational, since a the subtraction of a rational and irrational number would result in an irrational number. Also the subtraction of an irrational number with an irrational number would be irrational assuming the two numbers are not equal.
+ 
+
+Seeing as the $\sqrt{3}$ is a prime number there doesn't exist a rational number taken to the power of 3  would result in 3 I would say the $\sqrt{3}$ is irrational. I believe this same argument can be made for the $\sqrt{2}$. So I believe this proves $\sqrt{3}$ or $3\sqrt{2}$ is irrational. 
+
+___
+___
