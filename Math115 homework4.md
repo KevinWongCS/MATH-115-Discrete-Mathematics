@@ -1,7 +1,7 @@
 name: kevin wong\
 filename: Math115 homework4\
 date: 2/14/2022\
-desc: https://courses.csail.mit.edu/6.042/spring18/mcs.pdf (Links to an external site.) please do these problems:  5.3, 5.11, 5.22, 5.28, 5.30
+desc: https://courses.csail.mit.edu/6.042/spring18/mcs.pdf (Links to an external site.) please do these problems:  5.3, 5.11, 5.22, 5.28, 5.30 x/c 5.10, 5.17, 5.27
 
 ### Problem 5.3
 Use induction to prove that
@@ -78,9 +78,11 @@ Let our induction hypothesis be $p(n) = n$ where n is positive and even number a
 
     Assumption: $p(n)\rightarrow p(n + 1)$ where n is positive and even number, and each new square shared an edge with at least one previously-placed square and no squares overlapped.
     
-    So to prove his theory I would have to fail at finding a counterexample. After playing around with different configurations I would have to say it is very difficult to find one if not impossible. In every combination I tried, the number of edges always came out to be even described by $ "TotalOutSideEdges" = ("Total Number Of Squares" * 4)-("Total Edges Touching" * 2) $. So I couldn't disprove $p(n)\rightarrow p(n + 1)$. 
+    So to prove his theory I would have to fail at finding a counterexample. After playing around with different configurations I would have to say it is very difficult to find one if not impossible. In every combination I tried, the number of edges always came out to be even described by
 
-- **Conclusion**: I would have to agree that induction does prove this hypothesis.
+   $ TotalOutSideEdges= (Total Number Of Squares * 4)-(Total Edges Touching * 2) $
+
+- **Conclusion**:    So I couldn't disprove $p(n)\rightarrow p(n + 1)$. I would have to agree that induction does prove this hypothesis.
 ___
 ___
 
@@ -189,6 +191,8 @@ $ p(n) = F(0)^2 + F(1)^2 + ... + F(n)^2 = F(n)F(n+1)$ for $n \epsilon \N$
 
    $p(n + 1) = F(0)^2 + F(1)^2 + ... + F(n)^2 + F(n+1)^2= F(n)F(n+1) + F(n+1)^2$ for $n \epsilon \N$
 
+   
+
    Simplifying the right side of the equation:
 
    $F(n)F(n+1) + F(n+1)^2$
@@ -204,7 +208,7 @@ $ p(n) = F(0)^2 + F(1)^2 + ... + F(n)^2 = F(n)F(n+1)$ for $n \epsilon \N$
    $\sum_{n = 0}^{n + 1} F(0)^2 + ...+ F(n + 1)^2 = F(n + 1) * (F(n) + F(n+1))$
 
 
-- **Conclusion**: This argument is valid for every for $n \epsilon \N$. So I would say by induction the hypothesis is true.
+- **Conclusion**: I couldn't figure out the mathematical manipulation to make the left side equal the right side, but after plugging in some numbers I believe this argument is valid for every for $n \epsilon \N$. So I would say by induction the hypothesis is true.
 ___
 ___
 
