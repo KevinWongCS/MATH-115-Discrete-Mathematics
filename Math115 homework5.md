@@ -150,10 +150,51 @@ g) $ x \rightarrow e^x$
 
 ---
 ---
-- a) 
+- a) bijective.
+- b) bijective.
+- c) surjective and not bijective.
 
+   if $x_1 = 2$ and $x_2 = -2$
+
+   $x_1 \neq x_2$
+
+   but $f(x_1) = f(x_2) = 4$, so not injective, but there is mapping of an x to every $f(x)$, so surjective.
+
+- d) bijective.
+   
+   if $x_1 \neq x_2$
+
+   if $(x_1)^3$ and $(x_2)^3$ would only be equal if $x_1 = x_2$, so this is injective.
+
+   there is also mapping of an $x$ to every $f(x) = x^3$, so surjective.
+
+- e) surjective and not bijective.
+
+   there is mapping of an x to every $f(x)$, but not injective because multiple $x$ values can be mapped to $f(x)$.
+- f) surjective and not bijective.
+   
+   the explanation is similar to e).
+
+- g) bijective.
+   
+   if $x_1 \neq x_2$
+
+   There is no combination of $x_1 \neq x_2$ that would make $e^{x_1} = e^{x_2}$, so injective.
+
+   if we take $e^x$ to $\infty$ or -$\infty$ there would be an $x$ to map to $e^x$, so I would say it's surjective.
 ---
 ---
-
 
 ### 4.20
+Let $f : A \rightarrow B$ and $g : B \rightarrow C$ be functions and $h : A \rightarrow C$ be their composition, namely, $h(a) ::= g(f(a))$ for all $a \in A$.
+
+a) Prove that if $f$ and $g$ are surjections, then so is $h$.
+
+b) Prove that if $f$ and $g$ are bijections, then so is $h$.
+
+c) If $f$ is a bijection, then so is $f^{-1}$.
+
+---
+---
+---
+---
