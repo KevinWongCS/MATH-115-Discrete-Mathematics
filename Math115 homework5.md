@@ -5,9 +5,43 @@ desc: https://courses.csail.mit.edu/6.042/spring18/mcs.pdf (Links to an external
 
 ### 4.8
 
+Let A, B and C be sets. Prove that
+
+$A \bigcup B \bigcup C = (A - B) \bigcup (B - C) \bigcup (C - A) \bigcup (A \bigcap B \bigcap C))$
+
+using a chain of IFF’s as Section 4.1.5.
+
 ---
 ---
-OMG
+
+$A \bigcup B \bigcup C = (A - B) \bigcup (B - C) \bigcup (C - A) \bigcup (A \bigcap B \bigcap C))$
+
+converting minus signs to equivalent set expressions
+
+iff $ \underline{ (A \bigcap \bar{B}) } $ $ \bigcup $ $\underline{ (B \bigcap \bar C) } $ $ \bigcup $ $\underline{ (C \bigcap \bar A) } $ $ \bigcup $ $ (A \bigcap B \bigcap C)) $
+
+manipulating the right side, we get
+
+iff $ (A \bigcap \bar{B}) $ $ \bigcup $ $ (B \bigcap \bar C) $ $ \bigcup $ $ (C \bigcap \bar A) $ $ \bigcup $ $ \underline{ ((A \bigcap B) \bigcup (B \bigcap C) \bigcup (C \bigcup A)) } $
+
+iff $ (A \bigcap \bar{B}) $ $ \bigcup $ $ (B \bigcap \bar C) $ $ \bigcup $ $ (C \bigcap \bar A) $ $ \bigcup $ $ (A \bigcap B) $ $ \bigcup $ $ (B \bigcap C) $ $ \bigcup $ $ (C \bigcup A) $
+
+Associative property to shuffle things around
+
+iff $ (A \bigcap \bar{B}) $  $ \bigcup $ $ (A \bigcap B) $ $ \bigcup $ $ (B \bigcap \bar C) $ $ \bigcup $ $ (B \bigcap C) $ $ (C \bigcap \bar A) $ $ \bigcup $ $ (C \bigcup A) $
+
+Reverse distribute for $A, B, C$
+
+iff $ (A \bigcap (\bar{B} \bigcup B)) $ $ \bigcup $ $ (B \bigcap (\bar C \bigcup C)) $ $ \bigcup $ $ (C \bigcap (\bar A \bigcup A)) $
+
+Universe $ = set \bigcup \bar{set}$
+
+iff $ (A \bigcap U ) $ $ \bigcup $ $ (B \bigcap U) $ $ \bigcup $ $ (C \bigcap U) $
+
+Identity: $A \bigcap U = A$
+
+$= A \bigcup B \bigcup C $
+
 ---
 ---
 
@@ -26,8 +60,6 @@ application of the WOP.
 ---
 ---
 Prove by contradiction/induction.
-
-The well ordered principle(WOP) says that for every non-empty set of $\N$, it has a smallest element.
 
 Let's say $P(n) \leftrightarrow Q(n)$
 
@@ -102,7 +134,7 @@ c) Fix the proof to show that $R \subseteq L$.
 ---
 ---
 
-- a) this proof is false because $L$ would have two times more combinations than $R$. 
+- a) this proof is false because $L$ would have two times more combinations or products than $R$.
 
    For example if A, B, C and D have 2 elements each. $ L ::= (A \bigcup B) \times (C \bigcup D) $ would have 16 combinations total. $ R ::= (A \times C) \bigcup (B \times D) $ would have 8 combinations total.
 
@@ -151,37 +183,81 @@ g) $ x \rightarrow e^x$
 ---
 ---
 - a) bijective.
+
+   $\forall x_1, x_2 \in \R: x \rightarrow x + 2$ 
+
+   let $x_1$ and $x_2$ $\in$ $\R$ and $f(x_1) = f(x_2)$
+
+   $x_1 + 2 = x_2 + 2$
+
+   subtract $2$ from both sides
+
+     $x_1 = x_2$
+
+   $x_1$ has to equal $x_2$, this implies this function is injective. The function can continuously map an $x$ in its domain to the codomain through out $\R$, so by the intermediate value theorum the function is surjective as well.
+
+    
+
 - b) bijective.
-- c) surjective and not bijective.
 
-   if $x_1 = 2$ and $x_2 = -2$
+   $\forall x_1, x_2 \in \R: x \rightarrow 2x$ 
 
-   $x_1 \neq x_2$
+   let $x_1$ and $x_2$ $\in$ $\R$ and $f(x_1) = f(x_2)$
 
-   but $f(x_1) = f(x_2) = 4$, so not injective, but there is mapping of an x to every $f(x)$, so surjective.
+   $2x_1= 2x_2$
 
-- d) bijective.
+   dividing $2$ on both sides
+
+     $x_1 = x_2$
+
+   $x_1$ has to equal $x_2$, this implies this function is injective. The function can continuously map an $x$ in its domain to the codomain through out $\R$, so by the intermediate value theorum the function is surjective as well.
+
+- c) neither an injection nor a surjection.
+    
+   $\forall x_1, x_2 \in \R: x \rightarrow x^2$ 
+
+    let $x_1$ and $x_2$ $\in$ $\R$ and $f(x_1) = f(x_2)$
+
+   $(x_1)^2 = (x_2)^2$ 
+
+   If $x_1 \ne x_2$ they can still map to the same element in the codomain, example -2 and 2 would both map to 4, so not injective. There also isn't mapping of an $f(x)$ to every $\R$ because $x^2$ is always positive, so not surjective.
+
+- d) bijection.
    
+   $\forall x_1, x_2 \in \R: x \rightarrow x^3$    
+
+    let $x_1$ and $x_2$ $\in$ $\R$ and $f(x_1) = f(x_2)$
+
    if $x_1 \neq x_2$
 
-   if $(x_1)^3$ and $(x_2)^3$ would only be equal if $x_1 = x_2$, so this is injective.
+   $(x_1)^3$ and $(x_2)^3$ would only be equal if $x_1 = x_2$, so this is injective.
 
-   there is also mapping of an $x$ to every $f(x) = x^3$, so surjective.
+  The function can continuously map an $x$ in its domain to the codomain through out $\R$, so by the intermediate value theorum the function is surjective as well.
 
-- e) surjective and not bijective.
+- e) neither an injection nor a surjection.
 
-   there is mapping of an x to every $f(x)$, but not injective because multiple $x$ values can be mapped to $f(x)$.
-- f) surjective and not bijective.
+   $\forall x_1, x_2 \in \R: x \rightarrow sin{(x)}$
+
+    let $x_1$ and $x_2$ $\in$ $\R$ and $f(x_1) = f(x_2)$
+
+    
+   $sin{(x_1)} = sin{(x_2)}$
+
+   This is not injective because multiple $x$ values can be mapped to $f(x)$. There isn't mapping of a $f(x)$ to every $\R$, so it is not surjective.
+
+- f) surjection but not a bijection.
    
-   the explanation is similar to e).
+   the explanation is similar to e) but because of the multiplied by $x$, the function can span continuously to $\infty$ or -$\infty$, so by the intermediate value theorum, this function is surjective.
 
-- g) bijective.
+- g) injection but not a bijection.
    
-   if $x_1 \neq x_2$
+   $\forall x_1, x_2 \in \R: x \rightarrow e^x$
 
-   There is no combination of $x_1 \neq x_2$ that would make $e^{x_1} = e^{x_2}$, so injective.
+    let $x_1$ and $x_2$ $\in$ $\R$ and $f(x_1) = f(x_2)$
 
-   if we take $e^x$ to $\infty$ or -$\infty$ there would be an $x$ to map to $e^x$, so I would say it's surjective.
+   if $x_1 \neq x_2$, there is no combination $x_1$ and $x_2$ that can make $e^{x_1} = e^{x_2}$, therefore injective.
+
+   if we take $e^x$ to $\infty$ or -$\infty$ there would not be a $e^x$ to map from $-\infty$ to $0$. So I would say it's not surjective.
 ---
 ---
 
@@ -196,5 +272,47 @@ c) If $f$ is a bijection, then so is $f^{-1}$.
 
 ---
 ---
+
+- a) proof by deduction
+
+   Assuming $f$ and $g$ are surjective, then $C$ is a subset of $B$ and $B$ is a subset of $A$. This implies $C$ would be a subset of $A$.
+
+   so then $f \supseteq g \supseteq h$, which means $h$ has to be surjective as well.
+
+- b) proof by deduction
+
+    Assuming $f$ and $g$ are injective, a similar argument can be said compared to a). 
+      
+   let $x...x_n \in \R$ be in the set of $f : A \rightarrow B$ 
+   
+   and let $y...y_n \in \R$ be in the set of $g : B \rightarrow C$ 
+   
+   and let $z...z_n \in \R$ be in the set of $h : A \rightarrow C$ 
+
+   if $f$ is in $\R$ and $g$ is in $\R$. Then $h$ would also have to be in $\R$.
+
+- c) If $f$ is bijective $ \rightarrow f^{-1} $ is bijective. 
+
+   let $\forall x, y \in \R: x \rightarrow f(x)$.
+
+   $ f(x) = y $ and $ y \in \R $
+
+   $ f^{-1}(y)=x $ and $  x \in \R $
+
+   So the inverse function would just remap all $y$'s to $x$'s.
+
+
+   example: $x \in \R: f(x)=x^3$
+
+   let $x = 2n$, $n \in \R$
+
+   $f(x) = (2n)^3$
+
+   So $f^{-1} (x)= x^{\frac{1}{3}}$
+
+   $((2n)^3)^{\frac{1}{3}} = (2n)^{\frac{3}{3}} = 2n$
+
+   so we can say $(f^{-1}(f(x))) = x$, or a bijective functions inverse is bijective since it just undoes what the function did.
+
 ---
 ---
