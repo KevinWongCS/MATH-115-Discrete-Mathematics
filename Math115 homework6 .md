@@ -79,52 +79,141 @@ b) This function is equal to a polynomial function $p$. Find $p$ and prove that 
 
     and $p(n) = (n-1)^2 $ $\checkmark $
 
-- prove $f(n) = p(n) = (n-1)^2$
+- prove $f(n) = p(n)$
+
+    *reminder*: $f(n) = f(n + 1) - 2n + 1$ and $p(n) = (n-1)^2$
 
     prove by weak induction
 
     - base case $ n \in \N $ and $n=1,2,3,4,5$ for $p(n)$
     
-    $p(1) = (1 - 1)^2 = 0$ $\checkmark$ 
-   
-    $p(2) = (2 - 1)^2 = 1$ $\checkmark$  
-
-    $p(3) = (3 - 1)^2 = 4$ $\checkmark$ 
-
-    $p(4) = (4 - 1)^2 = 9$ $\checkmark$
-
-    $p(5) = (5 - 1)^2 = 16$ $\checkmark$
-
-    so for $n=1,2,3,4,5$, $p(n) = f(n)$ in each case.
+        $p(1) = (1 - 1)^2 = 0$ $\checkmark$ 
+        
+        $p(2) = (2 - 1)^2 = 1$ $\checkmark$  
+    
+        $p(3) = (3 - 1)^2 = 4$ $\checkmark$ 
+    
+        $p(4) = (4 - 1)^2 = 9$ $\checkmark$
+    
+        $p(5) = (5 - 1)^2 = 16$ $\checkmark$
+    
+        so for $n=1,2,3,4,5$, $p(n) = f(n)$ in each case.
 
     - inductive step
     
-    *inductive hypothesis*: $k \in \N$ and $k \ge 5$ and $p(k) = (k - 1)^2 $. If $ p(k) \rightarrow p(k + 1) \in \N $
-
-    $ p(n) = (n - 1)^2$
- 
-    so $ p(k + 1) = ((k + 1) - 1)^2 $
+        *inductive hypothesis*: Assume $k \in \N$, $k \ge 5$ and $1 \le n \le k $ and $p(k) = (k - 1)^2 $. Also assume $ p(k) \rightarrow p(k + 1) \in \N $.
     
-    $= k^2 $ 
-
-    $= (k + 1 - 1)^2 $ 
-
-    $= ((k - 1) + 1)^2 $
-
-    $ = ((k - 1) + 1) * ((k - 1) + 1) $ 
-
-    $ = (k-1)^2 + 2(k-1) + 1 $
-
-    $ = (k-1)^2 + 2k - 2 + 1 $
-
-    $ = (k-1)^2 + 2k - 1 $
-
-    $ = p(n) + 2k - 1 $ 
-
-    so $p(k + 1) = p(n) + 2k - 1 = f(k + 1)$ in the recursive case $ \checkmark$
+        $ p(n) = (n - 1)^2$
+     
+        so $ p(k + 1) = ((k + 1) - 1)^2 $
+        
+        $= k^2 $
+    
+        $= (k + 1 - 1)^2 $ 
+    
+        $= ((k - 1) + 1)^2 $
+    
+        $ = ((k - 1) + 1) * ((k - 1) + 1) $ 
+    
+        $ = (k-1)^2 + 2(k-1) + 1 $
+    
+        $ = (k-1)^2 + 2k - 2 + 1 $
+    
+        $ = (k-1)^2 + 2k - 1 $
+    
+        $ = p(n) + 2k - 1 $ 
+    
+        so $p(k + 1) = p(n) + 2k - 1 = f(k + 1)$  $ \checkmark $
 
 
 ---
 ---
 
 ### \#2
+Here is a recursively defined set, $S$.
+
+Base cases: $ 5, 9 \in S$
+
+Recursive Case: If $x \in S$ and $y \in S$, then $ x + y \in S$
+
+a) Give a non-recursive definition, $R$, of the set $S$.
+
+b) Prove that your set $R$ in part (a) equals the set $S$.
+
+---
+---
+- a) non-recursive definition, $R$
+    
+    $ R ::= $ { $ n, m \in \N_1 | n5 \bigcup m9 \bigcup n5 + m9 $ }
+
+- b) prove by structural induction
+
+    - base cases
+    
+       -  n = 1
+        
+          $ n*5 = 5*1 = 5 \in S$ and $\in R$ $\checkmark$
+
+            $ n*y = 9*1 = 9 \in S$ and $\in R$ $\checkmark$
+
+   - induction step
+        - case 1: $n = 1, m = 1$
+
+            $ n5 + m9 = (5* 1) + (9*1) = 14 \in R$, since 5 and 9 are in $S$, 14 is also in $S$. $\checkmark$
+
+            $ n5 + m9 = (5* 1) + (5*1) = 10 \in R$ and since 5 is in $S$, 10 is also in $S$. $\checkmark$
+
+            $ n5 + m9 = (9* 1) + (9*1) = 18 \in R$ and and since 9 is in $S$, 18 is also in $S$. $\checkmark$
+            
+        - case 2:
+            Assume $k \in \N, k = (k + 1)^{th}$ generation
+
+            $k5 = (k + 1)^{th}(5) \in R$ and any multiple of 5 is in $S$, which can also be expressed as a sum of $n5 + m9 \in R$ and $\in S$. $\checkmark$
+
+            $k9 = (k + 1)^{th}(9) \in R$ and any multiple of 9 is in $S$, which can also be expressed as a sum of $n5 + m9 \in R$ and $\in S$. $\checkmark$
+ 
+        - case 3: 
+             Assume $m, n \in \N, m = (m + 1)^{th}, n = (n + 1)^{th}$ generation
+
+            $n5 + m9 = (n + 1)^{th}(5)+ (m + 1)^{th}(9) \in R$ and any sum of the multiples of 5 and 9 are in $S$. $\checkmark$
+
+        - $S \subseteq R$ and $R \subseteq S$
+
+---
+---
+
+### 7.5
+Here is a simple recursive definition of the set $E$ of even integers:
+
+Definition. Base case: $0 \in E$.
+
+Constructor cases: If $n \in E$, then so are $n + 2$ and $-n$.
+
+Provide similar simple recursive definitions of the following sets:
+
+---
+---
+- a) $S ::=$ {$2^k 3^m 5^n \in \N | k, m ,n \in \N $}
+    
+    Definition. Base case: $[0,0 ,0] = 1 \in \N$
+
+    Constructor cases: If $ k, m, n \in \N $, then $2^{k+1} 3^{m+1} 5^{n+1} \in \N$
+
+- b) $S ::=$ {$2^k 3^{2k+m} 5^{m+n} \in \N | k, m ,n \in \N $}
+    
+    Definition. Base case: $[0,0 ,0] = 1 \in \N$
+    
+    Constructor cases: If $ k, m, n \in \N $, then $2^{k+1} 3^{2k+m+1} 5^{m+n+1} \in \N $
+
+- c) $L ::=$ { $(a,b) \in \Z^2 | (a-b) $ is a multiple of 3 }
+    
+    Definition. Base case: $0 \in \Z^2$
+
+    Constructor cases: If $a,b,m, n \in \Z, a =3m, b = 3n$ then $(a+1)(b+1) \in \Z^2 $
+    
+- d)
+- e)
+- f) 
+
+---
+---
