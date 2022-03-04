@@ -144,38 +144,32 @@ b) Prove that your set $R$ in part (a) equals the set $S$.
 ---
 - a) non-recursive definition, $R$
     
-    $ R ::= $ { $ n, m \in \N_1 | n5 \bigcup m9 \bigcup n5 + m9 $ }
+    $ R ::= $ { $ x, y \in S : \exists n \in \N_1,  \exists m \in \N_0: nx + my  = z : z \in S$ } $\bigcap$ { $x = 5$ or $9, y = 5$ or $9$ }
+    
+    english: "if $x, y$ are both in $S$, there exist an $n$ in $\N_1$ and a $m$ in $\N_0$ where $nx + my = z$ such that $z$ is in $S$, and $x$ and $y$ can equal 5 or 9."
 
 - b) prove by structural induction
 
     - base cases
     
-       -  n = 1
+       -  $n = 1, m = 0, x = 5$
         
-          $ n*5 = 5*1 = 5 \in S$ and $\in R$ $\checkmark$
+          $ n*x = 1*5 = 5 \in S$ and $\in R$ $\checkmark$
 
-            $ n*y = 9*1 = 9 \in S$ and $\in R$ $\checkmark$
+        -  $n = 1, m = 0, x = 9$
+    
+            $ n*x = 1*9 = 9 \in S$ and $\in R$ $\checkmark$
 
    - induction step
-        - case 1: $n = 1, m = 1$
-
-            $ n5 + m9 = (5* 1) + (9*1) = 14 \in R$, since 5 and 9 are in $S$, 14 is also in $S$. $\checkmark$
-
-            $ n5 + m9 = (5* 1) + (5*1) = 10 \in R$ and since 5 is in $S$, 10 is also in $S$. $\checkmark$
-
-            $ n5 + m9 = (9* 1) + (9*1) = 18 \in R$ and and since 9 is in $S$, 18 is also in $S$. $\checkmark$
-            
-        - case 2:
-            Assume $k \in \N, k = (k + 1)^{th}$ generation
-
-            $k5 = (k + 1)^{th}(5) \in R$ and any multiple of 5 is in $S$, which can also be expressed as a sum of $n5 + m9 \in R$ and $\in S$. $\checkmark$
-
-            $k9 = (k + 1)^{th}(9) \in R$ and any multiple of 9 is in $S$, which can also be expressed as a sum of $n5 + m9 \in R$ and $\in S$. $\checkmark$
  
-        - case 3: 
-             Assume $m, n \in \N, m = (m + 1)^{th}, n = (n + 1)^{th}$ generation
+        - case 1: 
+             Assume $n \in \N_0, m \in \N_1, m = (m + 1)^{th}$ generation, $ n = (n + 1)^{th}$ generation and $x$ and $y$ can equal 5 or 9 
 
-            $n5 + m9 = (n + 1)^{th}(5)+ (m + 1)^{th}(9) \in R$ and any sum of the multiples of 5 and 9 are in $S$. $\checkmark$
+            subcase 1: $nx + my = (n + 1)^{th}(5)+ (m + 1)^{th}(9) \in R$ and any sum of the multiples of 5 and 9 are in $S$. $\checkmark$
+
+            subcase 2: $nx + my = (n + 1)^{th}(5)+ (m + 1)^{th}(5) \in R$ and any sum of multiples of 5 are in $S$. $\checkmark$
+
+             subcase 3: $nx + my = (n + 1)^{th}(9)+ (m + 1)^{th}(9) \in R$ and any sum of multiples of 9 are in $S$. $\checkmark$
 
         - $S \subseteq R$ and $R \subseteq S$
 
@@ -195,25 +189,24 @@ Provide similar simple recursive definitions of the following sets:
 ---
 - a) $S ::=$ {$2^k 3^m 5^n \in \N | k, m ,n \in \N $}
     
-    Definition. Base case: $[0,0 ,0] = 1 \in \N$
+    Definition. Base case: $1 \in \N$
 
-    Constructor cases: If $ k, m, n \in \N $, then $2^{k+1} 3^{m+1} 5^{n+1} \in \N$
+    Constructor cases: If $ k, m, n \in \N^* $, then $2^{k+1} 3^{m+1} 5^{n+1} \in \N^*$
 
 - b) $S ::=$ {$2^k 3^{2k+m} 5^{m+n} \in \N | k, m ,n \in \N $}
     
-    Definition. Base case: $[0,0 ,0] = 1 \in \N$
+    Definition. Base case: $1 \in \N$
     
-    Constructor cases: If $ k, m, n \in \N $, then $2^{k+1} 3^{2k+m+1} 5^{m+n+1} \in \N $
+    Constructor cases: If $ k, m, n \in \N^* $, then $2^{k+1} 3^{2k+m+2} 5^{m+n+2} \in \N^* $
 
 - c) $L ::=$ { $(a,b) \in \Z^2 | (a-b) $ is a multiple of 3 }
     
     Definition. Base case: $0 \in \Z^2$
 
-    Constructor cases: If $a,b,m, n \in \Z, a =3m, b = 3n$ then $(a+1)(b+1) \in \Z^2 $
+    Constructor cases: If $a - b$ is a multiple of 3, then $(a+1)(b+1) \in \Z^2 $
     
-- d)
-- e)
-- f) 
+- d) $L'$ is the recursive definition given in \(c)
+
 
 ---
 ---
