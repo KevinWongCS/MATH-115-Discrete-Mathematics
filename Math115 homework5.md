@@ -22,13 +22,13 @@ iff $ \underline{ (A \bigcap \bar{B}) } $ $ \bigcup $ $\underline{ (B \bigcap \b
 
 manipulating the right side, we get
 
-iff $ (A \bigcap \bar{B}) $ $ \bigcup $ $ (B \bigcap \bar C) $ $ \bigcup $ $ (C \bigcap \bar A) $ $ \bigcup $ $ \underline{ ((A \bigcap B) \bigcup (B \bigcap C) \bigcup (C \bigcup A)) } $
+iff $ (A \bigcap \bar{B}) $ $ \bigcup $ $ (B \bigcap \bar C) $ $ \bigcup $ $ (C \bigcap \bar A) $ $ \bigcup $ $ \underline{ ((A \bigcap B) \bigcup (B \bigcap C) \bigcup (C \bigcap A)) } $
 
-iff $ (A \bigcap \bar{B}) $ $ \bigcup $ $ (B \bigcap \bar C) $ $ \bigcup $ $ (C \bigcap \bar A) $ $ \bigcup $ $ (A \bigcap B) $ $ \bigcup $ $ (B \bigcap C) $ $ \bigcup $ $ (C \bigcup A) $
+iff $ (A \bigcap \bar{B}) $ $ \bigcup $ $ (B \bigcap \bar C) $ $ \bigcup $ $ (C \bigcap \bar A) $ $ \bigcup $ $ (A \bigcap B) $ $ \bigcup $ $ (B \bigcap C) $ $ \bigcup $ $ (C \bigcap A) $
 
 Associative property to shuffle things around
 
-iff $ (A \bigcap \bar{B}) $  $ \bigcup $ $ (A \bigcap B) $ $ \bigcup $ $ (B \bigcap \bar C) $ $ \bigcup $ $ (B \bigcap C) $ $ (C \bigcap \bar A) $ $ \bigcup $ $ (C \bigcup A) $
+iff $ (A \bigcap \bar{B}) $  $ \bigcup $ $ (A \bigcap B) $ $ \bigcup $ $ (B \bigcap \bar C) $ $ \bigcup $ $ (B \bigcap C) $ $ \bigcup $ $ (C \bigcap \bar A) $ $ \bigcup $ $ (C \bigcap A) $
 
 Reverse distribute for $A, B, C$
 
