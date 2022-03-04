@@ -1,7 +1,7 @@
 name: kevin wong\
 filename: Math115 homework6\
-date: 2/21/2022\
-desc: https://courses.csail.mit.edu/6.042/spring18/mcs.pdf (Links to an external site.) please do these problems:  1, 2, 3
+date: 3/3/2022\
+desc: https://courses.csail.mit.edu/6.042/spring18/mcs.pdf (Links to an external site.) please do these problems:  1, 2, 3(7.5)
 
 ### \#1
 Here is a recursively defined function, $ f : $ { $ n \in \N : n \ge 1 $ } $\rightarrow \N $.
@@ -189,24 +189,45 @@ Provide similar simple recursive definitions of the following sets:
 ---
 - a) $S ::=$ {$2^k 3^m 5^n \in \N | k, m ,n \in \N $}
     
-    Definition. Base case: $1 \in \N$
+    Definition. Base case: $f(0, 0, 0) =1 \in \N$
 
-    Constructor cases: If $ k, m, n \in \N^* $, then $2^{k+1} 3^{m+1} 5^{n+1} \in \N^*$
+    Constructor cases: If $ k, m, n \in \N^* $, then $f(k+1, m+1 ,n+1) = 2^{k+1} 3^{m+1} 5^{n+1} \in \N^*$
 
 - b) $S ::=$ {$2^k 3^{2k+m} 5^{m+n} \in \N | k, m ,n \in \N $}
     
-    Definition. Base case: $1 \in \N$
+    Definition. Base case: $f(0, 0, 0) = 1 \in \N$
     
-    Constructor cases: If $ k, m, n \in \N^* $, then $2^{k+1} 3^{2k+m+2} 5^{m+n+2} \in \N^* $
+    Constructor cases: If $ k, m, n \in \N^* $, then $f(k+1, m+1 ,n+1) = 2^{k+1} 3^{2k+m+2} 5^{m+n+2} \in \N^* $
 
 - c) $L ::=$ { $(a,b) \in \Z^2 | (a-b) $ is a multiple of 3 }
     
-    Definition. Base case: $0 \in \Z^2$
+    Definition. Base case: $(0, 0) \in \Z^2$
 
-    Constructor cases: If $a - b$ is a multiple of 3, then $(a+1)(b+1) \in \Z^2 $
+    Constructor cases: If $a - b$ is a multiple of 3, then $(a+1,b+1) \in \Z^2 $
     
-- d) $L'$ is the recursive definition given in \(c)
+- d) $L'$ is the recursive definition given in (c)
 
+    prove by induction
+
+    - base case 
+
+        $a=0,b=0$
+    
+        $(0, 0)$, $a-b$ is a multiple of 3 and in $L$ 
+
+    - inductive step
+        
+        *inductive hypothesis*: $m, n \in \Z$, $m - n$ is a multiple of 3, $(m, n) \in \Z^2 \rightarrow (m + 1, n + 1) \in \Z^2$
+        
+        - case 1: $m > 0, n > 0$, $m-n$ is a multiple of 3, $(m + 1, n+1) \in L'$ and $\in L$ 
+        
+        - case 2: $m < 0, n < 0$, $m-n$ is a multiple of 3, $(m + 1, n+1) \in L'$ and $\in L$ 
+        
+        - case 3: $m > 0, n < 0$, $m-n$ is a multiple of 3, $(m + 1, n+1) \in L'$ and $\in L$ 
+        
+        - case for a counter example: let's say $k, l \in \Z$ and $(k, l) \in L'$. Based on the recursive definition set $(k, l)$ would only be in $L'$ and $L$ if $k - l$ is a multiple of 3. So if it's in $L'$ then it's in $L$. No counter example found.
+    
+    - By induction we have all combinations of  2 dimensional sets of positive and negative integers $m$ and $n$, where $m-n$ is a multiple of 3. So $L' \subseteq L$ and  $L \subseteq L'$.
 
 ---
 ---
