@@ -197,7 +197,7 @@ Provide similar simple recursive definitions of the following sets:
     
     Definition. Base case: $f(0, 0, 0) = 1 \in \N$
     
-    Constructor cases: If $ k, m, n \in \N^* $, then $f(k+1, m+1 ,n+1) = 2^{k+1} 3^{2k+m+2} 5^{m+n+2} \in \N^* $
+    Constructor cases: If $ k, m, n \in \N^* $, then $f(k+1, m+1 ,n+1) = 2^{k+1} 3^{2k+m+3} 5^{m+n+2} \in \N^* $
 
 - c) $L ::=$ { $(a,b) \in \Z^2 | (a-b) $ is a multiple of 3 }
     
