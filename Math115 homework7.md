@@ -164,6 +164,105 @@ The area of an equilateral triangle is $Area = \frac{\sqrt{3}}{4} l^2$, where $l
 
 
 ### 6.3
+A robot named Wall-E wanders around a two-dimensional grid. He starts out at
+$(0, 0)$ and is allowed to take four different types of steps:
+
+1. $(+2, -1)$
+1. $(+1, -2)$
+1. $(+1, +1)$
+1. $(-3, 0)$
+
+Wall-E’s true love, the fashionable and high-powered robot, Eve, awaits at $0, 2)$.
+
+(a) Describe a state machine model of this problem. What are the states? The
+transitions?
+
+(b) Will Wall-E ever find his true love? If yes, find a path from Wall-E to Eve. If
+no, use the Invariant Principle to prove that no such path exists, being sure to clearly
+state and prove your preserved invariant. Hint: The value $x-y$ is not preserved, but how can it change? 
+
+---
+---
+- a) Describe a state machine model of this problem. What are the states? The
+transitions? 
+
+The start state is $(0, 0)$
+
+The transitions are given by rules:
+
+$(0,0) \rightarrow \left\{ \begin{array}{rcl}{step1(+2, -1)} &\\ {step2(+1, -2)} &\\ {step3(+1, +1)}&\\ {step4(-3, +0)}\end{array}\right.$
+
+- b) Unfortunately, Wall-E will never find his true love. After some trial and error it appears all steps result in coordinates where the difference of $(x, y)$ will always be a multiple of 3. So Eve is at $(0, 2)$ so Wall-E will never reach those coordinates because $0 - 2$ is not divisible by 3.
+
+   - Base case: $P(0) = (0,0)$
+
+   - Inductive Step: Assume $(a, b) \in \Z^2$
+
+
+      - step 1: $(a + 2, b - 1): a + 2 - (b - 1) = a - b + 3$
+
+        case 1: if $a = b$ then step 3 occurs resulting in a 3.
+
+        case 2: if $a \neq b$ then steps 1, 2, 4 occur and those steps are always changing the coordinates where the their difference is a multiple of 3.
+
+      - step 2: $(a + 1, b - 2): a + 1 - (b - 2) = a - b + 3$
+      
+        cases are same as above.
+
+     - step 3: $(a + 1, b + 1): a + 1 - (b + 1) = a - b$
+
+         case 1: if $a = b$ we have 0
+
+         case 2: if $a \neq b$ then steps 1, 2, 4 occur and those steps are always changing the coordinates where the their difference is a multiple of 3.
+
+     - step 4: $(a - 3, b + 0): a - 3 - b = a - b - 3$
+     
+       cases are analogous to inductive step 1. Either way we are left with the difference of $x, y$ being a multiple of 3.
+
+   
+
+```
+# simple program that test the rule
+import random
+
+WallE = [0,0]
+
+random.randint(1, 4)
+
+for x in range(10000000):
+    
+    step = random.randint(1, 4) # gets random num 1 <= x <= 4
+
+    if step == 1: # (+2, -1)
+        WallE[0] = WallE[0] + 2
+        WallE[1] = WallE[1] - 1
+
+    elif step == 2: # (+1, -2)
+        WallE[0] = WallE[0] + 1
+        WallE[1] = WallE[1] - 2
+
+    elif step == 3: # (+1, +1)
+        WallE[0] = WallE[0] + 1
+        WallE[1] = WallE[1] + 1
+
+    elif step == 4: # (-3, +0)
+        WallE[0] = WallE[0] + 3
+        WallE[1] = WallE[1] + 0
+
+    
+    # print coordinates if a step isn't a factor of 3
+    diff = WallE[0] - WallE[1]
+    if (diff % 3) != 0:
+        print("(",WallE[0], WallE[1], ")")
+
+# There is no output, meaning in ten million steps not one step doesn't follow the rule.
+    
+```
+
+- This concludes that Wall-E will never find Eve.
+
+---
+---
 
 ### 6.12 
 
