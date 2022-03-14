@@ -23,11 +23,11 @@ for all strings $r,s,t \in A^*$
 
       \# the reverse of an empty string is itself, an empty string.
 
-   - Constructor cases: 
+   - Constructor: 
 
-       If $s,\lambda \in A^*$ then $rev(s \cdot \lambda) ::= rev(s) ::= s$ 
+       If $s,\lambda \in A^*$ then $rev(s \cdot \lambda) ::= rev(s) = s$ 
    
-      If $s,t  \in A^*$ then $rev(s \cdot t) ::= rev(t) \cdot rev(s) ::= t \cdot s$
+      If $s,t  \in A^*$ then $rev(s \cdot t) ::= rev(t) \cdot rev(s) = t \cdot s$
 
      
 
@@ -71,7 +71,7 @@ for all strings $r,s,t \in A^*$
 
             Similar cases follow for the concatenation with empty strings($\lambda$), where utilizing the definition of concantenation with the definition of $rev()$ will result in the reverse string.
 
-        - This proves that the immediate descendant and future descendants will be concantenated on the right side of the string, creating a string that is the reverse of the string produced by the definition of concatenation on the same set. $\checkmark$
+        - This proves that the immediate descendant and future descendants will be concantenated on the right side of the string, creating a string that is the reverse of the string produced by the definition of concatenation on the same set. 
 ---
 ---
 
@@ -124,7 +124,7 @@ different edge lengths.
 ```
 - B) Prove using structural induction
 
-The area of an equilateral triangle is $Area = \frac{\sqrt{3}}{4} l^2$, where $l$ is the length of an edge. We are to prove the area of any Koch snowflake is consistent with the given equation $q \sqrt{3}$ where $q$ is a rational number.
+  The area of an equilateral triangle is $Area = \frac{\sqrt{3}}{4} l^2$, where $l$ is the length of an edge. We are to prove the area of any Koch snowflake is consistent with the given equation $q \sqrt{3}$ where $q$ is a rational number.
 
    - Base case: 
       
@@ -140,11 +140,13 @@ The area of an equilateral triangle is $Area = \frac{\sqrt{3}}{4} l^2$, where $l
 
    - Inductive step:
 
-     Inductive hypothesis: Assume the area inside a single equilateral triangle is $Area = \frac{\sqrt{3}}{4} l^2$, Need to show that adding any immediate descendants or future descendants using recursive case is of form $q\sqrt3$ where $q$ is a rational number $Q$. Using the recursive case we can derive the area of every descendent triangle, because we know it's edge length is one third the length of its parent triangle's edge. Using that knowledge we have the equation below:
+     Inductive hypothesis: Assume the area inside a single equilateral triangle is $Area = \frac{\sqrt{3}}{4} l^2$, Need to show that adding any immediate descendants or future descendants using recursive case is of form $q\sqrt3$ where $q$ is a rational number $Q$. 
+
+     Using the recursive case we can derive the area of every descendent triangle, because we know it's edge length is one third the length of its parent triangle's edge. Using that knowledge we have the equation below:
 
      Let $n,k, j \in \N$ and $j$ is a factor of 3.
 
-     $\sum_{n=1}^{k+1} = Area_1 + Area_2 + ... + Area_{k+1}$
+     $\sum_{n=1}^{k+1} Area_n = Area_1 + Area_2 + ... + Area_{k+1}$
 
      $= \frac{\sqrt{3}}{4}1^2 + \frac{\sqrt{3}}{4}(\frac{1}{3})^2 + ... + \frac{\sqrt{3}}{4}(\frac{1}{j})^2$, 
 
@@ -155,7 +157,7 @@ The area of an equilateral triangle is $Area = \frac{\sqrt{3}}{4} l^2$, where $l
 
      $= \sqrt{3} ($ some rational number $ ) $  $\checkmark$
 
-     So from $n = 1$ up to the $k+1$ generation we have an equation where we can always factor out a $\sqrt3$ and we are left with a rational number which is consistent with the given $q\sqrt3$ where $q$ is a rational number $Q$. $\checkmark$
+     So from $n = 1$ up to the $k+1$ generation we have an equation where we can always factor out a $\sqrt3$ and left with a rational number, which is consistent with the given $q\sqrt3$ where $q$ is a rational number $Q$. $\checkmark$
 
    
 
@@ -192,32 +194,35 @@ The transitions are given by rules:
 
 $(0,0) \rightarrow \left\{ \begin{array}{rcl}{step1(+2, -1)} &\\ {step2(+1, -2)} &\\ {step3(+1, +1)}&\\ {step4(-3, +0)}\end{array}\right.$
 
-- b) Unfortunately, Wall-E will never find his true love. After some trial and error it appears all steps result in coordinates where the difference of $(x, y)$ will always be a multiple of 3. So Eve is at $(0, 2)$ so Wall-E will never reach those coordinates because $0 - 2$ is not divisible by 3.
+- b) After some trial and error it appears all steps result in coordinates where the difference of $(x, y)$ will always be a multiple of 3. So Eve is at $(0, 2)$ so Wall-E will never reach those coordinates because $0 - 2$ is not divisible by 3.
+
+    Preserved invariant: If the state is $(x, y)$, where $x, y \in \Z$, then $x - y$ is a multiple of 3.
+    
+    Prove by induction.
 
    - Base case: $P(0) = (0,0)$
 
-   - Inductive Step: Assume $(a, b) \in \Z^2$
+   - Inductive Step: Assume $(a, b) \in \Z^2$ and $a-b$ is a multiple of 3. I will try to prove that all immediate and future descendants are also a multiple of 3.
 
+      - case 1: step 1 occurs: $(a + 2, b - 1): a + 2 - (b - 1) = a - b + 3$
 
-      - step 1: $(a + 2, b - 1): a + 2 - (b - 1) = a - b + 3$
+        subcase a: if $a = b$ then the result is a 3. $\checkmark$
 
-        case 1: if $a = b$ then step 3 occurs resulting in a 3.
+        subcase b: if $a \neq b$ then the transitions are always incrementing of decrementing the difference of the coordinates by 3(steps 1, 2, 4). If step 3 occurs the difference between $a$ and $b$ is maintained, resulting in a multiple of 3.$\checkmark$
 
-        case 2: if $a \neq b$ then steps 1, 2, 4 occur and those steps are always changing the coordinates where the their difference is a multiple of 3.
-
-      - step 2: $(a + 1, b - 2): a + 1 - (b - 2) = a - b + 3$
+      - case 2: step 2 occurs: $(a + 1, b - 2): a + 1 - (b - 2) = a - b + 3$
       
-        cases are same as above.
+        subcases are same as above.
 
-     - step 3: $(a + 1, b + 1): a + 1 - (b + 1) = a - b$
+     - case 3: step 3 occurs: $(a + 1, b + 1): a + 1 - (b + 1) = a - b$
 
-         case 1: if $a = b$ we have 0
+         subcase a: if $a = b$ we have 0. $\checkmark$
 
-         case 2: if $a \neq b$ then steps 1, 2, 4 occur and those steps are always changing the coordinates where the their difference is a multiple of 3.
+         subcase b: if $a \neq b$. Same explaination as case 1: subcase b.
 
-     - step 4: $(a - 3, b + 0): a - 3 - b = a - b - 3$
+     - case 4: step 4 occurs: $(a - 3, b + 0): a - 3 - b = a - b - 3$
      
-       cases are analogous to inductive step 1. Either way we are left with the difference of $x, y$ being a multiple of 3.
+       subcases are analogous to case 1. Either way we are left with the difference of $x, y$ being a multiple of 3.
 
    
 
@@ -246,7 +251,7 @@ for x in range(10000000):
         WallE[1] = WallE[1] + 1
 
     elif step == 4: # (-3, +0)
-        WallE[0] = WallE[0] + 3
+        WallE[0] = WallE[0] - 3
         WallE[1] = WallE[1] + 0
 
     
@@ -255,7 +260,7 @@ for x in range(10000000):
     if (diff % 3) != 0:
         print("(",WallE[0], WallE[1], ")")
 
-# There is no output, meaning in ten million steps not one step doesn't follow the rule.
+# There is no output, meaning in ten million steps all states followed the rules of the preserved invariant.
     
 ```
 
@@ -266,4 +271,135 @@ for x in range(10000000):
 
 ### 6.12 
 
+Token Switching is a process for updating a set of black and white tokens. The
+process starts with a single black token. 
+
+At each step,
+- i. one black token can be replaced with two white tokens, or
+- ii. if the numbers of white and black tokens are not the same, the colors of all
+the tokens can be switched: all the black tokens become white, and the white
+tokens become black.
+
+We can model Token Switching as a state machine whose states are pairs $(b, w)$ of nonnegative integers$(\Z^+)$, where $b$ equals the number of black tokens, and $w$ equals
+the number of white tokens. So the start state is$(1, 0)$.
+
+---
+---
+- a) Indicate which of the following states can be reached from the start state in
+exactly two steps:
+
+   $(0, 0), (1, 0), (0, 1), (1, 1), (0, 2), (2, 0), (2, 1), (1, 2), (0, 3), (3, 0) $
+
+   Start state: $(1, 0)$
+    
+    $(1, 0)$ step 2 twice.
+
+    $(2, 0)$ step 1 then step 2
+
+- b) Define the predicate $F(b, w)$ by the rule:
+ 
+   $F(b,w) ::= (b - w) $ is not a multiple of 3.
+    
+    "Let $F$ be the predicate: Assume  $b, w \in \Z^+$, if $(b, w)$ is a token switching pair, then the difference of $b$ and $w$ is not a multiple of 3."
+
+    
+
+- Prove the following:
+
+    *Claim*. If $F(b, w)$, then state $(b, w)$ is reachable from the start state.
+
+```
+                                start state
+                                (1, 0) <-
+                                 / \     \
+                                /   \     \ loops back
+                            (0, 2)   \    /
+                            /        (0, 1)
+                        (2, 0) <-    
+                        /    \   \  loops back      
+                    (1, 2)   (0, 2)
+                    /    \
+                (2, 1)   (0, 4)
+                /    \        \
+            (1, 2)  (2, 1)   (4, 0)
+            /       /           \ 
+        (0, 4)   (1, 3)        (3, 2)
+         /       /    \         /   \
+     (4, 0)   (3, 1)  (0, 5) (2, 3) (2, 4)
+       /       /  \    /  \   /  \   /  \  
+    etc......
+F seems to be holding so far.
+
+```
+
+Prove by structural induction:
+- base case: $b = 1$ and $w = 0$ and $1 - 0$ is not a multiple of 3.
+
+- inductive step:
+
+   Assume $b, w \in \N$ and $F$ holds. So we have to prove that the $F$ holds for all immediate descendants and future descendants at some future state $(c, d)$ and $c, d \in \N$.
+
+- case 1: $2r$ is an even number in $\N$
+    
+        
+
+- case 2: $r,s$ is an odd number in $\N$ and not a multiple of 3. 
+
+- c) Prove that the eligible state $(11, 5)$ is not reachable state. Hint: Do not assume F is a preserved invariant without proving it.
+
+   *The idea is that by proving the preserved invariant, the difference of a state can't be a multiple of 3. $11 - 5$ is 6, which is a multiple of 3 which if true, means the preserved invariant isn't true.*
+
+---
+---
+
 ### 6.15 (parts b and c)
+Let $A$ be a sequence consisting of the numbers, $1,...,n$ in some order. A pair of integers in $A$ is called an *out-of-order* pair when the first element of the pair both comes *earlier* in the sequence, and is *larger*, than the second element of the pair.
+
+The elements in A can be rearranged using the *Rotate-Triple operation*, in which
+three consecutive elements of $A$ are rotated to move the smallest of them to be first.
+
+---
+---
+- b) Prove that having an even number of out-of-order pairs is a preserved invariant of this machine.
+
+   - proof by induction
+
+      - base case: Assume some sequence $A \in \N$, 
+        
+        $t(A) = 0$ and 0 is an even number. $\checkmark$
+
+     - inductive step: Assume if a sequence $A \in \N$ contains $k$ *out-of-order* pairs, then $k$ is an even number and the elements in $A$ can only be rearranged by *Rotate-Triple operation*.
+
+        - case 1: A single *out-of-order* pair.
+          
+          - subcase a: the *out-of-order* pair occurs at the first or last position.
+
+            counter example found: $S ::= (1, 2, 3, 5, 4)$ there is only 1 *out-of-order* pair (5, 4). There is no specific order given for the sequence of numbers. So the sequence $S$ could be possible. $S$ only has the number $5$ that comes earlier and is larger than it's pair. $\checkmark$ 
+
+            counter example found: $S::=(2, 1, 3, 4, 5)$ there is only 1 *out-of-order* pairs (2, 1).$\checkmark$
+
+          - subcase b: the *out-of-order* pair occurs in between the first and last position.
+
+            skip
+
+         
+
+        - case 2: $k + 1$ *out-of-order* pairs.
+           
+            skip
+
+        - I don't believe based on the definition of an *out-of-order* pair(when the first element of the pair both comes *earlier* in the sequence, and is *larger*, than the second element of the pair) that this is a preserved invariant.
+
+- c) Starting with the sequence below:
+
+   $S ::= (2014, 2013, 2012,...,2, 1)$,
+
+   explain why it is impossible to reach 
+
+   $T ::= (1, 2, ..., 2012, 2013, 2014)$
+
+   - It is impossible to sort list $S$ completely to list $T$ using the *Rotate-Triple* operation because the *Rotate-Triple* operation will eventually run out of triples to sort. In this case, the last pair of numbers will never be sorted or in other words be an *out-of-order* pair. 
+
+---
+---
+   
