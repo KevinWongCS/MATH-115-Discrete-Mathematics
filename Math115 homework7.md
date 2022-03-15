@@ -8,7 +8,7 @@ The *reversal* of a string is the string written backwards, for example, $rev(ab
 
 a) Give a simple recursive definition of $rev(s)$ based on the recursive definitions 7.1.1 of $s \in A^*$ and of the concatenation operation 7.1.3.
 
-b) Prove that 
+b) Prove the below:
 
 $rev(s \cdot t) = rev(t) \cdot rev(s)$
 
@@ -23,11 +23,11 @@ for all strings $r,s,t \in A^*$
 
       \# the reverse of an empty string is itself, an empty string.
 
-   - Constructor: 
+   - Constructor:
 
-       If $s,\lambda \in A^*$ then $rev(s \cdot \lambda) ::= rev(s) = s$ 
+       If $s \in A,\lambda \in A^*$ then $rev(s \cdot \lambda) ::= rev(s) ::= s \in A^*$
    
-      If $s,t  \in A^*$ then $rev(s \cdot t) ::= rev(t) \cdot rev(s) = t \cdot s$
+       If $s \in A,t  \in A^*$ then $rev(s \cdot t) ::= rev(t) \cdot rev(s) ::= t \cdot s \in A^*$
 
      
 
@@ -37,41 +37,39 @@ for all strings $r,s,t \in A^*$
 
    - Inductive step
 
-        Assume $s, t \in A^*$ and $rev(s \cdot t) = t \cdot s $.
+        Assume $s \in A, t \in A^*$ and $rev(s \cdot t) = t \cdot s $.
 
-        - case 1:  
+        - case 1:
 
-            Suppose $x \cdot y, s, t \in A^*$ and $rev(x \cdot y \cdot s \cdot t) = t \cdot s \cdot y \cdot x.$ Where $x, y$ represent any combination of immediate or future descendants in $A^*$.
+            Suppose $x \cdot y \in A^*, s \in A$ and $rev(x \cdot y \cdot s) = s \cdot y \cdot x.$ Where $x, y$ represent any combination of immediate or future descendants in $A^*$.
         
-            $rev(x \cdot y \cdot s \cdot t) = rev(t) \cdot rev(s) \cdot rev(x \cdot y)$
+            $rev( (x \cdot y) \cdot s ) = rev(s) \cdot rev(x \cdot y)$
 
             by definition of $rev()$
 
-            $ = rev(t) \cdot rev(s) \cdot rev(y) \cdot rev(x) $ 
+            $ = rev(s) \cdot rev(y) \cdot rev(x) $ 
 
             by definition of $rev()$
          
-            $ = t \cdot s \cdot y \cdot x $
+            $ = s \cdot y \cdot x $ $\checkmark$
 
         - case 2: 
-        
-            Suppose $x \cdot y ,s, t \in A^*$, $y = \lambda$ and $x$ represent any combination of immediate or future descendants in $A^*$.
+            
+            $rev( x \cdot (y \cdot s) ) = rev(y \cdot s) \cdot rev(x)$
+            
+            by definition of $rev()$
 
-            $rev(x \cdot y, s, t) = rev(t) \cdot rev(s) \cdot rev(x \cdot y)$
-
-            by the definition of concatenation (with an empty string)
-
-            $ = rev(t) \cdot rev(s) \cdot rev(x)$ 
+            $ rev(s) \cdot rev(y) \cdot rev(x) $
 
             by definition of $rev()$
 
-            $ = t \cdot s \cdot x$
+            $ = s \cdot y \cdot x $ $\checkmark$
 
         - other cases: 
 
             Similar cases follow for the concatenation with empty strings($\lambda$), where utilizing the definition of concantenation with the definition of $rev()$ will result in the reverse string.
 
-        - This proves that the immediate descendant and future descendants will be concantenated on the right side of the string, creating a string that is the reverse of the string produced by the definition of concatenation on the same set. 
+        - This proves that the immediate descendant and future descendants will be concantenated on the right side of the string, creating a string that is the reverse of the string produced by the definition of concatenation. 
 ---
 ---
 
@@ -101,6 +99,7 @@ structural induction too.
 - a) Find a single Koch snowflake that has exactly 9 edges and includes at least 3
 different edge lengths.
 ```
+
 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░     edges 1, 2 are the same length
 ░░░░░░░░░░░░░░░░░░░█░░░░░░░░░░░░░░░░░░░     edges 3, 4, 9 are the same length
 ░░░░░░░░░░░░░░░░░░█░█░░░░░░░░░░░░░░░░░░     edges 5, 6, 7, 8 are the same length
@@ -121,6 +120,7 @@ different edge lengths.
 ░░░█████████████████████████████████░░░
 ░░░░░░░░░░░░░░░░░░░2░░░░░░░░░░░░░░░░░░░
 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+
 ```
 - B) Prove using structural induction
 
@@ -158,8 +158,6 @@ different edge lengths.
      $= \sqrt{3} ($ some rational number $ ) $  $\checkmark$
 
      So from $n = 1$ up to the $k+1$ generation we have an equation where we can always factor out a $\sqrt3$ and left with a rational number, which is consistent with the given $q\sqrt3$ where $q$ is a rational number $Q$. $\checkmark$
-
-   
 
 ---
 ---
@@ -208,7 +206,7 @@ $(0,0) \rightarrow \left\{ \begin{array}{rcl}{step1(+2, -1)} &\\ {step2(+1, -2)}
 
         subcase a: if $a = b$ then the result is a 3. $\checkmark$
 
-        subcase b: if $a \neq b$ then the transitions are always incrementing of decrementing the difference of the coordinates by 3(steps 1, 2, 4). If step 3 occurs the difference between $a$ and $b$ is maintained, resulting in a multiple of 3.$\checkmark$
+        subcase b: if $a \neq b$ then the transition to the next state is always incrementing or decrementing the difference of the coordinates by 3(steps 1, 2, 4), resulting in a multiple of 3. If step 3 occurs the difference between $a$ and $b$ is maintained, resulting in a multiple of 3.$\checkmark$
 
       - case 2: step 2 occurs: $(a + 1, b - 2): a + 1 - (b - 2) = a - b + 3$
       
@@ -255,12 +253,12 @@ for x in range(10000000):
         WallE[1] = WallE[1] + 0
 
     
-    # print coordinates if a step isn't a factor of 3
+    # print coordinates if a step's difference isn't a factor of 3
     diff = WallE[0] - WallE[1]
     if (diff % 3) != 0:
         print("(",WallE[0], WallE[1], ")")
 
-# There is no output, meaning in ten million steps all states followed the rules of the preserved invariant.
+# This program compiles and there is no output, meaning in ten million steps all states followed the rules of the preserved invariant.
     
 ```
 
@@ -325,29 +323,75 @@ exactly two steps:
             /       /           \ 
         (0, 4)   (1, 3)        (3, 2)
          /       /    \         /   \
-     (4, 0)   (3, 1)  (0, 5) (2, 3) (2, 4)
-       /       /  \    /  \   /  \   /  \  
+     (4, 0)   (3, 1) (0, 5)  (2, 3) (2, 4)
+       /       /  \   /  \    /  \   /  \  
     etc......
-F seems to be holding so far.
+Predicate F seems to be holding so far.
 
 ```
 
 Prove by structural induction:
-- base case: $b = 1$ and $w = 0$ and $1 - 0$ is not a multiple of 3.
+- base case: $b = 1$ and $w = 0$ and $1 - 0$ is not a multiple of 3. $\checkmark$
 
 - inductive step:
 
-   Assume $b, w \in \N$ and $F$ holds. So we have to prove that the $F$ holds for all immediate descendants and future descendants at some future state $(c, d)$ and $c, d \in \N$.
+   Assume $b, w \in \Z^+$ and $F$ holds. So we have to prove that the $F$ holds for all immediate descendants and future descendants at some future state $(c, d)$ and $c, d \in \Z^+$.
 
-- case 1: $2r$ is an even number in $\N$
+---
+---
+
+   // Side note: After some trial and error, I believe all token switching pairs $(b, w)$, the difference of the black to white tokens $b - w$ is always not a multiple of 3. Same goes for its immediate and future descendants. I'll try to define a recursive set that describes this behavior below:
+
+ set $S$ and is defined recursively as:
     
-        
+  - $S$ set base case: $(1, 0) \in S$
+    
+  - $S$ set recursive case:
+    
+     if  $(b, w) \in S$ then $b - w$ is not a multiple of 3.
 
-- case 2: $r,s$ is an odd number in $\N$ and not a multiple of 3. 
+     $b,w \in \Z^+$
+
+---
+---
+
+  - Lets call the set of all token switching pairs set $P$. So if $ P \subseteq S $ and $S \subseteq P $ then that proves our preserved invariant. 
+
+  - case 1: *step ii* occurs, implying $b$ and $w$ are flipped, which will just result in the opposite signed number, i.e. 1 to -1 or -1 to 1, which if it is not a multiple of 3, then its opposite signed number would also not be a multiple of 3. $\checkmark$
+
+  - case 2: *step i* occurs, the descendants after the base case begins at $(2, 0)$ with a difference of 2. Which is not a multiple of 3. So by incrementing or decrementing a number that isn't a multiple of 3 by 3, via *step i*, the difference of the coordinates will remain not a multiple of 3. Or in other words the characteristic of this set is preserved through out all immediate and future states. $\checkmark$
+  
+  - So if $S$ was expanded and $P$ was expanded into there respective set of coordinates we would find that $ P \subseteq S $ and $S \subseteq P $. I had a very hard time finding a math equation for this number pattern, so I ended up using a python program to find the numbers, I put it below.
 
 - c) Prove that the eligible state $(11, 5)$ is not reachable state. Hint: Do not assume F is a preserved invariant without proving it.
 
-   *The idea is that by proving the preserved invariant, the difference of a state can't be a multiple of 3. $11 - 5$ is 6, which is a multiple of 3 which if true, means the preserved invariant isn't true.*
+    The idea is that by proving the preserved invariant, the difference of a state can't be a multiple of 3. $11 - 5$ is 6, which is a multiple of 3 which if true, means the preserved invariant isn't true.But we proved the preserved invariant in part b) so $(11, 5)$ can't be a state for this problem.
+
+```
+import random
+
+# base case
+TokenSwitch = [1, 0]    # positive one is b and position two is w
+
+for i in range(10000000):
+    step = random.randint(1, 2)
+    
+    if step == 1 and TokenSwitch[0] >= 1:   # b - 1, w + 2
+        TokenSwitch[0] = TokenSwitch[0] - 1
+        TokenSwitch[1] = TokenSwitch[1] + 2
+    elif step == 2 and  TokenSwitch[0] != TokenSwitch[1]:
+        temp = TokenSwitch[0]
+        TokenSwitch[0] = TokenSwitch[1]
+        TokenSwitch[1] = temp
+
+    # will output state where (b - w) % 3 == 0
+    diff = TokenSwitch[0] - TokenSwitch[1]
+    if diff % 3 == 0:
+        print("diff: ", diff)
+        print("(", TokenSwitch[0],",", TokenSwitch[1], ")")
+
+# This program compiles and there is no output, meaning in ten million steps all states followed the rules of the preserved invariant.
+```
 
 ---
 ---
@@ -378,17 +422,9 @@ three consecutive elements of $A$ are rotated to move the smallest of them to be
 
             counter example found: $S::=(2, 1, 3, 4, 5)$ there is only 1 *out-of-order* pairs (2, 1).$\checkmark$
 
-          - subcase b: the *out-of-order* pair occurs in between the first and last position.
+        - proving counter example: Take for example part c) of this question. I'll use the same sequence in that question, $S ::= (2014, 2013, 2012,...,2, 1)$ and perform the maximum amount of *Rotate-Triple operations* on it and the result would be $T ::= (1, 2, ..., 2012, 2014, 2013)$ and $t(T) = 1$ because $2014$ is the only element that comes earlier in the sequence and is larger than the second element of the pair.
 
-            skip
-
-         
-
-        - case 2: $k + 1$ *out-of-order* pairs.
-           
-            skip
-
-        - I don't believe based on the definition of an *out-of-order* pair(when the first element of the pair both comes *earlier* in the sequence, and is *larger*, than the second element of the pair) that this is a preserved invariant.
+        - I don't believe based on the definition of an *out-of-order* pair that this is a preserved invariant.
 
 - c) Starting with the sequence below:
 
@@ -398,7 +434,7 @@ three consecutive elements of $A$ are rotated to move the smallest of them to be
 
    $T ::= (1, 2, ..., 2012, 2013, 2014)$
 
-   - It is impossible to sort list $S$ completely to list $T$ using the *Rotate-Triple* operation because the *Rotate-Triple* operation will eventually run out of triples to sort. In this case, the last pair of numbers will never be sorted or in other words be an *out-of-order* pair. 
+   - It is impossible to sort list $S$ completely to list $T$ using the *Rotate-Triple* operation because the *Rotate-Triple* operation will eventually run out of triples to sort. In this case, the last *out-of-order* pair will never be sorted. So $T ::= (1, 2, ..., 2012, 2014, 2013)$ and since $2012$ is the smallest number in the last triple $2013$ will never rotate with $2014$.
 
 ---
 ---
