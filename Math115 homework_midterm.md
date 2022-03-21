@@ -1,0 +1,568 @@
+name: kevin wong\
+filename: Math115 Midterm\
+date: 3/21/2022\
+desc: 15 questions midterm review
+
+### 1
+---
+---
+State the definitions of the following concepts:
+
+- a) proposition:
+
+    A statement that is either true or false.
+
+    - predicate: A preposition whose truth depends on the value of one or more variables
+    
+- b) rational number:
+    
+    The set of numbers that can be expressed as the ratio of two integers. Denominator cannot be divisible by zero.
+
+    $S = \{ \frac{n}{m} | n, m \in \Z \}$
+- c) even integer:
+
+    A number that is divisble by 2.
+
+    $S = \{ 2k | k \in \Z \}$
+
+- d) odd integer:
+
+    The set of integers that is not even.
+
+    $S = \{ 2k+1 | k \in \Z \}$
+
+- e) injective function:
+
+    A function that maps distinct elements of the input set to distinct elements of the functions set.
+
+    Often we here it expressed as "one to one" or "no two elements map to the same element in the functions set".
+
+    $\forall a_1, a_2 \in A, f(a_1) = f(a_2) \rightarrow a_1 = a_2 $
+
+- f) surjective function:
+
+    aka: onto function. When the whole set of the function is mapped to.
+
+    $f: \R \rightarrow \R, f(x) = y$ has to cover all of $\R$
+
+    Does not have to be "one to one".
+
+    - Bijective: Both injective and surjective.
+
+- g) the union of two sets:
+
+    Say there's two sets $A$ and $B$, the union of the two sets would be $A \bigcup B$.
+
+    - The intersection would be $A \bigcap B$.
+    - Other sets symbols: universe($U$) and empty set($\varnothing$)  
+---
+---
+
+### 2
+Two of the following three propositions are equivalent.  Which two?  Prove that they are equivalent using a truth table. $\urcorner(P \rightarrow Q), P \wedge \urcorner Q,(\urcorner P) \rightarrow \urcorner Q $.
+
+| $P$  | $Q$  | $P \rightarrow Q$  | $\urcorner(P \rightarrow Q)$  | $P \wedge \urcorner Q$  | $(\urcorner P) \rightarrow \urcorner Q$  |
+|---|---|---|---|---|---|
+| T | T | T | F | F | T |
+| T | F | F | T | T | T |
+| F | T | T | F | F | F |
+| F | F | T | F | F | T |
+
+$\urcorner(P \rightarrow Q) \equiv P \wedge \urcorner Q$ $\checkmark$
+
+---
+---
+
+### 3
+Prove or disprove the following equivalences.
+
+- a) $(P \rightarrow Q) \rightarrow R \equiv P \rightarrow (Q \rightarrow R)$
+
+| $P$ | $Q$ | $R$ | $P \rightarrow Q$  | $(P \rightarrow Q) \rightarrow R$  | $Q \rightarrow R$  | $P \rightarrow (Q \rightarrow R)$ |
+|:-:|:-:|:-:|:-:|:-:|:-:|---|
+| T | T | T | T | T | T | T |
+| T | T | F | T | F | F | F |
+| T | F | T | F | T | T | T |
+| T | F | F | F | T | T | T |
+| F | T | T | T | T | T | T |
+| F | T | F | F | F | F | T |
+| F | F | T | F | T | T | T |
+| F | F | F | T | F | T | T |
+
+$(P \rightarrow Q) \rightarrow R (\urcorner \equiv) P \rightarrow (Q \rightarrow R)$ $\checkmark$
+
+- b) $(\urcorner P) \leftrightarrow (\urcorner Q) \equiv P \leftrightarrow Q$
+
+
+| $P$ | $Q$ | $\urcorner P$  | $\urcorner Q$  | $  (\urcorner P) \leftrightarrow (\urcorner Q)$  | $P \leftrightarrow Q$  |
+|:-:|:-:|:-:|:-:|:-:|:-:|
+| T | T | F | F | T | T |
+| T | F | F | T | F | F |
+| F | T | T | F | F | F |
+| F | F | T | T | T | T |
+
+
+$(\urcorner P) \leftrightarrow (\urcorner Q) \equiv P \leftrightarrow Q$ $\checkmark$
+
+---
+---
+
+### 4
+Say $D_1$ is the domain of all students at CCSF, $D_2$ is the domain of all classes at CCSF. Say $T$ is a propositional function with domain $D_1$ x $D_2, T(x, y) := x$ has taken $y$. 
+
+Express the negation of the following propositions in English. 
+
+- a) $\forall x \in D_1, T(x,M115)$
+
+    All students at CCSF have taken Math 115.
+
+    negation: Not all students have taken math 115.
+
+- b) $\exist y \in D_2, \urcorner T(Felipe, y)$ 
+
+    Felipe has not taken a class at CCSF.
+
+    negation: Felipe has at least taken one class at CCSF.
+
+- c) $\forall x \in D_1, \exist y \in D_2, T(x,y)$
+
+    All students at CCSF has at least taken one one class at CCSF.
+
+    negation: All students at CCSF have not taken a class at CCSF.
+
+---
+---
+
+### 5
+5. Prove or disprove the following claims.
+
+- a) Given any two distinct integers there exists a rational number strictly between them. 
+
+    Assume $a, b \in \Z$ and are not equal. You can just take the average of $a, b$ to produce a rational number between the 2 integers.
+
+    $a, b \in \Z, \frac{a + b}{2} = RationalNumber$ 
+
+- b) Given any two distinct integers there exists an irrational number strictly between them. 
+
+    Assume $a, b \in \Z$ and $a < b$
+
+    $0 < \frac{1}{\sqrt{2}} < 1$
+
+    multiply all sides by $(b-a)$
+
+    $(b-a)0 < (b-a) \frac{1}{\sqrt{2}} < (b-a)1$
+
+    $0 < (b-a) \frac{1}{\sqrt{2}} < (b-a)1$
+
+    add $a$ to both sides
+
+    $a <  \frac{(b-a)}{\sqrt{2}} + a < b$
+
+    Interpreting the expression in the middle, $ \frac{(b-a)}{\sqrt{2}}$ is an irrational number, and $a$ is a rational number. We know an irrational number plus an rational number is irrational. $\checkmark$
+
+    note: a irrational number plus a irrational number can produce a rational number.
+
+    $\pi + (1 - \pi) = 1$ $\checkmark$
+
+- c) Given any two distinct irrational numbers there exists an integer strictly between them. 
+
+    Using the equation from part b). 
+
+    $a <  \frac{(b-a)}{\sqrt{2}} + a < b$ and $a, b \in \Z$ and $a < b$
+
+    subtract $ \frac{(b-a)}{\sqrt{2}}$ from all sides.
+
+    $a -  \frac{(b-a)}{\sqrt{2}} <  a < b -  \frac{(b-a)}{\sqrt{2}}$
+
+    So we have a irrational number plus a rational, which is irrational, a rational number in the middle, and a irrational number plus a rational, which is irrational on the right side. $\checkmark$
+    
+---
+---
+
+### 6 
+Here are some sets contained in the universe $U =$ {$0, 1, 2, 3, 4, 5$}
+
+$A = \{0, 5\}$
+
+$B = \{2, 3, 4\}$
+
+$C = \{1, 3, 5\}$
+
+compute the following sets.
+
+- a) $\overline{A \bigcup B}$ 
+
+    $A \bigcup B = \{0, 2, 3, 4, 5\}$ 
+
+    $\overline{A \bigcup B} = \{1\}$ 
+
+- b) $(C-A) \bigcup (B-C)$ 
+
+    $(C-A) \equiv (C \bigcap \overline{A}) = \{1, 3\}$
+
+    $(B-C) \equiv (B \bigcap \overline{C}) = \{2, 4\}$
+
+    $(C-A) \bigcup (B-C) = \{1, 2, 3, 4\}$ 
+
+- c) $\overline{A} \bigcap B \bigcap \overline{C}$
+
+    $\overline{A} = \{1, 2, 3, 4\}$
+
+    $B = \{2, 3, 4\}$
+
+    $\overline{C} = \{0, 2, 4\}$
+
+    $\overline{A} \bigcap B \bigcap \overline{C} = \{2, 4\}$
+
+---
+---
+
+### 7
+Prove or disprove the following claims. In your arguments please rely on the definitions of $\bigcup, \bigcap, \subset$ and/or equality of sets.
+
+- a) For all sets $A, B, C$ if $A \subseteq C$ and $B \subseteq C$, then $A \bigcup B \subseteq C$.
+    
+    - case 1:
+
+        Suppose $x \in A$
+
+        Because $x$ is in $A$ and $A$ is a subset of $C$ 
+
+        We can conclude:
+
+        $A$ or $B$ is a subset of $C$, aka $A \bigcup B \subseteq C$ $\checkmark$
+    
+    - case 2:
+    
+        Suppose $x \in B$
+
+        Because $x$ is in $C$ and $B$ is a subset of $C$
+
+        We can conclude that $B$ or $A$ is a subset of $C$.
+
+        aka $B \bigcup A \subseteq C \equiv A \bigcup B \subseteq C$ $\checkmark$
+
+    - case 3:
+    
+        Suppose $x \in A,B$
+    
+        Then just a combination of case 1 and 2. $\checkmark$
+
+- b) For all sets $A, B, C$, if $A \bigcup C \subseteq B \bigcup C$, then $A \subseteq B$.
+
+    - case 1: 
+    
+        Suppose $x \in A, x \notin B, x \notin C$
+        
+        $A \notin B$
+
+        so  $A \nsubseteq B$ $\checkmark$
+
+    - case 2:
+    
+        Suppose $x \in C, x \notin A, x \notin B$
+
+        We know $x$ is in $C$, but $x$ isn't in $A$ or $B$.
+
+        $x \notin A,B$
+
+        so  $A \nsubseteq B$ $\checkmark$
+
+    - case 3:
+    
+        Suppose $x \in A, x \in B, x \notin C$
+
+        In this case because $x$ is in $A$ and $B$ we can conclude:
+
+        $A \subseteq B$
+
+    - conclusion, we can conclude there exist a possibility such that $A$ is a subset of $B$, where $x$ is in both $A$ and $B$.
+    
+        $\exist x : A \subseteq B | x \in A, x \in B$
+
+c) If you have two sets $A$ and $B$, then $A \bigcup B = B$ *iff* $A \bigcap B = A$
+
+- case 1:
+
+    suppose $x$ in $A$, $x \in A$
+
+    So $x$ is in $A$ or $B$, $A \bigcup B$
+
+    Using our assumption $A$ or $B$ is $B$, $A \bigcup B = B$
+
+    Then $A$ is a subset of $B$, $A \subseteq B$
+
+    aka, all $x$ are in $B$, $x \in B$
+
+    So, $A$ and $B$ is just $A$, $A \bigcap B = A$ $\checkmark$
+
+- case 2: 
+
+    Suppose $x$ in $A$, $x \in A$
+
+    and $x$ in $A$ and $B$, $x \in A \bigcap B$
+
+    Using our assumption $A$ and $B$ equals $A$, $A \bigcap B = A$
+
+    then $A$ is a subset of $B$, $A \subseteq B$
+
+    So, $A$ or $B$ is just $B$, $A \bigcup B = B$ $\checkmark$
+
+- Conclusion the *iff* or $\leftrightarrow$ goes both ways in this preposition making this claim valid. $\checkmark$
+
+---
+---
+
+### 8
+Use induction to prove that $n^2$ equals the sum of the first n positive odd integers. In other words $1 + 3 +...+(2n - 1) = n^2$ for all integers $n \geq 1$.
+
+Prove by weak induction:
+
+- base case: n = 1
+    
+    $1^2 = 1$ $\checkmark$
+
+- inductive step: 
+    
+    Inductive hypothesis: Assume $n^2$ equals the sum of the first n positive odd integers or the equation above.
+
+    Prove if $k^2 = 1 + 3 +...+(2k - 1), k \geq 1$ 
+
+    then $(k + 1)^2 = 1 + 3 +...+(2(k + 1) - 1), k \geq 1$
+
+    $= 1 + 3 +...+(2k + 1)$
+
+    $(2k + 1)$ is the next odd number in sequence, so the claim is valid. $\checkmark$
+
+---
+---
+
+### 9
+Suppose $a_0 = 1, a_1 = 2, a_{n+2} = 5a_{n+1} - 6a_n$ for $n \in \N$
+
+- a) compute $a_2, a_3, a_4, a_5$.
+
+    $a_{0 + 2} = 5a_{0 + 1} - 6a_0$
+
+    $= 10 - 6 = 4$
+
+    - $a_2 = 4$
+
+    $a_{1 + 2} = 5a_{1 + 1} - 6a_1$
+
+    $= 20 - 12 = 8$
+
+    - $a_3 = 8$
+
+    $a_{2 + 2} = 5a_{2 + 1} - 6a_2$
+
+    $= 40 - 24 = 8$
+
+    - $a_4 = 16$
+    
+    $a_{3 + 2} = 5a_{3 + 1} - 6a_3$
+
+    $= 80 - 48 = 32$
+
+    - $a_5 = 32$
+
+- b) Do you see a pattern in part a)? Maybe a hypothesis about $a_n$, then prove it using induction.
+
+    After trial and error, I'm guessing $f(n) = 2^n$.
+
+    - Prove by weak induction
+    
+    - Base case: 
+
+        $2^0 = 1$ $\checkmark$
+
+        $2^1 = 2$ $\checkmark$
+
+    - inductive step:
+    
+        Assume if $f(k)  = 2^k$ is the function we are looking. Prove $k + 1$, $f(k + 1) = 2^{k+1} = 2^k * 2^1$
+
+        $f(3 + 1) = 2^3 * 2 = 16$ $\checkmark$
+
+        $f(4 + 1) = 2^4 * 2 = 32$ $\checkmark$
+
+        - It appears $f(n) = 2^n$ can produce the same number pattern as the recursively defined set above.
+
+---
+---
+
+### 10
+The 2-3-averaged numbers($N23$) are a subset of real-number interval $[0, 1]$ defined as follows:
+
+Base case: $0 \in N23, 1 \in N23$
+
+Recursive case: if $x \in N23$ and $y \in N23$, then $\frac{2x + 3y}{5} \in N23$
+
+- 10a) Use induction to show that $(\frac{3}{5})^n \in N23$ for all $n \in \N$.
+
+    prove using weak induction 
+
+    - base case: 
+        
+        $(\frac{3}{5})^0 = 1$ and $1 \in \N$ $\checkmark$
+
+    - inductive step:
+
+        Assume if $f(k) = (\frac{3}{5})^k \in N23$ for all $k \in \N$. Prove $f(k + 1) \in N23$.
+
+        $f(k + 1) = (\frac{3}{5})^{k+1}$
+
+        $= (\frac{3}{5})^k * (\frac{3}{5})^1$
+
+        This is equivalent to or share the same form as:
+
+        $\frac{2x + 3y}{5} = \frac{2x}{5} + \frac{3y}{5}$, where $x = 0$ 
+
+
+        or $(rational <= 1)^2 \in [0, 1] \in N23$ $\checkmark$ 
+
+
+- 10b) Use structural induction to show that 
+
+    $\forall x, y \in [0, 1]$ if $x \in N23$ and $y \in N23$, then $xy \in N23$.
+
+    Prove using structural induction
+
+    - base case: $x = 0, y = 0$ $\checkmark$
+    - inductive step: Assume if $y, x \in N23$ then $xy \in N23$. Prove that immediate and future descendants are also in $N23$.
+    
+        - case 1:
+
+            $y \in N23, x = 0$
+
+            $y * 0 = 0$ and $0 \in N23$ $\checkmark$       
+
+        - case 2:
+
+            $y \in N23, x = 1$
+
+            $y * 1 = y$ and $y \in N23$ $\checkmark$       
+
+        - case 3:
+        
+            $y \in N23, x = y$
+
+            $y * x = x^2 = y^2$ and $x^2, y^2 \in [0, 1] \in N23$ $\checkmark$
+
+        - case 4:
+        
+            $y \in N23, x > y$ or $x < y$
+
+            $y * x$ and $(rational <= 1) * (rational <= 1) \in [0, 1] \in N23$ $\checkmark$
+        
+---
+---
+
+### 11
+One of the following functions is not a bijection.  Which one and why not?
+
+- i) $f : R \rightarrow [1, \infin), f(x) = e^x + e^{-x}$
+
+    - injective?
+    
+        if injective then $\forall x \in R, \forall y \in [1, \infin), f(x) = f(y) \rightarrow x = y$
+    
+        counter example:
+        
+        $x = 1, e^{1} + e^{-1} = 3.08616126963 $
+    
+        $y = -1, e^{-1} + e^{-(-1)} = 3.08616126963 $
+        
+        - conclusion: not injective, so not bijective. $\checkmark$
+    
+    - note: The surjective proof leads to an equation that is difficult to solve, requiring the quadratic formula.
+    - also, you can argue, since my counter example is irrational, you won't know for sure how equal they are.
+
+- ii) $g: [-2, 0] \rightarrow [0, 16], g(x) = x^4$
+
+    - injective?
+
+        if injective then $\forall x \in [-2, 0], \forall y \in [0, 16], f(x) = f(y) \rightarrow x = y$
+    
+        yes, if $[0, 16]$ is interpreted as a set of only 0 and 16.  $\checkmark$ 
+    
+        no, if $[0, 16]$ is interpreted as a range of 0 through 16, because $(-2)^4 = (2)^4 = 16$.  $\checkmark$ 
+
+    - surjective?
+
+        $f(x) = x^4$
+    
+        $x^4 = y$
+    
+        $x = \sqrt[4]{y}$
+    
+        $f(\sqrt[4]{y}) = (\sqrt[4]{y})^4 = y$ 
+
+        So surjective. $\checkmark$ 
+
+    - possible bijection, depending on how the injective case is interpreted.
+
+- iii) $[0, \pi] \rightarrow [-1, 1], h(x) = cos(x)$
+
+    - injective?
+    
+        if injective then $\forall x \in [0, \pi], \forall y \in [-1, 1], f(x) = f(y) \rightarrow x = y$
+
+        This is true because of the cropped range of $h$.  $\checkmark$
+
+    - surjective?
+        
+        $cos(x) = y$
+
+        $x = cos^{-1}(y)$
+
+        $f(cos^{-1}(y)) = cos(cos^{-1}(y)) = y$ 
+
+        So surjective. $\checkmark$
+
+---
+---
+
+### 12
+$p: R \rightarrow R, p(x) = 2x + 3$.
+
+Prove that $p$ is a bijection.  Be sure to use definitions of injection and surjection in your proof. 
+
+- prove injective:
+    
+    $\forall x,y \in R, f(x) = f(y) \rightarrow x = y$
+
+    This is a linear function in $R$, so it is one to one. $\checkmark$
+    
+- prove surjective:
+
+    $y = 2x + 3$
+
+    $x = \frac{y - 3}{2}$
+
+    $f(\frac{y - 3}{2}) = 2(\frac{y - 3}{2}) + 3$
+
+    $= (\frac{2y - 6}{2}) + 3$
+
+    $= (\frac{2y - 6}{2}) + \frac{3*2}{2}$
+
+    $= (\frac{2y - 6 + 6}{2})$
+
+    $= (\frac{2y}{2})$
+
+    $f(x) = y$ 
+
+    So surjective. $\checkmark$
+
+    - note: we can also appeal to the intermediate value theorum(IVT) in this case because it's a continuous function and it diverges to $(-\infin, \infin)$ for $x$ in $R$. aka:
+
+        $\forall x, y \in R | p(x) = y$
+
+- conclusion: bijective $\checkmark$
+
+
+---
+---
+
+### 13
+

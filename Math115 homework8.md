@@ -392,43 +392,6 @@ for i in range(10000000):
 
 # This program compiles and there is no output, meaning in ten million steps all states followed the rules of the preserved invariant.
 ```
-///////////////////////////////////////////////////////////////////////////////////////////
-
-Note: The correct way to do this problem was done by a student: The same idea can be done on the quiz 5 problem which is very similar.
-
-- base: $(1, 0)$
-     
-    $1 - 0 = 1$ and $1$ % $4 = 1$ $\checkmark$ 
-
-- inductive step: 
-    
-   Assume $(b - w)$ % $4 = 1$  is a preserved invariant. We need to prove that this is an invariant is true for all future states or descendants or generations. 
-
-   - case 1: $(b - 1, w + 3)$
-   
-     say $a, b$ is a state that exist in the set.
-
-     $(b - 1 - (w + 3))$ % $4 = 1$ 
-
-     $(b - 1 - w - 3)$ % $4 = 1$ 
-
-     $((b - w) - 4)$ % $4 = 1$ 
-
-     so $b - w$ can't be a multiple of $4$ using our inductive assumption so $b - w \neq 4k$ or else $(b - w)$ % $4 = 1$ wouldn't be true.
-
-     $((b - w) - 4 = 4k$
-
-     $((b - w) = 4k + 4$
-
-     $((b - w) = 4(k + 1)$ where $k$ is always incremented by $4$
-
-     and $4(k + 1)$ % $4 = 1$, where $k$ is always incremented by $4$ $\checkmark$
- 
-   - case 2: $(b - 1, w + 3)$
-     
-     analogous to case 1
-   
-////////////////////////////////////////////////////////////////////////////////////////////////
 
 ---
 ---
