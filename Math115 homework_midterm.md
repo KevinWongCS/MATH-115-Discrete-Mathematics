@@ -507,7 +507,8 @@ Recursive case: if $x \in N23$ and $y \in N23$, then $\frac{2x + 3y}{5} \in N23$
 
             $y * x$ and $(rational <= 1) * (rational <= 1) \in [0, 1] \in N23$ $\checkmark$
 
-    - Conclusion: The claim is true. $\checkmark$
+    - ~~Conclusion: The claim is true. $\checkmark$~~
+    - note: instructor said we can't find $\frac{1}{2}$, therefore the claim should be false. $\checkmark$
 
 ---
 ---
