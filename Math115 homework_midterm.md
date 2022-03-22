@@ -625,20 +625,20 @@ Prove or disprove the following claims.
 
     - Proof: 
 
-        Assume if $h = g \circ f: A \rightarrow C$ is injective then prove $f$ is injective.
+        - Assume if $h = g \circ f: A \rightarrow C$ is injective then prove $f$ is injective.
 
-        If $h$ is injective then $g(f(a))$ is injective, *definition of composition*
+        - If $h$ is injective then $g(f(a))$ is injective, *definition of composition*
 
-        $\forall a_1,a_2 \in A, g(f(a_1)) = g(f(a_2)) \rightarrow a_1 = a_2$ is injective, *proof for injectivity*
+        - $\forall a_1,a_2 \in A, g(f(a_1)) = g(f(a_2)) \rightarrow a_1 = a_2$ is injective, *proof for injectivity*
 
-        This means no two values from domain $A$ can be mapped to codomain $C$.
-
-        So if $a_1 \neq a_2$ and map to the same $c$ in codomain $C$ then that goes against our assumption, therefore $f$ is injective.
+         - So if $a_1 \neq a_2$ and map to the same $c$ in codomain $C$ then that goes against our assumption, therefore $f$ is injective.
 
        - conclusion: claim is valid. $\checkmark$
 
 ```
-Not injective h: A -> C
+h: A -> C    not injective
+f: A -> B    not injective
+g: B -> C    injective
 
     f        g       
 A   ->   B   ->   C
@@ -661,12 +661,20 @@ h: A -> C
 
     - Proof: 
         
-        piggy backing on part b), $g$ does need to be injective when mapping domain $B$ to codomain $C$. If an element in codomain $C$ has two not equal $b$ elements mapping to it, it is equivalent to two not equal $a$ elements mapping to a single $c$ element. 
+        piggy backing on part b), $g$ does need to be injective when mapping domain $B$ to codomain $C$. If two not equal $b$ elements map to the same $c$, this is equivalent to two not equal $a$ elements being mapped to the same $c$.
+
+        $b_1 \neq b_2 \rightarrow_{map} c$ | $b_1, b_2 \in B, c \in C$
+        
+        $\equiv$        
+
+        $a_1 \neq a_2 \rightarrow_{map} c$ | $a_1, a_2 \in A, c \in C$
 
     - conclusion: claim is valid. $\checkmark$
 
 ```
-Not injective h: A -> C
+h: A -> C    not injective
+f: A -> B    injective
+g: B -> C    not injective
 
     f        g       
 A   ->   B   ->   C
@@ -685,4 +693,77 @@ to a single element from C, which makes it two
 A's mapping to a single C element, meaning not
 injective h: A -> C
 ```
-        
+---
+---
+
+### 14
+What is wrong with this proof.
+
+Claim: $f: R \rightarrow R, f(x) = x^2$ is bijective.
+
+Proof:
+
+Using the function $g(x) = \sqrt x$ we see that if $f(x_1) = f(x_2)$, then $x_1^2 = x_2^2$ then
+
+$x_1 = \sqrt{x_1^2} = \sqrt{x_2^2} = x_2$,
+
+so $f$ is injective.
+
+Also, if $y \in R$, then using $x = \sqrt{y}$ gives that $f(x) = (\sqrt{y})^2 = y$, so $f$ is surjective.
+
+- Why the claim is not true:
+    
+    example:
+
+    $x_1 = 1, -1 = \sqrt{x_1^2}$
+
+    and
+
+    $x_2 = 1, -1 = \sqrt{x_2^2}$
+
+    $1 \neq -1$
+
+- $f(x_1) = f(x_2) \rightarrow x_1 = x_2$. This isn't true because multiple values of $x$ can map to the same element in the codomain.
+
+- I think the surjective part is questionable. The claim is $f: R \rightarrow R$, but the $f(x) = x^2$ only covers $[0, \infin)$. So this function is not surjective. $\checkmark$
+
+---
+---
+
+### 15
+What, if anything, is wrong with this proof? 
+
+Claim: $A \bigcup (B_1 \bigcap B_2 \bigcap...\bigcap B_n) = (A \bigcup B_1) \bigcap (A \bigcup B_2) \bigcap...\bigcap (A \bigcup B_n)$
+
+for all sets $A, B_1, B_2,..., B_n$ for all $n \in \N$.
+
+Proof(induction on $n$):
+
+Base Case: $n = 0$.
+
+In this case there aren’t any sets $B_i$, both sides of the equation are equal to $A$, so the equation is true. 
+
+Inductive Step: Suppose the claim is true when $n = k$ for some integer $k \ge 0$.
+
+Then
+
+$A \bigcup (B_1 \bigcap B_2 \bigcap...\bigcap B_{k+1})$
+
+$= A \bigcup ((B_1 \bigcap B_2 \bigcap...\bigcap B_k) \bigcap B_{k+1})$
+
+$= A \bigcup (B_1 \bigcap B_2 \bigcap...\bigcap B_k) \bigcap (A \bigcup B_{k+1}))$
+
+$= ((A \bigcup B_1) \bigcap (A \bigcup B_2) \bigcap...\bigcap (A \bigcup B_k)) \bigcap (A \bigcap B_{K+1})$
+
+$= (A \bigcup B_1) \bigcap (A \bigcup B_2) \bigcap...\bigcap (A \bigcup B_k) \bigcap (A \bigcap B_{K+1})$
+
+By induction the claim is true for all $n \in \N$.
+
+- Claim: I believe you need at least 2 base cases in order to do the inductive step. Or else we just have $A \bigcup \varnothing$. And we can't prove the claim with only $A$. 
+
+---
+---
+*END*
+
+---
+---
