@@ -684,7 +684,7 @@ o ------ o        o
 o        o ------ o
         
 o        o        o
-            \------\
+          \------\
 o ------ o ------ o
         
 o        o ------ o
@@ -699,7 +699,7 @@ g: B -> C    injective
     f        g       
 A   ->   B   ->   C
 o ------ o        o
-    /------/       
+          /------/       
 o        o ------ o
         
 o        o        o
@@ -760,21 +760,21 @@ injective h: A -> C
 
 ```
 Diagram of counter example:
-    h: A -> C    injective
-    f: A -> B    injective
-    g: B -> C    not injective
-    
-        f        g       
-    A   ->   B   ->   C
-    o ------ o        o
-              \------\
-    o        o ------ o
-            
-    o        o        o
-    
-    o ------ o ------ o
-              \------\
-    o        o ------ o
+h: A -> C    injective
+f: A -> B    injective
+g: B -> C    not injective
+
+    f        g       
+A   ->   B   ->   C
+o ------ o        o
+          \------\
+o        o ------ o
+        
+o        o        o
+
+o ------ o ------ o
+          \------\
+o        o ------ o
 ```
 
 ---
