@@ -3,9 +3,11 @@ filename: Math115 Midterm\
 date: 3/21/2022\
 desc: 15 questions midterm review
 
-### 1
+
 ---
 ---
+### ***1***
+
 State the definitions of the following concepts:
 
 - a) proposition:
@@ -37,7 +39,7 @@ State the definitions of the following concepts:
 
     Often we here it expressed as "one to one" or "no two elements map to the same element in the functions set".
 
-    $\forall a_1, a_2 \in A, f(a_1) = f(a_2) \rightarrow a_1 = a_2 $
+    $ \forall a_1, a_2 \in A, f(a_1) = f(a_2) \rightarrow a_1 = a_2 $
 
     note: passes the "vertical line test".
 
@@ -62,7 +64,7 @@ State the definitions of the following concepts:
 ---
 ---
 
-### 2
+### ***2***
 Two of the following three propositions are equivalent.  Which two?  Prove that they are equivalent using a truth table. $\urcorner(P \rightarrow Q), P \wedge \urcorner Q,(\urcorner P) \rightarrow \urcorner Q $.
 
 | $P$  | $Q$  | $P \rightarrow Q$  | $\urcorner(P \rightarrow Q)$  | $P \wedge \urcorner Q$  | $(\urcorner P) \rightarrow \urcorner Q$  |
@@ -77,7 +79,7 @@ $\urcorner(P \rightarrow Q) \equiv P \wedge \urcorner Q$ $\checkmark$
 ---
 ---
 
-### 3
+### ***3***
 Prove or disprove the following equivalences.
 
 - a) $(P \rightarrow Q) \rightarrow R \equiv P \rightarrow (Q \rightarrow R)$
@@ -113,7 +115,7 @@ $(\urcorner P) \leftrightarrow (\urcorner Q) \equiv P \leftrightarrow Q$ $\check
 ---
 ---
 
-### 4
+### ***4***
 Say $D_1$ is the domain of all students at CCSF, $D_2$ is the domain of all classes at CCSF. Say $T$ is a propositional function with domain $D_1$ x $D_2, T(x, y) := x$ has taken $y$. 
 
 Express the negation of the following propositions in English. 
@@ -148,14 +150,14 @@ Statement 	                        Negation
 "A or B" 	                        "not A and not B"
 "A and B" 	                        "not A or not B"
 "if A, then B" 	                    "A and not B"
-"For all x, A(x)"                 	"There exist x such that not A(x)"
+"For all x, A(x)"                   "There exist x such that not A(x)"
 "There exists x such that A(x)" 	"For every x, not A(x)"
 
 ```
 ---
 ---
 
-### 5
+### ***5***
 5. Prove or disprove the following claims.
 
 - a) Given any two distinct integers there exists a rational number strictly between them. 
@@ -209,7 +211,7 @@ Statement 	                        Negation
 ---
 ---
 
-### 6 
+### ***6*** 
 Here are some sets contained in the universe $U =$ {$0, 1, 2, 3, 4, 5$}
 
 $A = \{0, 5\}$
@@ -247,7 +249,7 @@ compute the following sets.
 ---
 ---
 
-### 7
+### ***7***
 Prove or disprove the following claims. In your arguments please rely on the definitions of $\bigcup, \bigcap, \subset$ and/or equality of sets.
 
 - a) For all sets $A, B, C$ if $A \subseteq C$ and $B \subseteq C$, then $A \bigcup B \subseteq C$.
@@ -310,19 +312,21 @@ Prove or disprove the following claims. In your arguments please rely on the def
     
         $\exist x : A \subseteq B | x \in A, x \in B$
 
-        example:
+        - example:
 
-        $A = \{1\}$, $B = \{2\}$, $C = \{1, 3\}$
-
-        $A \bigcup C = \{1, 3\}$, $B \bigcup C = \{1, 2, 3\}$
-
-        $A \bigcup C \subseteq B \bigcup C$
-
-        and $A \nsubseteq B$
+            $A = \{1\}$, $B = \{2\}$, $C = \{1, 3\}$
+    
+            $A \bigcup C = \{1, 3\}$, $B \bigcup C = \{1, 2, 3\}$
+    
+            $A \bigcup C \subseteq B \bigcup C$
+    
+            and $A \nsubseteq B$
 
 c) If you have two sets $A$ and $B$, then $A \bigcup B = B$ *iff* $A \bigcap B = A$
 
 - case 1:
+
+    expression on left side of *iff*
 
     suppose $x$ in $A$, $x \in A$
 
@@ -338,6 +342,8 @@ c) If you have two sets $A$ and $B$, then $A \bigcup B = B$ *iff* $A \bigcap B =
 
 - case 2: 
 
+    expression on right side of *iff*
+
     Suppose $x$ in $A$, $x \in A$
 
     and $x$ in $A$ and $B$, $x \in A \bigcap B$
@@ -350,10 +356,16 @@ c) If you have two sets $A$ and $B$, then $A \bigcup B = B$ *iff* $A \bigcap B =
 
 - Conclusion the *iff* or $\leftrightarrow$ goes both ways in this preposition making this claim valid. $\checkmark$
 
+    - example:
+
+        $A = \{1\}, B = \{1, 2\}$
+
+        $A \bigcup B = B$ and $A \bigcap B = A$ 
+
 ---
 ---
 
-### 8
+### ***8***
 Use induction to prove that $n^2$ equals the sum of the first n positive odd integers. In other words $1 + 3 +...+(2n - 1) = n^2$ for all integers $n \geq 1$.
 
 Prove by weak induction:
@@ -377,7 +389,7 @@ Prove by weak induction:
 ---
 ---
 
-### 9
+### ***9***
 Suppose $a_0 = 1, a_1 = 2, a_{n+2} = 5a_{n+1} - 6a_n$ for $n \in \N$
 
 - a) compute $a_2, a_3, a_4, a_5$.
@@ -431,7 +443,7 @@ Suppose $a_0 = 1, a_1 = 2, a_{n+2} = 5a_{n+1} - 6a_n$ for $n \in \N$
 ---
 ---
 
-### 10
+### ***10***
 The 2-3-averaged numbers($N23$) are a subset of real-number interval $[0, 1]$ defined as follows:
 
 Base case: $0 \in N23, 1 \in N23$
@@ -500,7 +512,7 @@ Recursive case: if $x \in N23$ and $y \in N23$, then $\frac{2x + 3y}{5} \in N23$
 ---
 ---
 
-### 11
+### ***11***
 One of the following functions is not a bijection.  Which one and why not?
 
 - i) $f : R \rightarrow [1, \infin), f(x) = e^x + e^{-x}$
@@ -565,7 +577,7 @@ One of the following functions is not a bijection.  Which one and why not?
 ---
 ---
 
-### 12
+### ***12***
 $p: R \rightarrow R, p(x) = 2x + 3$.
 
 Prove that $p$ is a bijection.  Be sure to use definitions of injection and surjection in your proof. 
@@ -608,7 +620,7 @@ Prove that $p$ is a bijection.  Be sure to use definitions of injection and surj
 ---
 ---
 
-### 13
+### ***13***
 Prove or disprove the following claims.
 
 - a) If $f: R \rightarrow R$ is a function which satisfies $f(x) > x^2$ for all $x \in R$ then $f$ is injective.
@@ -696,7 +708,7 @@ injective h: A -> C
 ---
 ---
 
-### 14
+### ***14***
 What is wrong with this proof.
 
 Claim: $f: R \rightarrow R, f(x) = x^2$ is bijective.
@@ -730,7 +742,7 @@ Also, if $y \in R$, then using $x = \sqrt{y}$ gives that $f(x) = (\sqrt{y})^2 = 
 ---
 ---
 
-### 15
+### ***15***
 What, if anything, is wrong with this proof? 
 
 Claim: $A \bigcup (B_1 \bigcap B_2 \bigcap...\bigcap B_n) = (A \bigcup B_1) \bigcap (A \bigcup B_2) \bigcap...\bigcap (A \bigcup B_n)$
