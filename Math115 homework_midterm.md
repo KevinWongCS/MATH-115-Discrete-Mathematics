@@ -39,6 +39,8 @@ State the definitions of the following concepts:
 
     $\forall a_1, a_2 \in A, f(a_1) = f(a_2) \rightarrow a_1 = a_2 $
 
+    note: passes the "vertical line test".
+
 - f) surjective function:
 
     aka: onto function. When the whole set of the function is mapped to.
@@ -48,6 +50,8 @@ State the definitions of the following concepts:
     Does not have to be "one to one".
 
     - Bijective: Both injective and surjective.
+    
+    note: you can draw the function without picking up your pencil or diverge to $-\infin$ and $\infin$.
 
 - g) the union of two sets:
 
@@ -89,6 +93,8 @@ Prove or disprove the following equivalences.
 | F | F | T | F | T | T | T |
 | F | F | F | T | F | T | T |
 
+not equivalent "$(\urcorner \equiv)$"
+
 $(P \rightarrow Q) \rightarrow R (\urcorner \equiv) P \rightarrow (Q \rightarrow R)$ $\checkmark$
 
 - b) $(\urcorner P) \leftrightarrow (\urcorner Q) \equiv P \leftrightarrow Q$
@@ -116,20 +122,36 @@ Express the negation of the following propositions in English.
 
     All students at CCSF have taken Math 115.
 
-    negation: Not all students have taken math 115.
+    negation: $\urcorner(\forall x \in D_1, T(x,M115))$
+
+    Not all students have taken math 115.
 
 - b) $\exist y \in D_2, \urcorner T(Felipe, y)$ 
 
     Felipe has not taken a class at CCSF.
 
-    negation: Felipe has at least taken one class at CCSF.
+    negation: $\urcorner (\exist y \in D_2, \urcorner T(Felipe, y))$
+
+    Felipe has taken all classes at CCSF.
 
 - c) $\forall x \in D_1, \exist y \in D_2, T(x,y)$
 
-    All students at CCSF has at least taken one one class at CCSF.
+    All students at CCSF has at least taken one class at CCSF.
 
-    negation: All students at CCSF have not taken a class at CCSF.
+    negation: $\urcorner (\forall x \in D_1, \exist y \in D_2, T(x,y))$
 
+    Not all students at CCSF have taken all classes at CCSF.
+
+```
+Statement 	                        Negation
+----------------------------------------------------------
+"A or B" 	                        "not A and not B"
+"A and B" 	                        "not A or not B"
+"if A, then B" 	                    "A and not B"
+"For all x, A(x)"                 	"There exist x such that not A(x)"
+"There exists x such that A(x)" 	"For every x, not A(x)"
+
+```
 ---
 ---
 
@@ -174,7 +196,15 @@ Express the negation of the following propositions in English.
 
     $a -  \frac{(b-a)}{\sqrt{2}} <  a < b -  \frac{(b-a)}{\sqrt{2}}$
 
-    So we have a irrational number plus a rational, which is irrational, a rational number in the middle, and a irrational number plus a rational, which is irrational on the right side. $\checkmark$
+    So we have a irrational number plus a rational, which is irrational, a rational number in the middle, and a irrational number plus a rational, which is irrational on the right side. 
+
+    The problem with the equation is that if $a = 5$ and $b = 6$ we have:
+
+    $5 - \frac{6 - 5}{\sqrt2} < integer < 6 - \frac{6 - 5}{\sqrt2}$
+
+    $(5 - \frac{6 - 5}{\sqrt2}) - (6 - \frac{6 - 5}{\sqrt2}) = 1$
+
+    The above we have the subtraction of two distinct irrational numbers and their difference is one. So this is a counter example to the claim because it can't just be any distinct irrational numbers. So I would have to conclude that the claim is invalid, but there are cases where it is true. $\checkmark$
     
 ---
 ---
@@ -276,9 +306,19 @@ Prove or disprove the following claims. In your arguments please rely on the def
 
         $A \subseteq B$
 
-    - conclusion, we can conclude there exist a possibility such that $A$ is a subset of $B$, where $x$ is in both $A$ and $B$.
+    - conclusion, we can conclude there exist a possibility such that $A$ is a subset of $B$, where $x$ is in both $A$ and $B$, but this claim is invalid. $\checkmark$
     
         $\exist x : A \subseteq B | x \in A, x \in B$
+
+        example:
+
+        $A = \{1\}$, $B = \{2\}$, $C = \{1, 3\}$
+
+        $A \bigcup C = \{1, 3\}$, $B \bigcup C = \{1, 2, 3\}$
+
+        $A \bigcup C \subseteq B \bigcup C$
+
+        and $A \nsubseteq B$
 
 c) If you have two sets $A$ and $B$, then $A \bigcup B = B$ *iff* $A \bigcap B = A$
 
@@ -332,7 +372,7 @@ Prove by weak induction:
 
     $= 1 + 3 +...+(2k + 1)$
 
-    $(2k + 1)$ is the next odd number in sequence, so the claim is valid. $\checkmark$
+    $(2k + 1)$ is the next odd number in sequence. $\checkmark$
 
 ---
 ---
@@ -433,28 +473,30 @@ Recursive case: if $x \in N23$ and $y \in N23$, then $\frac{2x + 3y}{5} \in N23$
     
         - case 1:
 
-            $y \in N23, x = 0$
+            Assume (or suppose) $y \in N23, x = 0$
 
             $y * 0 = 0$ and $0 \in N23$ $\checkmark$       
 
         - case 2:
 
-            $y \in N23, x = 1$
+            Assume $y \in N23, x = 1$
 
             $y * 1 = y$ and $y \in N23$ $\checkmark$       
 
         - case 3:
         
-            $y \in N23, x = y$
+            Assume $y \in N23, x = y$
 
             $y * x = x^2 = y^2$ and $x^2, y^2 \in [0, 1] \in N23$ $\checkmark$
 
         - case 4:
         
-            $y \in N23, x > y$ or $x < y$
+            Assume $y \in N23, x > y$ or $x < y$
 
             $y * x$ and $(rational <= 1) * (rational <= 1) \in [0, 1] \in N23$ $\checkmark$
-        
+
+    - Conclusion: The claim is true. $\checkmark$
+
 ---
 ---
 
@@ -518,7 +560,7 @@ One of the following functions is not a bijection.  Which one and why not?
 
         $f(cos^{-1}(y)) = cos(cos^{-1}(y)) = y$ 
 
-        So surjective. $\checkmark$
+        So injective. $\checkmark$
 
 ---
 ---
@@ -554,6 +596,8 @@ Prove that $p$ is a bijection.  Be sure to use definitions of injection and surj
 
     So surjective. $\checkmark$
 
+    note: the above is basically the inverse.
+
     - note: we can also appeal to the intermediate value theorum(IVT) in this case because it's a continuous function and it diverges to $(-\infin, \infin)$ for $x$ in $R$. aka:
 
         $\forall x, y \in R | p(x) = y$
@@ -565,4 +609,80 @@ Prove that $p$ is a bijection.  Be sure to use definitions of injection and surj
 ---
 
 ### 13
+Prove or disprove the following claims.
 
+- a) If $f: R \rightarrow R$ is a function which satisfies $f(x) > x^2$ for all $x \in R$ then $f$ is injective.
+
+    What if $f(x)$ is a straight line, but it won't always be greater than $x^2$, eventually $x^2$ will be larger than an equation of a line.
+
+    - I believe any function greater than $x^2$ would have to have a similar shape, so that means it wouldn't pass the horizontal line test, meaning its not injective. $\checkmark$
+
+- b) For all functions $f: A \rightarrow B$ and $g: B \rightarrow C$, if the composition $h = g \circ f: A \rightarrow C$ is injective, then $f$ is injective.
+
+    Definition of composition:
+
+    $h \circ f \equiv g(f(a)) = c$, where $a \in A, b \in B, c \in C$.
+
+    - Proof: 
+
+        Assume if $h = g \circ f: A \rightarrow C$ is injective then prove $f$ is injective.
+
+        If $h$ is injective then $g(f(a))$ is injective, *definition of composition*
+
+        $\forall a_1,a_2 \in A, g(f(a_1)) = g(f(a_2)) \rightarrow a_1 = a_2$ is injective, *proof for injectivity*
+
+        This means no two values from domain $A$ can be mapped to codomain $C$.
+
+        So if $a_1 \neq a_2$ and map to the same $c$ in codomain $C$ then that goes against our assumption, therefore $f$ is injective.
+
+       - conclusion: claim is valid. $\checkmark$
+
+```
+Not injective h: A -> C
+
+    f        g       
+A   ->   B   ->   C
+o ------ o ------ o
+
+o ------ o ------ o
+ /-------^
+o        o        o
+
+o ------ o ------ o
+
+o ------ o ------ o
+
+The above is an example of 2 elements from A mapping
+to a single element in C, meaning not injective for
+h: A -> C
+```
+
+- c) For all functions $f: A \rightarrow B$ and $g: B \rightarrow C$, if the composition $h = g \circ f: A \rightarrow C$ is injective, then $g$ is injective.
+
+    - Proof: 
+        
+        piggy backing on part b), $g$ does need to be injective when mapping domain $B$ to codomain $C$. If an element in codomain $C$ has two not equal $b$ elements mapping to it, it is equivalent to two not equal $a$ elements mapping to a single $c$ element. 
+
+    - conclusion: claim is valid. $\checkmark$
+
+```
+Not injective h: A -> C
+
+    f        g       
+A   ->   B   ->   C
+o ------ o ------ o
+
+o ------ o ------ o
+          /-------^
+o ------ o        o
+
+o ------ o ------ o
+
+o ------ o ------ o
+
+The above is an example of 2 elements from B mapping 
+to a single element from C, which makes it two
+A's mapping to a single C element, meaning not
+injective h: A -> C
+```
+        
