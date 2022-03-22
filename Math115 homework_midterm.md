@@ -646,7 +646,7 @@ Prove or disprove the following claims.
 
          - So if $a_1 \neq a_2$ and map to the same $c$ in codomain $C$ then that goes against our assumption, therefore $f$ is injective.
 
-       - conclusion: claim is valid. $\checkmark$
+       - ~~conclusion: claim is valid $\checkmark$~~
 
 ```
 h: A -> C    not injective
@@ -670,6 +670,45 @@ to a single element in C, meaning not injective for
 h: A -> C
 ```
 
+```
+
+Diagram of counter example:
+h: A -> C    injective
+f: A -> B    not injective
+g: B -> C    not injective
+
+    f        g       
+A   ->   B   ->   C
+o ------ o        o
+    /------/       
+o        o ------ o
+        
+o        o        o
+            \------\
+o ------ o ------ o
+        
+o        o ------ o
+```
+```
+
+Diagram of counter example:
+h: A -> C    injective
+f: A -> B    not injective
+g: B -> C    injective
+
+    f        g       
+A   ->   B   ->   C
+o ------ o        o
+    /------/       
+o        o ------ o
+        
+o        o        o
+        
+o ------ o ------ o
+        
+o        o ------ o
+```
+
 - c) For all functions $f: A \rightarrow B$ and $g: B \rightarrow C$, if the composition $h = g \circ f: A \rightarrow C$ is injective, then $g$ is injective.
 
     - Proof: 
@@ -682,7 +721,7 @@ h: A -> C
 
         $a_1 \neq a_2 \rightarrow_{map} c$ | $a_1, a_2 \in A, c \in C$
 
-    - conclusion: claim is valid. $\checkmark$
+    - ~~conclusion: claim is valid.~~ $\checkmark$
 
 ```
 h: A -> C    not injective
@@ -706,6 +745,38 @@ to a single element from C, which makes it two
 A's mapping to a single C element, meaning not
 injective h: A -> C
 ```
+
+- note: a counter example(diagram above is incorrect)
+    
+    Let $A = \{0\}, B = \{1, 2\}, C = \{3\}$
+    
+    $f: A \rightarrow B, f(0) = 1$, *injective*
+    
+    $g: Y \rightarrow Z, g(1) = g(2) = 3$, *not injective*
+
+    $g$ is not injective, but $f \circ g$ is injective. 
+
+    Recall $f \circ g$ can be defined as $f(g(a)) = c$, so $f \circ g(0) = 3$
+
+```
+Diagram of counter example:
+    h: A -> C    injective
+    f: A -> B    injective
+    g: B -> C    not injective
+    
+        f        g       
+    A   ->   B   ->   C
+    o ------ o        o
+              \------\
+    o        o ------ o
+            
+    o        o        o
+    
+    o ------ o ------ o
+              \------\
+    o        o ------ o
+```
+
 ---
 ---
 
