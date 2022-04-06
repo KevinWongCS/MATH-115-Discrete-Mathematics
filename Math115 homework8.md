@@ -1,441 +1,137 @@
 name: kevin wong\
-filename: Math115 homework7\
-date: 3/12/2022\
-desc: https://courses.csail.mit.edu/6.042/spring18/mcs.pdf (Links to an external site.) please do these problems:  7.3, 7.10, 6.3, 6.12, 6.15 (parts b and c); optional extra credit problems: 7.23 (1.5pts), 6.4 (1pt), 6.5(1pt), 6.15(part a; 0.5 pts).
+filename: Math115 homework8\
+date: 04/08/2022\
+desc: https://courses.csail.mit.edu/6.042/spring18/mcs.pdf (Links to an external site.) please do these problems:  9.10, 9.12
 
-### 7.3
-The *reversal* of a string is the string written backwards, for example, $rev(abcde) = edcba$.
-
-a) Give a simple recursive definition of $rev(s)$ based on the recursive definitions 7.1.1 of $s \in A^*$ and of the concatenation operation 7.1.3.
-
-b) Prove the below:
-
-$rev(s \cdot t) = rev(t) \cdot rev(s)$
-
-for all strings $r,s,t \in A^*$
+### 9.10
+Indicate **true** or **false** for the following statements about the greatest common
+divisor, and *provide counterexamples* for those that are **false**.
 
 ---
 ---
-
-- a) Give a simple recursive definition of $rev(s)$.
-
-    - Base case: $ \lambda \in A^* $ where $\lambda$ is an empty string.
-
-      \# the reverse of an empty string is itself, an empty string.
-
-   - Constructor:
-
-       If $s \in A,\lambda \in A^*$ then $rev(s \cdot \lambda) ::= rev(s) ::= s \in A^*$
-   
-       If $s \in A,t  \in A^*$ then $rev(s \cdot t) ::= rev(t) \cdot rev(s) ::= t \cdot s \in A^*$
-
-     
-
-- b) Prove by structural induction
-
-   - Base case: If $t \in A^*$ and $t = \lambda$ then $rev(t) = t = \lambda$
-
-   - Inductive step
-
-        Assume $s \in A, t \in A^*$ and $rev(s \cdot t) = t \cdot s $.
-
-        - case 1:
-
-            Suppose $x \cdot y \in A^*, s \in A$ and $rev(x \cdot y \cdot s) = s \cdot y \cdot x.$ Where $x, y$ represent any combination of immediate or future descendants in $A^*$.
-        
-            $rev( (x \cdot y) \cdot s ) = rev(s) \cdot rev(x \cdot y)$
-
-            by definition of $rev()$
-
-            $ = rev(s) \cdot rev(y) \cdot rev(x) $ 
-
-            by definition of $rev()$
-         
-            $ = s \cdot y \cdot x $ $\checkmark$
-
-        - case 2: 
-            
-            $rev( x \cdot (y \cdot s) ) = rev(y \cdot s) \cdot rev(x)$
-            
-            by definition of $rev()$
-
-            $ rev(s) \cdot rev(y) \cdot rev(x) $
-
-            by definition of $rev()$
-
-            $ = s \cdot y \cdot x $ $\checkmark$
-
-        - other cases: 
-
-            Similar cases follow for the concatenation with empty strings($\lambda$), where utilizing the definition of concantenation with the definition of $rev()$ will result in the reverse string.
-
-        - This proves that the immediate descendant and future descendants will be concantenated on the right side of the string, creating a string that is the reverse of the string produced by the definition of concatenation. 
----
----
-
-### 7.10
-Fractals are an example of mathematical objects that can be defined recursively. In this problem, we consider the Koch snowflake. Any Koch snowflake can be constructed by the following recursive definition.
-
-- Base case: An equilateral triangle with a positive integer side length is a
-Koch snowflake.
-
-- Constructor case: Let $K$ be a Koch snowflake, and let $l$ be a single edge
-of the snowflake. Remove the middle third of $l$, and replace it with two line
-segments of the same length as the middle third, as shown in Figure 7.8
-The resulting figure is also a Koch snowflake.
-
-- a) Find a single Koch snowflake that has exactly 9 edges and includes at least 3
-different edge lengths.
-
-- b) Prove using structural induction that the area inside any Koch snowflake is of
-the form $q\sqrt{3}$, where $q$ is a rational number. Be sure to clearly label your induction
-hypothesis and other necessary assumptions during your proof.
-
-- Hint: If you require other facts about Koch snowflakes, be sure to prove those by
-structural induction too.
-
----
----
-- a) Find a single Koch snowflake that has exactly 9 edges and includes at least 3
-different edge lengths.
-```
-
-░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░     edges 1, 2 are the same length
-░░░░░░░░░░░░░░░░░░░█░░░░░░░░░░░░░░░░░░░     edges 3, 4, 9 are the same length
-░░░░░░░░░░░░░░░░░░█░█░░░░░░░░░░░░░░░░░░     edges 5, 6, 7, 8 are the same length
-░░░░░░░░░░░░░░░░░█░░░█░9░░░░░░░░░░░░░░░
-░░░░░░░░░░░░░░░░█░░░░░█░░░░7░░█░░6░░░░░
-░░░░░░░░░░░░░░░█░░░░░░░█░░░░░█░█░░░░░░░
-░░░░░░░░░░░░░░█░░░░░░░░░█░8░█░░░█░5░░░░
-░░░░░░░░░░░░░█░░░░░░░░░░░███░░░░████░░░
-░░░░░░░░░░░░█░░░░░░░░░░░░░░░░░░░░░█░░░░
-░░░░░░░░1░░█░░░░░░░░░░░░░░░░░░░░░█░░░░░
-░░░░░░░░░░█░░░░░░░░░░░░░░░░░░░░░█░░4░░░
-░░░░░░░░░█░░░░░░░░░░░░░░░░░░░░░█░░░░░░░
-░░░░░░░░█░░░░░░░░░░░░░░░░░░░░░█░░░░░░░░
-░░░░░░░█░░░░░░░░░░░░░░░░░░░░░░░█░░░░░░░
-░░░░░░█░░░░░░░░░░░░░░░░░░░░░░░░░█░░3░░░
-░░░░░█░░░░░░░░░░░░░░░░░░░░░░░░░░░█░░░░░
-░░░░█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█░░░░
-░░░█████████████████████████████████░░░
-░░░░░░░░░░░░░░░░░░░2░░░░░░░░░░░░░░░░░░░
-░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-
-```
-- B) Prove using structural induction
-
-  The area of an equilateral triangle is $Area = \frac{\sqrt{3}}{4} l^2$, where $l$ is the length of an edge. We are to prove the area of any Koch snowflake is consistent with the given equation $q \sqrt{3}$ where $q$ is a rational number.
-
-   - Base case: 
-      
-       Using the definition of an equilateral triangle:
-
-       $n = 1$ and $ n \in \Z^+$
-        
-       $Area = \frac{\sqrt{3}}{4}1^2 = \frac{\sqrt{3}}{4} = \frac{1}{4}\sqrt3$ $\checkmark$
-
-      The base case is consistent with the given equation for area inside any Kock snowflake:
-
-       $q\sqrt3$ where $q$ is a rational number $Q$. $\checkmark$
-
-   - Inductive step:
-
-     Inductive hypothesis: Assume the area inside a single equilateral triangle is $Area = \frac{\sqrt{3}}{4} l^2$, Need to show that adding any immediate descendants or future descendants using recursive case is of form $q\sqrt3$ where $q$ is a rational number $Q$. 
-
-     Using the recursive case we can derive the area of every descendent triangle, because we know it's edge length is one third the length of its parent triangle's edge. Using that knowledge we have the equation below:
-
-     Let $n,k, j \in \N$ and $j$ is a factor of 3.
-
-     $\sum_{n=1}^{k+1} Area_n = Area_1 + Area_2 + ... + Area_{k+1}$
-
-     $= \frac{\sqrt{3}}{4}1^2 + \frac{\sqrt{3}}{4}(\frac{1}{3})^2 + ... + \frac{\sqrt{3}}{4}(\frac{1}{j})^2$, 
-
-     factor out $\sqrt{3}$ 
-
-
-     $= \sqrt{3} ( \sum_{n=1}^{k+1} = \frac{1}{4}1^2 + \frac{1}{4}(\frac{1}{3})^2 + ... + \frac{1}{4}(\frac{1}{j})^2 )$
-
-     $= \sqrt{3} ($ some rational number $ ) $  $\checkmark$
-
-     So from $n = 1$ up to the $k+1$ generation we have an equation where we can always factor out a $\sqrt3$ and left with a rational number, which is consistent with the given $q\sqrt3$ where $q$ is a rational number $Q$. $\checkmark$
-
----
----
-
-
-### 6.3
-A robot named Wall-E wanders around a two-dimensional grid. He starts out at
-$(0, 0)$ and is allowed to take four different types of steps:
-
-1. $(+2, -1)$
-1. $(+1, -2)$
-1. $(+1, +1)$
-1. $(-3, 0)$
-
-Wall-E’s true love, the fashionable and high-powered robot, Eve, awaits at $0, 2)$.
-
-(a) Describe a state machine model of this problem. What are the states? The
-transitions?
-
-(b) Will Wall-E ever find his true love? If yes, find a path from Wall-E to Eve. If
-no, use the Invariant Principle to prove that no such path exists, being sure to clearly
-state and prove your preserved invariant. Hint: The value $x-y$ is not preserved, but how can it change? 
-
----
----
-- a) Describe a state machine model of this problem. What are the states? The
-transitions? 
-
-The start state is $(0, 0)$
-
-The transitions are given by rules:
-
-$(0,0) \rightarrow \left\{ \begin{array}{rcl}{step1(+2, -1)} &\\ {step2(+1, -2)} &\\ {step3(+1, +1)}&\\ {step4(-3, +0)}\end{array}\right.$
-
-- b) After some trial and error it appears all steps result in coordinates where the difference of $(x, y)$ will always be a multiple of 3. So Eve is at $(0, 2)$ so Wall-E will never reach those coordinates because $0 - 2$ is not divisible by 3.
-
-    Preserved invariant: If the state is $(x, y)$, where $x, y \in \Z$, then $x - y$ is a multiple of 3.
+- a) If $gcd(a, b) \neq 1$ and $gcd(b, c) \neq 1$, then $gcd(a, c) \neq 1$.
     
-    Prove by induction.
+    true. 
 
-   - Base case: $P(0) = (0,0)$
-
-   - Inductive Step: Assume $(a, b) \in \Z^2$ and $a-b$ is a multiple of 3. I will try to prove that all immediate and future descendants are also a multiple of 3.
-
-      - case 1: step 1 occurs: $(a + 2, b - 1): a + 2 - (b - 1) = a - b + 3$
-
-        subcase a: if $a = b$ then the result is a 3. $\checkmark$
-
-        subcase b: if $a \neq b$ then the transition to the next state is always incrementing or decrementing the difference of the coordinates by 3(steps 1, 2, 4), resulting in a multiple of 3. If step 3 occurs the difference between $a$ and $b$ is maintained, resulting in a multiple of 3.$\checkmark$
-
-      - case 2: step 2 occurs: $(a + 1, b - 2): a + 1 - (b - 2) = a - b + 3$
-      
-        subcases are same as above.
-
-     - case 3: step 3 occurs: $(a + 1, b + 1): a + 1 - (b + 1) = a - b$
-
-         subcase a: if $a = b$ we have 0. $\checkmark$
-
-         subcase b: if $a \neq b$. Same explaination as case 1: subcase b.
-
-     - case 4: step 4 occurs: $(a - 3, b + 0): a - 3 - b = a - b - 3$
-     
-       subcases are analogous to case 1. Either way we are left with the difference of $x, y$ being a multiple of 3.
-
-   
-
-```
-# simple program that test the rule
-import random
-
-WallE = [0,0]
-
-random.randint(1, 4)
-
-for x in range(10000000):
+- b) If $a | bc$ and $gcd(a,b) = 1$, then $a|c$.
     
-    step = random.randint(1, 4) # gets random num 1 <= x <= 4
+    true.
 
-    if step == 1: # (+2, -1)
-        WallE[0] = WallE[0] + 2
-        WallE[1] = WallE[1] - 1
+- c) $gcd(a^n, b^n) = (gcd(a, b))^n$
 
-    elif step == 2: # (+1, -2)
-        WallE[0] = WallE[0] + 1
-        WallE[1] = WallE[1] - 2
+    true.  
 
-    elif step == 3: # (+1, +1)
-        WallE[0] = WallE[0] + 1
-        WallE[1] = WallE[1] + 1
-
-    elif step == 4: # (-3, +0)
-        WallE[0] = WallE[0] - 3
-        WallE[1] = WallE[1] + 0
-
-    
-    # print coordinates if a step's difference isn't a factor of 3
-    diff = WallE[0] - WallE[1]
-    if (diff % 3) != 0:
-        print("(",WallE[0], WallE[1], ")")
-
-# This program compiles and there is no output, meaning in ten million steps all states followed the rules of the preserved invariant.
-    
-```
-
-- This concludes that Wall-E will never find Eve.
-
----
----
-
-### 6.12 
-
-Token Switching is a process for updating a set of black and white tokens. The
-process starts with a single black token. 
-
-At each step,
-- i. one black token can be replaced with two white tokens, or
-- ii. if the numbers of white and black tokens are not the same, the colors of all
-the tokens can be switched: all the black tokens become white, and the white
-tokens become black.
-
-We can model Token Switching as a state machine whose states are pairs $(b, w)$ of nonnegative integers$(\Z^+)$, where $b$ equals the number of black tokens, and $w$ equals
-the number of white tokens. So the start state is$(1, 0)$.
-
----
----
-- a) Indicate which of the following states can be reached from the start state in
-exactly two steps:
-
-   $(0, 0), (1, 0), (0, 1), (1, 1), (0, 2), (2, 0), (2, 1), (1, 2), (0, 3), (3, 0) $
-
-   Start state: $(1, 0)$
-    
-    $(1, 0)$ step 2 twice.
-
-    $(2, 0)$ step 1 then step 2
-
-- b) Define the predicate $F(b, w)$ by the rule:
+- d) $gcd(ab, ac) = a * gcd(b, c)$
  
-   $F(b,w) ::= (b - w) $ is not a multiple of 3.
+    true.
+
+- e) $gcd(1 + a, 1 + b) = 1 + gcd(a,b)$
+
+    false.
+
+    counter example: $gcd(1 + 2, 1 + 1) = gcd(3, 2) = 1$ and $1 + gcd(2, 1) = 2$
+
+- f) If an integer linear combination of $a$ and $b$ equals $1$, then so does some integer linear combination of $a$ and $b^2$. 
+
+    true.
+
+- g) If no integer linear combination of $a$ and $b$ equals $2$, then neither does any integer linear combination of $a^2$ and $b^2$.
+
+    true.
+---
+---
+
+### 9.12
+Here is a game you can analyze with number theory and always beat me. We start with two distinct, positive integers written on a blackboard. Call them $a$ and $b$. Now we take turns. (I’ll let you decide who goes first.) On each turn, the player must write a new positive integer on the board that is the difference of two numbers that are already there. If a player cannot play, then they lose.
+
+For example, suppose that $12$ and $15$ are on the board initially. Your first play
+must be $3$, which is $15 - 12$. Then I might play $9$, which is $12 - 3$. Then you might play $6$, which is $15 - 9$. Then I can't play, so I lose. 
+
+---
+---
+
+- (a) Show that every number on the board at the end of the game is a multiple of $gcd(a, b)$.
+
+    Treating this game as list data structure that starts with $a$ and $b$, $b \gt a$. The data structure populates itself with new elements by storing the difference $c$, $c = ListElement1 - ListElement2$ and all list elements are less than $max(a, b)$ and greater than zero. The list also doesn't accept duplicates. This is similar to a recursively defined set or a state machine.
+
+    The recursive step or transition to add new integers for this game has the same characteristic or preserved invariant described by Euclid's algorithm:
+
+    $gcd(a, b) = gcd(b, rem(a, b))$, $b \ne 0$
+
+    So, every element appended to the list is a multiple of the pair $a, b$ and $gcd(a, b)$.
+
+- (b) Show that every positive multiple of $gcd(a, b)$ up to $max(a, b)$ is on the board at the end of the game.
     
-    "Let $F$ be the predicate: Assume  $b, w \in \Z^+$, if $(b, w)$ is a token switching pair, then the difference of $b$ and $w$ is not a multiple of 3."
+    The way this game is played, assuming $b \gt a$, $max(a, b) = b$ already exist at the start. $\checkmark$
 
+    Every subsequent play has be a difference of two fo the current set of numbers on the board, and can't exist on the board and must be greater than zero. So, if $b \gt a$, then $c = b - a$ is the first move. Then $d_1 = b - c$ or $d_2 = a - c$ is the second move and so on. This branching results in all positive integers being added on the board having a formula:
+
+     $OnBoard = b - q * gcd(a, b), q \in \Z^+$ and $OnBoard > 0$.
+
+    This formula represents the set of all numbers on the board at the end of the game. $\checkmark$
+
+- (c) Describe a strategy that lets you win this game every time.
+
+    Assuming $b$ is greater than $a$, if $\frac{b}{gcd(a,b)}$ is odd then you should go first to win. If $\frac{b}{gcd(a,b)}$ is even then you should insist your opponent goes first so that you can win. This strategy works because we know every mulitple of the $gcd(a, b)$ less than $b$ and greater than zero will have to be played to complete a game.
+---
+---
+
+### 3
+For each of the following pairs of numbers, do the following:
+
+i) Find $gcd(a, b)$
+
+ii) Express the $gcd$ as a combination of $a$ and $b$.
+
+---
+---
+
+- a) $(a, b) = (45, 36)$ 
     
+    | $i$ | $q_i$ | $r_i$ | $s_i$ | $t_i$ |
+    |-----|-------|-------|-------|-------|
+    | -1  | -     | 45    | 1     | 0     |
+    | 0   | -     | 36    | 0     | 1     |
+    | 1   | 1     | 9     | 1     | -1    |
+    | 2   | 4     | 0     | -4    | 5     |
 
-- Prove the following:
+    $gcd(45, 36) = 9 = 45(1) + 36(-1)$
 
-    *Claim*. If $F(b, w)$, then state $(b, w)$ is reachable from the start state.
+- b) $(a, b) = (35, 22)$ 
 
-```
-                                start state
-                                (1, 0) <-
-                                 / \     \
-                                /   \     \ loops back
-                            (0, 2)   \    /
-                            /        (0, 1)
-                        (2, 0) <-    
-                        /    \   \  loops back      
-                    (1, 2)   (0, 2)
-                    /    \
-                (2, 1)   (0, 4)
-                /    \        \
-            (1, 2)  (2, 1)   (4, 0)
-            /       /           \ 
-        (0, 4)   (1, 3)        (3, 2)
-         /       /    \         /   \
-     (4, 0)   (3, 1) (0, 5)  (2, 3) (2, 4)
-       /       /  \   /  \    /  \   /  \  
-    etc......
-Predicate F seems to be holding so far.
+    | $i$ | $q_i$ | $r_i$ | $s_i$ | $t_i$ |
+    |-----|-------|-------|-------|-------|
+    | -1  | -     | 35    | 1     | 0     |
+    | 0   | -     | 22    | 0     | 1     |
+    | 1   | 1     | 13    | 1     | -1    |
+    | 2   | 1     | 9     | -1    | 2     |
+    | 3   | 1     | 4     | 2     | -3    |
+    | 4   | 2     | 1     | -5    | 8     |
+    | 5   | 4     | 0     | 22    | -35   |
 
-```
+    $gcd(35, 22) = 1 = 35(-5) + 22(8)$
 
-Prove by structural induction:
-- base case: $b = 1$ and $w = 0$ and $1 - 0$ is not a multiple of 3. $\checkmark$
+- c) $(a, b) = (331, 158)$ 
 
-- inductive step:
+    | $i$ | $q_i$ | $r_i$ | $s_i$ | $t_i$ |
+    |-----|-------|-------|-------|-------|
+    | -1  | -     | 331   | 1     | 0     |
+    | 0   | -     | 158   | 0     | 1     |
+    | 1   | 2     | 15    | 1     | -2    |
+    | 2   | 10    | 8     | -10   | 21    |
+    | 3   | 1     | 7     | 11    | -23   |
+    | 4   | 1     | 1     | -21   | 44    |
+    | 5   | 1     | 0     | 32    | -67   |
 
-   Assume $b, w \in \Z^+$ and $F$ holds. So we have to prove that the $F$ holds for all immediate descendants and future descendants at some future state $(c, d)$ and $c, d \in \Z^+$.
-
----
----
-
-   // Side note: After some trial and error, I believe all token switching pairs $(b, w)$, the difference of the black to white tokens $b - w$ is always not a multiple of 3. Same goes for its immediate and future descendants. I'll try to define a recursive set that describes this behavior below:
-
- set $S$ and is defined recursively as:
-    
-  - $S$ set base case: $(1, 0) \in S$
-    
-  - $S$ set recursive case:
-    
-     if  $(b, w) \in S$ then $b - w$ is not a multiple of 3.
-
-     $b,w \in \Z^+$
+    $gcd(331, 158) = 1 = 331(-21) + 158(44)$
 
 ---
 ---
 
-  - Lets call the set of all token switching pairs set $P$. So if $ P \subseteq S $ and $S \subseteq P $ then that proves our preserved invariant. 
-
-  - case 1: *step ii* occurs, implying $b$ and $w$ are flipped, which will just result in the opposite signed number, i.e. 1 to -1 or -1 to 1, which if it is not a multiple of 3, then its opposite signed number would also not be a multiple of 3. $\checkmark$
-
-  - case 2: *step i* occurs, the descendants after the base case begins at $(2, 0)$ with a difference of 2. Which is not a multiple of 3. So by incrementing or decrementing a number that isn't a multiple of 3 by 3, via *step i*, the difference of the coordinates will remain not a multiple of 3. Or in other words the characteristic of this set is preserved through out all immediate and future states. $\checkmark$
-  
-  - So if $S$ was expanded and $P$ was expanded into there respective set of coordinates we would find that $ P \subseteq S $ and $S \subseteq P $. I had a very hard time finding a math equation for this number pattern, so I ended up using a python program to find the numbers, I put it below.
-
-- c) Prove that the eligible state $(11, 5)$ is not reachable state. Hint: Do not assume F is a preserved invariant without proving it.
-
-    The idea is that by proving the preserved invariant, the difference of a state can't be a multiple of 3. $11 - 5$ is 6, which is a multiple of 3 which if true, means the preserved invariant isn't true.But we proved the preserved invariant in part b) so $(11, 5)$ can't be a state for this problem.
-
-```
-import random
-
-# base case
-TokenSwitch = [1, 0]    # positive one is b and position two is w
-
-for i in range(10000000):
-    step = random.randint(1, 2)
-    
-    if step == 1 and TokenSwitch[0] >= 1:   # b - 1, w + 2
-        TokenSwitch[0] = TokenSwitch[0] - 1
-        TokenSwitch[1] = TokenSwitch[1] + 2
-    elif step == 2 and  TokenSwitch[0] != TokenSwitch[1]:
-        temp = TokenSwitch[0]
-        TokenSwitch[0] = TokenSwitch[1]
-        TokenSwitch[1] = temp
-
-    # will output state where (b - w) % 3 == 0
-    diff = TokenSwitch[0] - TokenSwitch[1]
-    if diff % 3 == 0:
-        print("diff: ", diff)
-        print("(", TokenSwitch[0],",", TokenSwitch[1], ")")
-
-# This program compiles and there is no output, meaning in ten million steps all states followed the rules of the preserved invariant.
-```
-
 ---
 ---
 
-### 6.15 (parts b and c)
-Let $A$ be a sequence consisting of the numbers, $1,...,n$ in some order. A pair of integers in $A$ is called an *out-of-order* pair when the first element of the pair both comes *earlier* in the sequence, and is *larger*, than the second element of the pair.
-
-The elements in A can be rearranged using the *Rotate-Triple operation*, in which
-three consecutive elements of $A$ are rotated to move the smallest of them to be first.
+*END*
 
 ---
 ---
-- b) Prove that having an even number of out-of-order pairs is a preserved invariant of this machine.
-
-   - proof by induction
-
-      - base case: Assume some sequence $A \in \N$, 
-        
-        $t(A) = 0$ and 0 is an even number. $\checkmark$
-
-     - inductive step: Assume if a sequence $A \in \N$ contains $k$ *out-of-order* pairs, then $k$ is an even number and the elements in $A$ can only be rearranged by *Rotate-Triple operation*.
-
-        - case 1: A single *out-of-order* pair.
-          
-          - subcase a: the *out-of-order* pair occurs at the first or last position.
-
-            counter example found: $S ::= (1, 2, 3, 5, 4)$ there is only 1 *out-of-order* pair (5, 4). There is no specific order given for the sequence of numbers. So the sequence $S$ could be possible. $S$ only has the number $5$ that comes earlier and is larger than it's pair. $\checkmark$ 
-
-            counter example found: $S::=(2, 1, 3, 4, 5)$ there is only 1 *out-of-order* pairs (2, 1).$\checkmark$
-
-        - proving counter example: Take for example part c) of this question. I'll use the same sequence in that question, $S ::= (2014, 2013, 2012,...,2, 1)$ and perform the maximum amount of *Rotate-Triple operations* on it and the result would be $T ::= (1, 2, ..., 2012, 2014, 2013)$ and $t(T) = 1$ because $2014$ is the only element that comes earlier in the sequence and is larger than the second element of the pair.
-
-        - I don't believe based on the definition of an *out-of-order* pair that this is a preserved invariant.
-
-- c) Starting with the sequence below:
-
-   $S ::= (2014, 2013, 2012,...,2, 1)$,
-
-   explain why it is impossible to reach 
-
-   $T ::= (1, 2, ..., 2012, 2013, 2014)$
-
-   - It is impossible to sort list $S$ completely to list $T$ using the *Rotate-Triple* operation because the *Rotate-Triple* operation will eventually run out of triples to sort. In this case, the last *out-of-order* pair will never be sorted. So $T ::= (1, 2, ..., 2012, 2014, 2013)$ and since $2012$ is the smallest number in the last triple $2013$ will never rotate with $2014$.
-
----
----
-   
