@@ -1,6 +1,6 @@
 name: kevin wong\
 filename: Math115 homework8\
-date: 04/08/2022\
+date: 04/06/2022\
 desc: https://courses.csail.mit.edu/6.042/spring18/mcs.pdf (Links to an external site.) please do these problems:  9.10, 9.12
 
 ### 9.10
@@ -11,7 +11,19 @@ divisor, and *provide counterexamples* for those that are **false**.
 ---
 - a) If $gcd(a, b) \neq 1$ and $gcd(b, c) \neq 1$, then $gcd(a, c) \neq 1$.
     
-    true. 
+    false.
+
+    - counter example: $a = 5, b = 10, c = 2$ 
+    
+        $gcd(5, 10) = 5 \ne 1$ 
+    
+        and
+    
+        $gcd(10, 2) = 2 \ne 1$
+
+        but
+
+        $gcd(5, 2) = 1$
 
 - b) If $a | bc$ and $gcd(a,b) = 1$, then $a|c$.
     
@@ -29,7 +41,13 @@ divisor, and *provide counterexamples* for those that are **false**.
 
     false.
 
-    counter example: $gcd(1 + 2, 1 + 1) = gcd(3, 2) = 1$ and $1 + gcd(2, 1) = 2$
+    - counter example: $a = 2, b = 1$ 
+    
+        $gcd(1 + 2, 1 + 1) = gcd(3, 2) = 1$ 
+    
+        but
+    
+        $1 + gcd(2, 1) = 2$
 
 - f) If an integer linear combination of $a$ and $b$ equals $1$, then so does some integer linear combination of $a$ and $b^2$. 
 
@@ -127,6 +145,92 @@ ii) Express the $gcd$ as a combination of $a$ and $b$.
 
 ---
 ---
+
+### 4
+ Find the multiplicative inverse, if possible. (Most of the work for this is done in problem 3).
+
+---
+---
+
+a) $gcd(45, 36) = 9 \ne 1$, so there is no multiplicative inverse for $36 mod 45$.
+
+b) The multiplicative inverse for $22 mod 35$ is $8$.
+
+c) The multiplicative inverse for $158 mod 331$ is $44$.
+
+d) The multiplicative inverse for $331 mod 158$ is $-21$.
+
+---
+---
+
+### 5
+Find the smallest positive integer, $x$, which solves this system
+
+$system = \left\{ \begin{array}{rcl}
+x \equiv_{6} 1 \\
+x \equiv_{7} 5 \\
+x \equiv_{19} 14 \\
+\end{array}\right.$
+
+---
+---
+
+$N = n_1 * n_2 * n_3 = 6 * 7 * 19 = 798$
+
+$N_i = \frac{N}{n_i}$
+
+$x = \sum^{3}_{i = 1} b_i * N_i * x_i (modN)$
+
+
+| $b_i$ | $N_i$ | $N_i = \frac{N}{N_i}$ | $x_i$                                                                                                                 | $b_i N_i x_i$      |
+|-------|-------|-----------------------|-----------------------------------------------------------------------------------------------------------------------|--------------------|
+| 1     | 6     | $798 / 6 = 133$       | $133x_1 \equiv_6 1$ $\rightarrow$ $132x_1 + 1x_1 \equiv_6 1$ $\rightarrow$ $x_1 \equiv_6 1$                           | 1 * 133 * 1 = 133  |
+| 5     | 7     | $798 / 7 = 114$       | $114x_2 \equiv_7 1$ $\rightarrow$ $112x_2 + 2x_2 \equiv_7 1$ $\rightarrow$ $2x_2 \equiv_7 1$ $\rightarrow$ $x_2 = 4$  | 5 * 114 * 4 = 2280 |
+| 14    | 19    | $798 / 19 = 42$       | $42x_3 \equiv_19 1$ $\rightarrow$ $38x_3 + 4x_3 \equiv_19 1$ $\rightarrow$ $4x_3 \equiv_19 1$ $\rightarrow$ $x_3 = 5$ | 14 * 42 * 5 = 2940 |
+
+$x = 133 + 2280 + 2940 (mod 798) = 5353 (mod 798)$
+
+$x = 4788 + 565 (mod 798)$
+
+$x = 565 (mod 798)$
+
+- check: 
+
+    - $565 \equiv_6 1$
+
+        $565 mod 6 = 1 = 1 mod 6$ $\checkmark$
+
+    - $565 \equiv_7 5$
+
+         $565 mod 7 = 5 = 5 mod 7$ $\checkmark$
+
+    - $565 \equiv_{19} 14$
+
+        $565 mod 19 = 14 = 14 mod 19$ $\checkmark$
+
+```
+x = 0
+
+while True:
+    
+    if (x % 6 == 1 % 6) and (x % 7 == 5 % 7) and (x % 19 == 14 % 19):
+        print(x,"\equiv", 1 % 6, "mod 6")
+        print(x,"\equiv", 5 % 7, "mod 7")
+        print(x,"\equiv", 14 % 19, "mod 19")
+        print("x =", x)
+        print("done!")
+        break
+    
+    x += 1
+
+---------------------------------------------------------
+OUTPUT:
+565 \equiv 1 mod 6
+565 \equiv 5 mod 7
+565 \equiv 14 mod 19
+x = 565
+done!
+```
 
 ---
 ---
