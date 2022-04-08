@@ -152,13 +152,19 @@ ii) Express the $gcd$ as a combination of $a$ and $b$.
 ---
 ---
 
-a) $gcd(45, 36) = 9 \ne 1$, so there is no multiplicative inverse for $36 mod 45$.
+- a) $gcd(45, 36) = 9 \ne 1$, so there is no multiplicative inverse for $36 mod 45$.
 
-b) The multiplicative inverse for $22 mod 35$ is $8$.
+- b) The multiplicative inverse for $22 mod 35$ is $8$.
 
-c) The multiplicative inverse for $158 mod 331$ is $44$.
+- c) The multiplicative inverse for $158 mod 331$ is $44$.
 
-d) The multiplicative inverse for $331 mod 158$ is $-21$.
+- d) The multiplicative inverse for $331 mod 158$ is $-21$.
+    
+    or 
+
+    $-21 \equiv (158 -21) mod(158) \equiv 137 mod(158)$
+
+    multiplicative inverse for $331 mod 158$ can also be $137$.
 
 ---
 ---
@@ -218,7 +224,6 @@ while True:
         print(x,"\equiv", 5 % 7, "mod 7")
         print(x,"\equiv", 14 % 19, "mod 19")
         print("x =", x)
-        print("done!")
         break
     
     x += 1
@@ -229,7 +234,6 @@ OUTPUT:
 565 \equiv 5 mod 7
 565 \equiv 14 mod 19
 x = 565
-done!
 ```
 
 ---
