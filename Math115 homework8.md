@@ -72,21 +72,25 @@ must be $3$, which is $15 - 12$. Then I might play $9$, which is $12 - 3$. Then 
 
     Treating this game as list data structure that starts with $a$ and $b$, $b \gt a$. The data structure populates itself with new elements by storing the difference $c$, $c = ListElement1 - ListElement2$ and all list elements are less than $max(a, b)$ and greater than zero. The list also doesn't accept duplicates. This is similar to a recursively defined set or a state machine.
 
-    The recursive step or transition to add new integers for this game has the same characteristic or preserved invariant described by Euclid's algorithm:
+    The recursive step or transition to add new integers for this game has the same characteristic or preserved invariant described by the Euclid's algorithm:
+    
+    $gcd(a, b) = gcd(a, b - a)$, $b \gt a$
+
+    and
 
     $gcd(a, b) = gcd(b, rem(a, b))$, $b \ne 0$
 
-    So, every element appended to the list is a multiple of the pair $a, b$ and $gcd(a, b)$.
+    So, every element appended to the list is a multiple of the pair $a, b$ and $gcd(a, b)$. $\checkmark$
 
 - (b) Show that every positive multiple of $gcd(a, b)$ up to $max(a, b)$ is on the board at the end of the game.
     
     The way this game is played, assuming $b \gt a$, $max(a, b) = b$ already exist at the start. $\checkmark$
 
-    Every subsequent play has be a difference of two fo the current set of numbers on the board, and can't exist on the board and must be greater than zero. So, if $b \gt a$, then $c = b - a$ is the first move. Then $d_1 = b - c$ or $d_2 = a - c$ is the second move and so on. This branching results in all positive integers being added on the board having a formula:
+    Every subsequent number played has be a difference of two current numbers on the board, be distinct and must be greater than zero. So, if $b \gt a$, then $c = b - a$ is the first move. Then $d_1 = b - c$ or $d_2 = a - c$ is the second move and so on. This branching results in numbers that can be described in the equation below:
 
-     $OnBoard = b - q * gcd(a, b), q \in \Z^+$ and $OnBoard > 0$.
+     $NumberOnBoard = b - q * gcd(a, b), q \in \Z^+$ and $b > a, b \ge NumberOnBoard \ge 0$.
 
-    This formula represents the set of all numbers on the board at the end of the game. $\checkmark$
+    This formula represents the set of all numbers on the board that has to be played in a game. $\checkmark$
 
 - (c) Describe a strategy that lets you win this game every time.
 
@@ -103,6 +107,20 @@ ii) Express the $gcd$ as a combination of $a$ and $b$.
 
 ---
 ---
+
+- extended Euclidean algorithm:
+
+    $a = r_{-1}, b = r_0$
+    
+    $a * s_i + b * t_i = r_i$, then iterate until $r_i$ equals to zero.
+    
+    $i$ is the index
+    
+    $q_i$ is the quotient
+    
+    $r_i$ is the remainder
+    
+    $s_i, t_i$ are the Bezout coefficients
 
 - a) $(a, b) = (45, 36)$ 
     
@@ -180,6 +198,7 @@ x \equiv_{19} 14 \\
 
 ---
 ---
+*crt*:
 
 $N = n_1 * n_2 * n_3 = 6 * 7 * 19 = 798$
 
@@ -215,6 +234,8 @@ $x = 565 (mod 798)$
         $565 mod 19 = 14 = 14 mod 19$ $\checkmark$
 
 ```
+# calculated via python:
+
 x = 0
 
 while True:
