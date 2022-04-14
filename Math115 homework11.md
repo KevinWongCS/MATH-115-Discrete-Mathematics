@@ -199,7 +199,8 @@ $f_4$ $f = {(1, b),(2, a),(3, d),(4, c),(5, f),(6, e)}$
     
     $f_8$ $f = {(1, a),(2, b),(3, c),(4, d),(5, f),(6, e)}$
 
-It seems the reason the two graphs only have the isomorphisms above is because of their symmetry along $(1, 2)$ or $(a, b)$. Imagine a line crossing $(1, 2)$ and $(a, b)$. The only "mappings" that allow are those that "mirror one side to the other". For example $(3, 5)$ can be mapped to $(d,f)$ and $(4, 6)$ can be mapped to $(c, e)$. Also $(a, b)$ exists on the center line, so its properties are preserved. This might be a preserved invariant argument or a path argument, but I currently can figure it out.
+It seems the reason the two graphs only have the isomorphisms above is because of their symmetry along $(1, 2)$ or $(a, b)$. The only "mappings" that allow are those that "mirror one side to the other". For example $f(3, 5) \rightarrow (c,e)$ or $f(3, 5) \rightarrow (d,f)$ and $f(4, 6) \rightarrow (d,f)$ or $f(4, 6) \rightarrow (c,e)$
+Since $(a, b)$ exists on the center line, so its isomorphic properties preserved. $\checkmark$
 
 ### 12.8
 
@@ -225,7 +226,7 @@ isomorphism (you only need prove one of them).
 
 We eliminate $G_3$ because 2 vertices doesn't share the same degree compared to the other three.
 
-- Having ten vertices is a preserved property amongst $G_1, G_2, G_3, G_4$.
+- Having ten vertices is a preserved property amongst $G_1, G_2, G_3$.
 
 - Having vertices with a degree of three is a preserved property amongst $G_1, G_2, G_3$.
 
@@ -243,7 +244,23 @@ We eliminate $G_3$ because 2 vertices doesn't share the same degree compared to 
 
 - ~~A preserved property might also be the intersection of edges being less than three. I think this is best described by just identifying the single edge that intersects three edges. In $G_4$, edge $(8,3)$ intersections edges $(9, 5), (1, 10)$ and $(2, 6)$, which is three intersections. In $G_1, G_2$, this pattern isn't observed.~~
 
+- A cycles argument appears to be pretty tedious as well.
+
 - I believe all pair combinations of $G_1, G_2, G_3$ can be isomorphic. $\checkmark$ 
+
+
+| $G_3$ | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+|-------|---|---|---|---|---|---|---|---|---|----|
+| 1     |   | 1 |   |   | 1 | 1 |   |   |   |    |
+| 2     | 1 |   | 1 |   |   |   | 1 |   |   |    |
+| 3     |   | 1 |   | 1 |   |   |   | 1 |   |    |
+| 4     |   |   | 1 |   | 1 |   |   |   |   | 1  |
+| 5     | 1 |   |   | 1 |   |   |   |   | 1 |    |
+| 6     | 1 |   |   |   |   |   | 1 |   | 1 |    |
+| 7     |   | 1 |   |   |   | 1 |   | 1 |   |    |
+| 8     |   |   | 1 |   |   |   | 1 |   |   | 1  |
+| 9     |   |   |   |   | 1 | 1 |   |   |   | 1  |
+| 10    |   |   |   | 1 |   |   |   | 1 | 1 |    |
 
 ### 12.10
 
@@ -252,18 +269,31 @@ We eliminate $G_3$ because 2 vertices doesn't share the same degree compared to 
 - a) 
 
 ```
-
-the numbers represent the degree for each vertex
-
 2---------2         1
 |         |         |
 |         |         |
 |         |         |
 2---------2         1
+
+A graph with 6 vertices. The numbers represent the degree for each vertex.
 
 ```
 
-- b) 
+- b) The incorrect proof comes in during the base case when "**Base case** $(n = 1)$: The only two-ended graph with a single edge consists of two vertices joined by an edge:"
+
+    - a counter example would be:
+
+```
+1
+|            3
+|              
+|   
+2
+
+A two-ended graph with vertices 1, 2, and 3. An edge joins vertices 1 and 2.
+```
+Vertices 1, 2 form a two-ended graph with a single edge, but there are 3 points. $\checkmark$
+
 
 ### RSA encryption problem
 You have intercepted some messages sent on a popular dating site.  The person sending these messages has the address $(n_1, e_1) = (96403, 31)$.  The person receiving these messages has the address $(n_2, e_2) = (405319, 29)$.
@@ -382,7 +412,7 @@ print("message3:", message)
 # message_decrypted_wZero: ['2207', '0019', '2608', '1826', '1907', '0426', '0104', '1819', '2612', '1421', '0804', '2624', '1420', '2104', '2618', '0404', '1326']
 # message3: WHAT-IS-THE-BEST-MOVIE-YOUVE-SEEN-
 ```
-Reply to senders address $(n_1, e_1) = (96403, 31)$:
+- Reply to senders address $(n_1, e_1) = (96403, 31)$:
 
 ```
 original text converted (not by compiler)
