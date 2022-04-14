@@ -5,13 +5,50 @@ desc: https://courses.csail.mit.edu/6.042/spring18/mcs.pdf (Links to an external
 
 ### 12.6
 
-For each of the following pairs of simple graphs, either define an isomorphism between them, or prove that there is none. (We write ab as shorthand for $(a — b)$.)
+For each of the following pairs of simple graphs, either define an isomorphism between them, or prove that there is none. (We write $ab$ as shorthand for $(a — b)$.)
 
 - (a)
     
-    $G_1$ with $V_1 = \{1, 2, 3, 4, 5, 6\}, E_1 = {12, 23, 34, 14, 15, 35, 45}$
+    $G_1$ with $V_1 = \{1, 2, 3, 4, 5, 6\}, E_1 = \{12, 23, 34, 14, 15, 35, 45\}$
 
-    $G_2$ with $V_2 = \{1, 2, 3, 4, 5, 6\}, E_2 = {12, 23, 34, 45, 51, 24, 25}$
+    $G_2$ with $V_2 = \{1, 2, 3, 4, 5, 6\}, E_2 = \{12, 23, 34, 45, 51, 24, 25\}$
+
+
+```
+G_1
+           ___________
+          |     _____ |
+          |    |     ||
+1----2----3----4-----5      6
+||_____________|     |
+|____________________|
+
+1 degree is 3
+2 degree is 2
+3 degree is 3
+4 degree is 4
+5 degree is 4
+6 degree is 0
+
+
+G_2
+    
+      ______________
+     | ________     |
+     ||        |    |
+1----2----3----4----5       6
+|                   |
+|___________________|
+
+1 degree is 2
+2 degree is 4
+3 degree is 2
+4 degree is 3
+5 degree is 3
+6 degree is 0
+```
+
+The pair of simples graphs above aren't isomorphic because they don't share vertices of the same degree. $\checkmark$
 
 - (b)
 
@@ -19,10 +56,89 @@ For each of the following pairs of simple graphs, either define an isomorphism b
 
     $G_4$ with $V_4 = \{a, b, c, d, e, f\}, E_4 = \{ab, bc, cd, de, ae, ef, cf\}$
 
+```
+G_3
+      ___________________
+     |                   |
+1----2----3----4----5----6
+|______________|
+
+1 degree is 2
+2 degree is 3
+3 degree is 2
+4 degree is 3
+5 degree is 2
+6 degree is 2
+
+G_4
+ ___________________
+|                   |
+a----b----c----d----e----f
+          |______________|
+
+a degree is 2
+b degree is 2
+c degree is 3
+d degree is 2
+e degree is 3
+f degree is 2
+
+```
+There are two possible functions for an isomorphism are:
+
+$f_1: V_{G_3} \rightarrow  V_{G_4}$ $f = {(1, a),(2, c),(3, b),(4, e),(5, d),(6, f)}$
+
+and
+
+$f_2: V_{G_3} \rightarrow  V_{G_4}$ $f = {(1, a),(2, e),(3, b),(4, c),(5, d),(6, f)}$
+
+Adjacencies matrix for $G_3$
+| $G_3$: | 1 | 2 | 3 | 4 | 5 | 6 |
+|--------|---|---|---|---|---|---|
+| 1      | 0 | 1 | 0 | 1 | 0 | 0 |
+| 2      | 1 | 0 | 1 | 0 | 0 | 1 |
+| 3      | 0 | 1 | 0 | 1 | 0 | 0 |
+| 4      | 1 | 0 | 1 | 0 | 1 | 0 |
+| 5      | 0 | 0 | 0 | 1 | 0 | 1 |
+| 6      | 0 | 1 | 0 | 0 | 1 | 0 |
+
+Adjacencies matrix for $G_4$
+| $G_4$: | a | b | c | d | e | f |
+|--------|---|---|---|---|---|---|
+| a      | 0 | 1 | 0 | 0 | 1 | 0 |
+| b      | 1 | 0 | 1 | 0 | 0 | 0 |
+| c      | 0 | 1 | 0 | 1 | 0 | 1 |
+| d      | 0 | 0 | 1 | 0 | 1 | 0 |
+| e      | 1 | 0 | 0 | 1 | 0 | 1 |
+| f      | 0 | 0 | 1 | 0 | 1 | 0 |
+
+Adjacencies matrix for $f_1(G3)$
+| $f_1(G3)$: | a | c | b | e | d | f |
+|------------|---|---|---|---|---|---|
+| a          | 0 | 0 | 1 | 1 | 0 | 0 |
+| c          | 0 | 0 | 1 | 0 | 1 | 1 |
+| b          | 1 | 1 | 0 | 0 | 0 | 0 |
+| e          | 1 | 0 | 0 | 0 | 1 | 1 |
+| d          | 0 | 1 | 0 | 1 | 0 | 0 |
+| f          | 0 | 1 | 0 | 1 | 0 | 0 |
+
+Adjacencies matrix for $f_2(G3)$
+| $f_2(G3)$: | a | e | b | c | d | f |
+|------------|---|---|---|---|---|---|
+| a          | 0 | 1 | 1 | 0 | 0 | 0 |
+| e          | 1 | 0 | 0 | 0 | 1 | 1 |
+| b          | 1 | 0 | 0 | 1 | 0 | 0 |
+| c          | 0 | 0 | 1 | 0 | 1 | 1 |
+| d          | 0 | 1 | 0 | 1 | 0 | 0 |
+| f          | 0 | 1 | 0 | 1 | 0 | 0 |
+
+Mapping vertices of equal degree doesn't appear to create an isomorphic pair of simple graphs. $\checkmark$
+
 ### 12.7
 
 List all the isomorphisms between the two graphs given in Figure 12.23. Explain why there are no others.
-![Figure12.23]('C:\Users\Kevin Wong\MATH-115-Discrete-Mathematics/Figure12.23.PNG')
+
+![Image](C:\Users\Kevin%20Wong\MATH-115-Discrete-Mathematics\Figure12.23.PNG)
 
 
 ### 12.8
@@ -61,7 +177,7 @@ two-ended graph $G_{n+1}$ by adding one more edge to $G_n$. This can be done in 
 one way: the new edge must join one of the two endpoints of $G_n$ to a new vertex;
 otherwise, $G_{n+1}$ would not be two-ended.
 
-### problem
+### RSA encryption problem
 You have intercepted some messages sent on a popular dating site.  The person sending these messages has the address $(n_1, e_1) = (96403, 31)$.  The person receiving these messages has the address $(n_2, e_2) = (405319, 29)$.
 
 Message1:
@@ -78,7 +194,7 @@ Message3:
 
 You've discovered that the modulus in the receiver's public key, $n=405319$, is the product of the primes $409$ and $991$.  Use this information to break the RSA encryption.  Pick one of the above questions (or more if you want), decrypt it, and send a reply to the sender.  
 
-- Decrypted message 3:
+- Going to decrypt message 3:
 
     Modulus recievers public key, $n = 405319$.
 
@@ -154,7 +270,7 @@ cipher = {
 
 decrypted_message = []
 
-# mapping loop using cipher
+# mapping decrypted message to a letter via cipher
 for message in message_decrypted_wZero:
     first_key = message[0] + message[0+1]
     second_key = message[0+2] + message[0+3]
