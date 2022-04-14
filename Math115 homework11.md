@@ -330,6 +330,7 @@ Then take the $MessageElement^{e^{-1}}$ $mod$ $n$ for each element in the messag
 
 - Finished the rest via python below:
 ```
+# reciever's private key: (n, e^-1 = e)
 n = 405319
 e = 250709
 
@@ -371,19 +372,69 @@ for message in message_decrypted_wZero:
 
 message = ""
 
-# loop to print string
+# print string
 for letters in decrypted_message:
     message += letters
     
 print("message3:", message)
 
-############# output #############
-message_decrypted_wZero: ['2207', '0019', '2608', '1826', '1907', '0426', '0104', '1819', '2612', '1421', '0804', '2624', '1420', '2104', '2618', '0404', '1326']
-message3: WHAT-IS-THE-BEST-MOVIE-YOUVE-SEEN-
+############## OUTPUT ###############
+# message_decrypted_wZero: ['2207', '0019', '2608', '1826', '1907', '0426', '0104', '1819', '2612', '1421', '0804', '2624', '1420', '2104', '2618', '0404', '1326']
+# message3: WHAT-IS-THE-BEST-MOVIE-YOUVE-SEEN-
 ```
 Reply to senders address $(n_1, e_1) = (96403, 31)$:
 
-0813 1904 1718 1904 1111 0017
+```
+original text converted (not by compiler)
+G O  O D  - W  I L  L -  H U  N T  I N  G -
+0614 1403 2622 0811 1126 0720 1319 0813 0626
+```
+```
+# sender's public encryption key: (n, e)
+n = 96403
+e = 31
+
+message = "GOOD-WILL-HUNTING-"
+
+cipher = {
+"00":"A", "01":"B", "02":"C", "03":"D", "04":"E", "05":"F", "06":"G", "07":"H", "08":"I", "09":"J", "10":"K", "11":"L", "12":"M", "13":"N", "14":"O", "15":"P", "16":"Q", "17":"R", "18":"S", "19":"T", "20":"U", "21":"V", "22":"W", "23":"X", "24":"Y", "25":"Z", "26":"-"}
+
+reverse_cipher = {}
+
+# reversing cipher
+for key in cipher:
+    reverse_cipher[cipher[key]] = key
+
+encrypted_message_string = ""
+
+# mapping letters to numbers via reverse_cipher
+    # note: only works for this particular message
+for letter in message:
+    if letter in reverse_cipher:
+        encrypted_message_string += reverse_cipher[letter]
+        
+encrypted_message = []
+
+# converting numbers to four number groupings
+for i in range(0, len(encrypted_message_string), 4):
+    four_number_set = encrypted_message_string[i] + encrypted_message_string[i + 1] + encrypted_message_string[i + 2] + encrypted_message_string[i + 3]
+    
+    encrypted_message.append(int(four_number_set))
+    
+print("encrypted_message", encrypted_message)
+
+encrypted_message_to_sender = []
+
+# encrypt message using sender's public key
+for number in encrypted_message:
+    encrypted_message_to_sender.append(number**e % n)
+    
+print("encrypted_message_to_sender", encrypted_message_to_sender)
+
+############## OUTPUT ###############
+# encrypted_message [614, 1403, 2622, 811, 1126, 720, 1319, 813, 626]
+# encrypted_message_to_sender [40918, 48263, 70873, 39011, 83765, 51088, 28246, 1906, 57941]
+```
 
 ---
 ---
