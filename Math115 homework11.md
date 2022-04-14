@@ -48,7 +48,7 @@ G_2
 6 degree is 0
 ```
 
-The pair of simples graphs above aren't isomorphic because they don't share vertices of the same degree. $\checkmark$
+The pair of simples graphs above aren't isomorphic because they don't share equal number of vertices with the same degree. $\checkmark$
 
 - (b)
 
@@ -83,14 +83,11 @@ d degree is 2
 e degree is 3
 f degree is 2
 
+note: G_4 looks like a mirror image of G_3 
+
 ```
-There are two possible functions for an isomorphism are:
 
-$f_1: V_{G_3} \rightarrow  V_{G_4}$ $f = {(1, a),(2, c),(3, b),(4, e),(5, d),(6, f)}$
-
-and
-
-$f_2: V_{G_3} \rightarrow  V_{G_4}$ $f = {(1, a),(2, e),(3, b),(4, c),(5, d),(6, f)}$
+$f_3: V_{G_3} \rightarrow  V_{G_4}$ $f = {(1, f),(2, e),(3, d),(4, c),(5, b),(6, a)}$
 
 Adjacencies matrix for $G_3$
 | $G_3$: | 1 | 2 | 3 | 4 | 5 | 6 |
@@ -102,7 +99,7 @@ Adjacencies matrix for $G_3$
 | 5      | 0 | 0 | 0 | 1 | 0 | 1 |
 | 6      | 0 | 1 | 0 | 0 | 1 | 0 |
 
-Adjacencies matrix for $G_4$
+Adjacencies matrix for $G_4$ (doesn't match $G_3$)
 | $G_4$: | a | b | c | d | e | f |
 |--------|---|---|---|---|---|---|
 | a      | 0 | 1 | 0 | 0 | 1 | 0 |
@@ -112,34 +109,63 @@ Adjacencies matrix for $G_4$
 | e      | 1 | 0 | 0 | 1 | 0 | 1 |
 | f      | 0 | 0 | 1 | 0 | 1 | 0 |
 
-Adjacencies matrix for $f_1(G3)$
-| $f_1(G3)$: | a | c | b | e | d | f |
+Adjacencies matrix for $f_3(G3)$ (matches $G_3$)
+| $f_3(G_3)$: | f | e | d | c | b | a |
 |------------|---|---|---|---|---|---|
-| a          | 0 | 0 | 1 | 1 | 0 | 0 |
-| c          | 0 | 0 | 1 | 0 | 1 | 1 |
-| b          | 1 | 1 | 0 | 0 | 0 | 0 |
-| e          | 1 | 0 | 0 | 0 | 1 | 1 |
-| d          | 0 | 1 | 0 | 1 | 0 | 0 |
 | f          | 0 | 1 | 0 | 1 | 0 | 0 |
-
-Adjacencies matrix for $f_2(G3)$
-| $f_2(G3)$: | a | e | b | c | d | f |
-|------------|---|---|---|---|---|---|
-| a          | 0 | 1 | 1 | 0 | 0 | 0 |
-| e          | 1 | 0 | 0 | 0 | 1 | 1 |
-| b          | 1 | 0 | 0 | 1 | 0 | 0 |
-| c          | 0 | 0 | 1 | 0 | 1 | 1 |
+| e          | 1 | 0 | 1 | 0 | 0 | 1 |
 | d          | 0 | 1 | 0 | 1 | 0 | 0 |
-| f          | 0 | 1 | 0 | 1 | 0 | 0 |
+| c          | 1 | 0 | 1 | 0 | 1 | 0 |
+| b          | 0 | 0 | 0 | 1 | 0 | 1 |
+| a          | 0 | 1 | 0 | 0 | 1 | 0 |
 
-Mapping vertices of equal degree doesn't appear to create an isomorphic pair of simple graphs. $\checkmark$
+$f_3$ respects the number of vertices, edges, degree of vertex, adjacency, and cycles of a particular length, so it is an isomorphic pair of graphs. $\checkmark$
 
 ### 12.7
 
 List all the isomorphisms between the two graphs given in Figure 12.23. Explain why there are no others.
 
-![Image](C:\Users\Kevin%20Wong\MATH-115-Discrete-Mathematics\Figure12.23.PNG)
 
+```
+     1
+    / \   
+   /   \
+  /     \
+ /       \
+/         \
+3----2----4
+|         |
+|         |
+5---------6
+
+1 degree is 2
+2 degree is 2
+3 degree is 3
+4 degree is 3
+5 degree is 2
+6 degree is 2
+
+     a
+    / \   
+   /   \
+  /     \
+ /       \
+/         \
+c----b----d
+|         |
+|         |
+e---------f
+
+a degree is 2
+b degree is 2
+c degree is 3
+d degree is 3
+e degree is 2
+f degree is 2
+
+Figure 12.23
+```
+$f_1: V_{G_3} \rightarrow  V_{G_4}$ $f = {(1, a),(2, c),(3, b),(4, e),(5, d),(6, f)}$
 
 ### 12.8
 
