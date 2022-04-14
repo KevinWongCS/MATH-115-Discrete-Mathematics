@@ -165,7 +165,44 @@ f degree is 2
 
 Figure 12.23
 ```
-$f_1: V_{G_3} \rightarrow  V_{G_4}$ $f = {(1, a),(2, c),(3, b),(4, e),(5, d),(6, f)}$
+
+$f_1$ $f = {(1, a),(2, b),(3, c),(4, d),(5, e),(6, f)}$
+
+swapped $a \leftrightarrow b$:$\checkmark$
+
+$f_2$ $f = {(1, b),(2, a),(3, c),(4, d),(5, e),(6, f)}$
+
+swapped $c \leftrightarrow d$, $e \leftrightarrow f$:$\checkmark$
+
+$f_7$ $f = {(1, a),(2, b),(3, d),(4, c),(5, f),(6, e)}$
+
+swapped $a \leftrightarrow b$, $c \leftrightarrow d$, $e \leftrightarrow f$:$\checkmark$
+
+- Below are a few that aren't isomorphisms:
+
+    ~~swapped $a \leftrightarrow b$, $c \leftrightarrow d$:~~
+    
+    $f_3$ $f = {(1, b),(2, a),(3, d),(4, c),(5, e),(6, f)}$
+    
+    ~~swapped $a \leftrightarrow b$, $e \leftrightarrow f$:~~
+    
+    $f_4$ $f = {(1, b),(2, a),(3, c),(4, d),(5, f),(6, e)}$
+    
+    
+    
+    $f_5$ $f = {(1, b),(2, a),(3, d),(4, c),(5, f),(6, e)}$
+    
+    ~~swapped $c \leftrightarrow d$:~~
+    
+    $f_6$ $f = {(1, a),(2, b),(3, d),(4, c),(5, e),(6, f)}$
+    
+    
+    
+    ~~swapped $e \leftrightarrow f$:~~
+    
+    ~~$f_8$ $f = {(1, a),(2, b),(3, c),(4, d),(5, f),(6, e)}$~~
+
+It seems the reason the two graphs only have the isomorphisms above is because of their symmetry along $(1, 2)$ or $(a, b)$. Imagine a line crossing $(1, 2)$ and $(a, b)$. The only "mappings" that allow are those that "mirror one side to the other". For example $(3, 5)$ can be mapped to $(d,f)$ and $(4, 6)$ can be mapped to $(c, e)$. Also $(a, b)$ exists on the center line, so its properties are preserved. This might be a preserved invariant argument or a path argument, but I currently can figure it out.
 
 ### 12.8
 
@@ -173,8 +210,22 @@ Determine which among the four graphs pictured in Figure 12.24 are isomorphic.
 For each pair of isomorphic graphs, describe an isomorphism between them. For
 each pair of graphs that are not isomorphic, give a property that is preserved under
 isomorphism such that one graph has the property, but the other does not. For
-at least one of the properties you choose, prove that it is indeed preserved under
+at least one of the properties you choose, *prove* that it is indeed preserved under
 isomorphism (you only need prove one of them).
+
+
+![figure12.24](https://i.imgur.com/QXfQcZC.png)
+
+|       | vertex $\rightarrow$ | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+|-------|----------------------|---|---|---|---|---|---|---|---|---|----|
+| $G_1$ | degrees              | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3  |
+| $G_2$ | degrees              | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3  |
+| $G_3$ | degrees              | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 4 | 3 | 4  |
+| $G_4$ | degrees              | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3  |
+
+We eliminate $G_3$ because 2 vertices doesn't share the same degree compared to the other three.
+
+A bit early, but I would say vertices with a degree of three is a preserved property amongst $G_1, G_2, G_3$, the remaining possible isomorphisms.
 
 ### 12.10
 
