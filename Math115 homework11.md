@@ -16,9 +16,9 @@ For each of the following pairs of simple graphs, either define an isomorphism b
 
 ```
 G_1
-           ___________
-          |     _____ |
-          |    |     ||
+           __________
+          |          |
+          |          |
 1----2----3----4-----5      6
 ||_____________|     |
 |____________________|
@@ -26,8 +26,8 @@ G_1
 1 degree is 3
 2 degree is 2
 3 degree is 3
-4 degree is 4
-5 degree is 4
+4 degree is 3
+5 degree is 3
 6 degree is 0
 
 
@@ -241,34 +241,29 @@ We eliminate $G_3$ because 2 vertices doesn't share the same degree compared to 
     
     $G_4{Hamiltonian Path} = 1, 2, 6, 5, 9, 8, 3, 4, 10, 7$
 
+- ~~A preserved property might also be the intersection of edges being less than three. I think this is best described by just identifying the single edge that intersects three edges. In $G_4$, edge $(8,3)$ intersections edges $(9, 5), (1, 10)$ and $(2, 6)$, which is three intersections. In $G_1, G_2$, this pattern isn't observed.~~
 
+- I believe all pair combinations of $G_1, G_2, G_3$ can be isomorphic. $\checkmark$ 
 
 ### 12.10
 
-Let’s say that a graph has “two ends” if it has exactly two vertices of degree 1 and
-all its other vertices have degree 2. For example, here is one such graph:
+![Problem](https://i.imgur.com/HOal637.png)
 
-(a) A *line graph* is a graph whose vertices can be listed in a sequence with edges
-between consecutive vertices only. So the two-ended graph above is also a line
-graph of length 4.
-Prove that the following theorem is false by drawing a counterexample.
-**False Theorem**. *Every two-ended graph is a line graph.*
+- a) 
 
-(b) Point out the first erroneous statement in the following bogus proof of the false
-theorem and describe the error.
+```
 
-*Bogus proof.* We use induction. The induction hypothesis is that every two-ended graph with n edges is a line graph.
+the numbers represent the degree for each vertex
 
-**Base case** $(n = 1)$: The only two-ended graph with a single edge consists of two vertices joined by an edge:
+2---------2         1
+|         |         |
+|         |         |
+|         |         |
+2---------2         1
 
-Sure enough, this is a line graph.
+```
 
-**Inductive case**: We assume that the induction hypothesis holds for some $n \ge 1$
-and prove that it holds for $n + 1$. Let $G_n$ be any two-ended graph with $n$ edges.
-By the induction assumption, $G_n$ is a line graph. Now suppose that we create a
-two-ended graph $G_{n+1}$ by adding one more edge to $G_n$. This can be done in only
-one way: the new edge must join one of the two endpoints of $G_n$ to a new vertex;
-otherwise, $G_{n+1}$ would not be two-ended.
+- b) 
 
 ### RSA encryption problem
 You have intercepted some messages sent on a popular dating site.  The person sending these messages has the address $(n_1, e_1) = (96403, 31)$.  The person receiving these messages has the address $(n_2, e_2) = (405319, 29)$.
