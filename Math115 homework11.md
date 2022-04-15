@@ -99,16 +99,6 @@ Adjacencies matrix for $G_3$
 | 5      | 0 | 0 | 0 | 1 | 0 | 1 |
 | 6      | 0 | 1 | 0 | 0 | 1 | 0 |
 
-Adjacencies matrix for $G_4$ (doesn't match $G_3$)
-| $G_4$: | a | b | c | d | e | f |
-|--------|---|---|---|---|---|---|
-| a      | 0 | 1 | 0 | 0 | 1 | 0 |
-| b      | 1 | 0 | 1 | 0 | 0 | 0 |
-| c      | 0 | 1 | 0 | 1 | 0 | 1 |
-| d      | 0 | 0 | 1 | 0 | 1 | 0 |
-| e      | 1 | 0 | 0 | 1 | 0 | 1 |
-| f      | 0 | 0 | 1 | 0 | 1 | 0 |
-
 Adjacencies matrix for $f_3(G3)$ (matches $G_3$)
 | $f_3(G_3)$: | f | e | d | c | b | a |
 |------------|---|---|---|---|---|---|
@@ -165,21 +155,69 @@ f degree is 2
 
 Figure 12.23
 ```
+- Adjacency matrix for top graph
+
+|   | 1 | 2 | 3 | 4 | 5 | 6 |
+|---|---|---|---|---|---|---|
+| 1 | 0 | 0 | 1 | 1 | 0 | 0 |
+| 2 | 0 | 0 | 1 | 1 | 0 | 0 |
+| 3 | 1 | 1 | 0 | 0 | 1 | 0 |
+| 4 | 1 | 1 | 0 | 0 | 0 | 1 |
+| 5 | 0 | 0 | 1 | 0 | 0 | 1 |
+| 6 | 0 | 0 | 0 | 1 | 1 | 0 |
+
+- no swaps $\checkmark$
 
 $f_1$ $f = {(1, a),(2, b),(3, c),(4, d),(5, e),(6, f)}$
 
-swapped $a \leftrightarrow b$:$\checkmark$
+| $f_1$  | a | b | c | d | e | f |
+|---|---|---|---|---|---|---|
+| a | 0 | 0 | 1 | 1 | 0 | 0 |
+| b | 0 | 0 | 1 | 1 | 0 | 0 |
+| c | 1 | 1 | 0 | 0 | 1 | 0 |
+| d | 1 | 1 | 0 | 0 | 0 | 1 |
+| e | 0 | 0 | 1 | 0 | 0 | 1 |
+| f | 0 | 0 | 0 | 1 | 1 | 0 |
+
+- swapped $a \leftrightarrow b$:$\checkmark$
 
 $f_2$ $f = {(1, b),(2, a),(3, c),(4, d),(5, e),(6, f)}$
 
-swapped $c \leftrightarrow d$, $e \leftrightarrow f$:$\checkmark$
+| $f_2$   | b | a | c | d | e | f |
+|---|---|---|---|---|---|---|
+| b | 0 | 0 | 1 | 1 | 0 | 0 |
+| a | 0 | 0 | 1 | 1 | 0 | 0 |
+| c | 1 | 1 | 0 | 0 | 1 | 0 |
+| d | 1 | 1 | 0 | 0 | 0 | 1 |
+| e | 0 | 0 | 1 | 0 | 0 | 1 |
+| f | 0 | 0 | 0 | 1 | 1 | 0 |
+
+- swapped $c \leftrightarrow d$, $e \leftrightarrow f$:$\checkmark$
 
 $f_3$ $f = {(1, a),(2, b),(3, d),(4, c),(5, f),(6, e)}$
 
-swapped $a \leftrightarrow b$, $c \leftrightarrow d$, $e \leftrightarrow f$:$\checkmark$
+|$f_3$   | a | b | d | c | f | e |
+|---|---|---|---|---|---|---|
+| a | 0 | 0 | 1 | 1 | 0 | 0 |
+| b | 0 | 0 | 1 | 1 | 0 | 0 |
+| d | 1 | 1 | 0 | 0 | 1 | 0 |
+| c | 1 | 1 | 0 | 0 | 0 | 1 |
+| f | 0 | 0 | 1 | 0 | 0 | 1 |
+| e | 0 | 0 | 0 | 1 | 1 | 0 |
+
+- swapped $a \leftrightarrow b$, $c \leftrightarrow d$, $e \leftrightarrow f$:$\checkmark$
 
     
 $f_4$ $f = {(1, b),(2, a),(3, d),(4, c),(5, f),(6, e)}$
+
+| $f_4$  | b | a | d | c | f | e |
+|---|---|---|---|---|---|---|
+| b | 0 | 0 | 1 | 1 | 0 | 0 |
+| a | 0 | 0 | 1 | 1 | 0 | 0 |
+| d | 1 | 1 | 0 | 0 | 1 | 0 |
+| c | 1 | 1 | 0 | 0 | 0 | 1 |
+| f | 0 | 0 | 1 | 0 | 0 | 1 |
+| e | 0 | 0 | 0 | 1 | 1 | 0 |
 
 - Below are a few that aren't isomorphisms:
 
@@ -199,8 +237,10 @@ $f_4$ $f = {(1, b),(2, a),(3, d),(4, c),(5, f),(6, e)}$
     
     $f_8$ $f = {(1, a),(2, b),(3, c),(4, d),(5, f),(6, e)}$
 
-It seems the reason the two graphs only have the isomorphisms above is because of their symmetry along $(1, 2)$ or $(a, b)$. The only "mappings" that allow are those that "mirror one side to the other". For example $f(3, 5) \rightarrow (c,e)$ or $f(3, 5) \rightarrow (d,f)$ and $f(4, 6) \rightarrow (d,f)$ or $f(4, 6) \rightarrow (c,e)$
-Since $(a, b)$ exists on the center line, so its isomorphic properties preserved. $\checkmark$
+- An observation about the two graphs is that they are clearly isomorphic. 
+
+It seems the allowed functions for isomorphic mapping are those that mirror one side to the other along an imaginary axis splitting $(1,2)$ or $(a, b)$. In other words, if a vertex on one side is mapped to the other side, all vertices from that same side have to also be mapped to its equivalent vertex on the other side. For example $f(3, 5) \rightarrow (c,e)$ or $f(3, 5) \rightarrow (d,f)$ and $f(4, 6) \rightarrow (d,f)$ or $f(4, 6) \rightarrow (c,e)$.
+Since $(a, b)$ exists on the "center line", so its isomorphic properties preserved regardless if they are swapped. $\checkmark$
 
 ### 12.8
 
