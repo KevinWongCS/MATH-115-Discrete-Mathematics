@@ -301,16 +301,11 @@ isomorphism (you only need prove one of them).
 - Conclusion:
     - I believe $G_1$ and $G_4$ is an isomorphic pair, the work is shown below.  $\checkmark$ 
     
-    - I don't know for sure, but I believe $G_2$ can't form an isomorphic pair with $G_1$ and $G_4$ because of the same reason we couldn't connect the utilities in the house in the lectures notes. It has something to do with crossing edges.
+    - I feel like there should exist an isomorphism between $G_2$ with $G_1$ and $G_4$, but it is very tedious to find. So at this point I'd have to say $G_2$ can't form an isomorphic pair with $G_1$ and $G_4$ because of the same reason we couldn't connect the utilities in the house in the lectures notes. It has something to do with crossing edges.
 
-    - THe work: The $G_1$ and $G_4$ pair was found by untying $G_1$ into $G_4$
+    - The work: The $G_1$ and $G_4$ pair was found by untying $G_1$ into $G_4$
 
-![](https://i.imgur.com/dycPPPH.png)
-![](https://i.imgur.com/tJXJWND.png)
-![](https://i.imgur.com/dKTZkRT.png)
-![](https://i.imgur.com/aNEtvGn.png)
-![](https://i.imgur.com/qUqnL87.png)
-
+![](https://i.imgur.com/10kIubm.png)
 
 | $G_4 = G_4 = G_4$ | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
 |-------|---|---|---|---|---|---|---|---|---|----|
@@ -547,8 +542,6 @@ print("encrypted_message_to_sender", encrypted_message_to_sender)
 # encrypted_message [614, 1403, 2622, 811, 1126, 720, 1319, 813, 626]
 # encrypted_message_to_sender [40918, 48263, 70873, 39011, 83765, 51088, 28246, 1906, 57941]
 ```
-
--The encrypted message to the sender is [40918, 48263, 70873, 39011, 83765, 51088, 28246, 1906, 57941]
 
 ---
 ---
