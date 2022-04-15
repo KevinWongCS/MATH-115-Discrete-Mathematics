@@ -1,5 +1,5 @@
 name: kevin wong\
-filename: Math115 homework8\
+filename: Math115 homework11\
 date: 04/12/2022\
 desc: https://courses.csail.mit.edu/6.042/spring18/mcs.pdf (Links to an external site.) please do these problems: 12.6, 12.7, 12.8, 12.10, additional problem
 
@@ -111,6 +111,9 @@ Adjacencies matrix for $f_3(G3)$ (matches $G_3$)
 
 $f_3$ respects the number of vertices, edges, degree of vertex, adjacency, and cycles of a particular length, so it is an isomorphic pair of graphs. $\checkmark$
 
+---
+---
+
 ### 12.7
 
 List all the isomorphisms between the two graphs given in Figure 12.23. Explain why there are no others.
@@ -155,7 +158,7 @@ f degree is 2
 
 Figure 12.23
 ```
-- Adjacency matrix for top graph
+- Adjacency matrix for top graph with the numbered vertices.
 
 |   | 1 | 2 | 3 | 4 | 5 | 6 |
 |---|---|---|---|---|---|---|
@@ -170,6 +173,8 @@ Figure 12.23
 
 $f_1$ $f = {(1, a),(2, b),(3, c),(4, d),(5, e),(6, f)}$
 
+Adjacency matrix for $f_1$
+
 | $f_1$  | a | b | c | d | e | f |
 |---|---|---|---|---|---|---|
 | a | 0 | 0 | 1 | 1 | 0 | 0 |
@@ -182,6 +187,8 @@ $f_1$ $f = {(1, a),(2, b),(3, c),(4, d),(5, e),(6, f)}$
 - swapped $a \leftrightarrow b$:$\checkmark$
 
 $f_2$ $f = {(1, b),(2, a),(3, c),(4, d),(5, e),(6, f)}$
+
+Adjacency matrix for $f_2$
 
 | $f_2$   | b | a | c | d | e | f |
 |---|---|---|---|---|---|---|
@@ -196,6 +203,8 @@ $f_2$ $f = {(1, b),(2, a),(3, c),(4, d),(5, e),(6, f)}$
 
 $f_3$ $f = {(1, a),(2, b),(3, d),(4, c),(5, f),(6, e)}$
 
+Adjacency matrix for $f_3$
+
 |$f_3$   | a | b | d | c | f | e |
 |---|---|---|---|---|---|---|
 | a | 0 | 0 | 1 | 1 | 0 | 0 |
@@ -209,6 +218,8 @@ $f_3$ $f = {(1, a),(2, b),(3, d),(4, c),(5, f),(6, e)}$
 
     
 $f_4$ $f = {(1, b),(2, a),(3, d),(4, c),(5, f),(6, e)}$
+
+Adjacency matrix for $f_4$
 
 | $f_4$  | b | a | d | c | f | e |
 |---|---|---|---|---|---|---|
@@ -239,8 +250,11 @@ $f_4$ $f = {(1, b),(2, a),(3, d),(4, c),(5, f),(6, e)}$
 
 - An observation about the two graphs is that they are clearly isomorphic. 
 
-It seems the allowed functions for isomorphic mapping are those that mirror one side to the other along an imaginary axis splitting $(1,2)$ or $(a, b)$. In other words, if a vertex on one side is mapped to the other side, all vertices from that same side have to also be mapped to its equivalent vertex on the other side. For example $f(3, 5) \rightarrow (c,e)$ or $f(3, 5) \rightarrow (d,f)$ and $f(4, 6) \rightarrow (d,f)$ or $f(4, 6) \rightarrow (c,e)$.
+The isomorphic mappings appear to be those that mirror one side to the other along an imaginary axis splitting $(1,2)$ or $(a, b)$. In other words, if a vertex on one side is mapped to the other side, all vertices from that same side have to also be mapped to its equivalent vertex on the other side. For example $f(3, 5) \rightarrow (c,e)$ or $f(3, 5) \rightarrow (d,f)$ and $f(4, 6) \rightarrow (d,f)$ or $f(4, 6) \rightarrow (c,e)$.
 Since $(a, b)$ exists on the "center line", so its isomorphic properties preserved regardless if they are swapped. $\checkmark$
+
+---
+---
 
 ### 12.8
 
@@ -264,7 +278,7 @@ isomorphism (you only need prove one of them).
 | $G_3$ | degrees              | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 4 | 3 | 4  | 16    |
 | $G_4$ | degrees              | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3 | 3  | 15    |
 
-We eliminate $G_3$ because 2 vertices doesn't share the same degree compared to the other three.
+- We eliminate $G_3$ because two of the vertices doesn't share the same degree compared to the other three graphs.
 
 - Having ten vertices is a preserved property amongst $G_1, G_2, G_3$.
 
@@ -282,25 +296,51 @@ We eliminate $G_3$ because 2 vertices doesn't share the same degree compared to 
     
     $G_4{Hamiltonian Path} = 1, 2, 6, 5, 9, 8, 3, 4, 10, 7$
 
-- ~~A preserved property might also be the intersection of edges being less than three. I think this is best described by just identifying the single edge that intersects three edges. In $G_4$, edge $(8,3)$ intersections edges $(9, 5), (1, 10)$ and $(2, 6)$, which is three intersections. In $G_1, G_2$, this pattern isn't observed.~~
-
 - A cycles argument appears to be pretty tedious as well.
 
-- I believe all pair combinations of $G_1, G_2, G_3$ can be isomorphic. $\checkmark$ 
+- Conclusion:
+    - I believe $G_1$ and $G_4$ is an isomorphic pair, the work is shown below.  $\checkmark$ 
+    
+    - I don't know for sure, but I believe $G_2$ can't form an isomorphic pair with $G_1$ and $G_4$ because of the same reason we couldn't connect the utilities in the house in the lectures notes. It has something to do with crossing edges.
+
+    - THe work: The $G_1$ and $G_4$ pair was found by untying $G_1$ into $G_4$
+
+![](https://i.imgur.com/dycPPPH.png)
+![](https://i.imgur.com/tJXJWND.png)
+![](https://i.imgur.com/dKTZkRT.png)
+![](https://i.imgur.com/aNEtvGn.png)
+![](https://i.imgur.com/qUqnL87.png)
 
 
-| $G_3$ | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+| $G_4 = G_4 = G_4$ | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
 |-------|---|---|---|---|---|---|---|---|---|----|
-| 1     |   | 1 |   |   | 1 | 1 |   |   |   |    |
-| 2     | 1 |   | 1 |   |   |   | 1 |   |   |    |
+| 1     |   | 1 |   |   |   |   |   |   | 1 | 1  |
+| 2     | 1 |   | 1 |   |   | 1 |   |   |   |    |
 | 3     |   | 1 |   | 1 |   |   |   | 1 |   |    |
 | 4     |   |   | 1 |   | 1 |   |   |   |   | 1  |
-| 5     | 1 |   |   | 1 |   |   |   |   | 1 |    |
-| 6     | 1 |   |   |   |   |   | 1 |   | 1 |    |
-| 7     |   | 1 |   |   |   | 1 |   | 1 |   |    |
-| 8     |   |   | 1 |   |   |   | 1 |   |   | 1  |
-| 9     |   |   |   |   | 1 | 1 |   |   |   | 1  |
-| 10    |   |   |   | 1 |   |   |   | 1 | 1 |    |
+| 5     |   |   |   | 1 |   | 1 |   |   | 1 |    |
+| 6     |   | 1 |   |   | 1 |   | 1 |   |   |    |
+| 7     |   |   |   |   |   | 1 |   | 1 |   | 1  |
+| 8     |   |   | 1 |   |   |   | 1 |   | 1 |    |
+| 9     | 1 |   |   |   | 1 |   |   | 1 |   |    |
+| 10    | 1 |   |   | 1 |   |   | 1 |   |   |    |
+
+
+| $f(G_4) \rightarrow G_1$ | 1 | 2 | 3 | 7 | 8 | 9 | 10 | 4 | 5 | 6 |
+|--------------------------|---|---|---|---|---|---|----|---|---|---|
+| 1                        |   | 1 |   |   |   |   |    |   | 1 | 1 |
+| 2                        | 1 |   | 1 |   |   | 1 |    |   |   |   |
+| 3                        |   | 1 |   | 1 |   |   |    | 1 |   |   |
+| 7                        |   |   | 1 |   | 1 |   |    |   |   | 1 |
+| 8                        |   |   |   | 1 |   | 1 |    |   | 1 |   |
+| 9                        |   | 1 |   |   | 1 |   | 1  |   |   |   |
+| 10                       |   |   |   |   |   | 1 |    | 1 |   | 1 |
+| 4                        |   |   | 1 |   |   |   | 1  |   | 1 |   |
+| 5                        | 1 |   |   |   | 1 |   |    | 1 |   |   |
+| 6                        | 1 |   |   | 1 |   |   | 1  |   |   |   |
+
+---
+---
 
 ### 12.10
 
@@ -334,6 +374,8 @@ A two-ended graph with vertices 1, 2, and 3. An edge joins vertices 1 and 2.
 ```
 Vertices 1, 2 form a two-ended graph with a single edge, but there are 3 points. $\checkmark$
 
+---
+---
 
 ### RSA encryption problem
 You have intercepted some messages sent on a popular dating site.  The person sending these messages has the address $(n_1, e_1) = (96403, 31)$.  The person receiving these messages has the address $(n_2, e_2) = (405319, 29)$.
@@ -505,6 +547,8 @@ print("encrypted_message_to_sender", encrypted_message_to_sender)
 # encrypted_message [614, 1403, 2622, 811, 1126, 720, 1319, 813, 626]
 # encrypted_message_to_sender [40918, 48263, 70873, 39011, 83765, 51088, 28246, 1906, 57941]
 ```
+
+-The encrypted message to the sender is [40918, 48263, 70873, 39011, 83765, 51088, 28246, 1906, 57941]
 
 ---
 ---
