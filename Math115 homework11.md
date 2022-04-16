@@ -3,6 +3,9 @@ filename: Math115 homework11\
 date: 04/12/2022\
 desc: https://courses.csail.mit.edu/6.042/spring18/mcs.pdf (Links to an external site.) please do these problems: 12.6, 12.7, 12.8, 12.10, additional problem
 
+---
+---
+
 ### 12.6
 
 For each of the following pairs of simple graphs, either define an isomorphism between them, or prove that there is none. (We write $ab$ as shorthand for $(a — b)$.)
@@ -30,7 +33,6 @@ G_1
 5 degree is 3
 6 degree is 0
 
-
 G_2
     
       ______________
@@ -46,6 +48,8 @@ G_2
 4 degree is 3
 5 degree is 3
 6 degree is 0
+
+Visual of graphs G_1 and G_2.
 ```
 
 The pair of simples graphs above aren't isomorphic because they don't share equal number of vertices with the same degree. $\checkmark$
@@ -83,14 +87,16 @@ d degree is 2
 e degree is 3
 f degree is 2
 
-note: G_4 looks like a mirror image of G_3 
+Visual of graphs G_3 and G_4.
+note: G_4 looks like a mirror image of G_3.
 
 ```
 
 $f_3: V_{G_3} \rightarrow  V_{G_4}$ $f = {(1, f),(2, e),(3, d),(4, c),(5, b),(6, a)}$
 
-Adjacencies matrix for $G_3$
-| $G_3$: | 1 | 2 | 3 | 4 | 5 | 6 |
+Adjacencies matrix for $G_3$. note: "$G_3 = G_3$" is used to correct table alignment for a better visual.
+
+| $G_3 = G_3$: | 1 | 2 | 3 | 4 | 5 | 6 |
 |--------|---|---|---|---|---|---|
 | 1      | 0 | 1 | 0 | 1 | 0 | 0 |
 | 2      | 1 | 0 | 1 | 0 | 0 | 1 |
@@ -158,7 +164,7 @@ f degree is 2
 
 Figure 12.23
 ```
-- Adjacency matrix for top graph with the numbered vertices.
+- Adjacency matrix for top graph with the numbered vertices, $V_{numbers}$.
 
 |   | 1 | 2 | 3 | 4 | 5 | 6 |
 |---|---|---|---|---|---|---|
@@ -171,7 +177,7 @@ Figure 12.23
 
 - no swaps $\checkmark$
 
-$f_1$ $f = {(1, a),(2, b),(3, c),(4, d),(5, e),(6, f)}$
+$f_1$: $V_{numbers} \rightarrow V_{letters}$ $f = {(1, a),(2, b),(3, c),(4, d),(5, e),(6, f)}$
 
 Adjacency matrix for $f_1$
 
@@ -186,7 +192,7 @@ Adjacency matrix for $f_1$
 
 - swapped $a \leftrightarrow b$:$\checkmark$
 
-$f_2$ $f = {(1, b),(2, a),(3, c),(4, d),(5, e),(6, f)}$
+$f_2$: $V_{numbers} \rightarrow V_{letters}$ $f = {(1, b),(2, a),(3, c),(4, d),(5, e),(6, f)}$
 
 Adjacency matrix for $f_2$
 
@@ -201,7 +207,7 @@ Adjacency matrix for $f_2$
 
 - swapped $c \leftrightarrow d$, $e \leftrightarrow f$:$\checkmark$
 
-$f_3$ $f = {(1, a),(2, b),(3, d),(4, c),(5, f),(6, e)}$
+$f_3$: $V_{numbers} \rightarrow V_{letters}$ $f = {(1, a),(2, b),(3, d),(4, c),(5, f),(6, e)}$
 
 Adjacency matrix for $f_3$
 
@@ -217,7 +223,7 @@ Adjacency matrix for $f_3$
 - swapped $a \leftrightarrow b$, $c \leftrightarrow d$, $e \leftrightarrow f$:$\checkmark$
 
     
-$f_4$ $f = {(1, b),(2, a),(3, d),(4, c),(5, f),(6, e)}$
+$f_4$: $V_{numbers} \rightarrow V_{letters}$ $f = {(1, b),(2, a),(3, d),(4, c),(5, f),(6, e)}$
 
 Adjacency matrix for $f_4$
 
@@ -234,24 +240,26 @@ Adjacency matrix for $f_4$
 
     ~~swapped $a \leftrightarrow b$, $c \leftrightarrow d$:~~
     
-    $f_5$ $f = {(1, b),(2, a),(3, d),(4, c),(5, e),(6, f)}$
+    $f_5$: $f = {(1, b),(2, a),(3, d),(4, c),(5, e),(6, f)}$
     
     ~~swapped $a \leftrightarrow b$, $e \leftrightarrow f$:~~
     
-    $f_6$ $f = {(1, b),(2, a),(3, c),(4, d),(5, f),(6, e)}$
+    $f_6$: $f = {(1, b),(2, a),(3, c),(4, d),(5, f),(6, e)}$
     
     ~~swapped $c \leftrightarrow d$:~~
     
-    $f_7$ $f = {(1, a),(2, b),(3, d),(4, c),(5, e),(6, f)}$
+    $f_7$: $f = {(1, a),(2, b),(3, d),(4, c),(5, e),(6, f)}$
     
     ~~swapped $e \leftrightarrow f$:~~
     
-    $f_8$ $f = {(1, a),(2, b),(3, c),(4, d),(5, f),(6, e)}$
+    $f_8$: $f = {(1, a),(2, b),(3, c),(4, d),(5, f),(6, e)}$
 
-- An observation about the two graphs is that they are clearly isomorphic. 
+- conclusion:
 
-The isomorphic mappings appear to be those that mirror one side to the other along an imaginary axis splitting $(1,2)$ or $(a, b)$. In other words, if a vertex on one side is mapped to the other side, all vertices from that same side have to also be mapped to its equivalent vertex on the other side. For example $f(3, 5) \rightarrow (c,e)$ or $f(3, 5) \rightarrow (d,f)$ and $f(4, 6) \rightarrow (d,f)$ or $f(4, 6) \rightarrow (c,e)$.
-Since $(a, b)$ exists on the "center line", so its isomorphic properties preserved regardless if they are swapped. $\checkmark$
+    An observation about the two graphs is that they are clearly isomorphic. 
+    
+    The isomorphic mappings appear to be those that mirror one side to the other along an imaginary axis splitting $(1,2)$ or $(a, b)$. In other words, if a vertex on one side is mapped to the other side, all vertices from that same side have to also be mapped to its equivalent vertex on the other side. For example $f(3, 5) \rightarrow (c,e)$ or $f(3, 5) \rightarrow (d,f)$ and $f(4, 6) \rightarrow (d,f)$ or $f(4, 6) \rightarrow (c,e)$.
+    Since $(a, b)$ exists on the "center line", so its isomorphic properties preserved regardless if they are swapped. $\checkmark$
 
 ---
 ---
@@ -269,7 +277,7 @@ isomorphism (you only need prove one of them).
 ![figure12.24](https://i.imgur.com/QXfQcZC.png)
 
 
-- Adjacency matrices are too tedious for this problem.
+Table to account for vertices, edges, and degrees.
 
 |       | vertex $\rightarrow$ | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | Edges |
 |-------|----------------------|---|---|---|---|---|---|---|---|---|----|-------|
@@ -280,32 +288,30 @@ isomorphism (you only need prove one of them).
 
 - We eliminate $G_3$ because two of the vertices doesn't share the same degree compared to the other three graphs.
 
-- Having ten vertices is a preserved property amongst $G_1, G_2, G_3$.
+- Having ten vertices is a preserved property amongst $G_1, G_2, G_4$.
 
-- Having vertices with a degree of three is a preserved property amongst $G_1, G_2, G_3$.
+- Having vertices with a degree of three is a preserved property amongst $G_1, G_2, G_4$.
 
-- Having fifteen edges is a preserved property amongst $G_1, G_2, G_3$, the remaining possible isomorphisms.
+- Having fifteen edges is a preserved property amongst $G_1, G_2, G_4$.
 
-- A Hamiltonian path is a preserved property amongst the $G_1, G_2, G_3, G_4$.
+- A Hamiltonian path is a preserved property amongst the $G_2$.
 
-    $G_1{Hamiltonian Path} = 1, 2, 3, 4, 5, 8, 7, 6, 10, 9$
+    $G_1{Hamiltonian Path} = 1, 2, 3, 4, 5, 8, 7, 6, 10, 9$ (tried a few, going to say it doesn't exist for $G_1$)
     
-    $G_2{Hamiltonian Path} = 1, 2, 3, 4, 5, 9, 10, 8, 7, 6$
+    $G_2{Hamiltonian Path} = 1, 2, 3, 4, 5, 9, 10, 8, 7, 6, 1$ $\checkmark$
     
-    $G_3{Hamiltonian Path} = 1, 2, 3, 4, 5, 9, 10, 6, 8, 7$
-    
-    $G_4{Hamiltonian Path} = 1, 2, 6, 5, 9, 8, 3, 4, 10, 7$
-
-- A cycles argument appears to be pretty tedious as well.
+    $G_4{Hamiltonian Path} = 1, 2, 6, 5, 9, 8, 3, 4, 10, 7$ (tried a few, going to say it doesn't exist for $G_4$)
 
 - Conclusion:
     - I believe $G_1$ and $G_4$ is an isomorphic pair, the work is shown below.  $\checkmark$ 
     
-    - I feel like there should exist an isomorphism between $G_2$ with $G_1$ and $G_4$, but it is very tedious to find. So at this point I'd have to say $G_2$ can't form an isomorphic pair with $G_1$ and $G_4$ because of the same reason we couldn't connect the utilities in the house in the lectures notes. It has something to do with crossing edges.
+    - I feel like there should exist an isomorphism between $G_2$ with $G_1$ and $G_4$, but it is very tedious to find. So at this point I'd have to say $G_2$ can't form an isomorphic pair with $G_1$ and $G_4$. The reason might be the same reason we couldn't connect the utilities in the house in the lectures notes. It has something to do with crossing edges.
 
-    - The work: The $G_1$ and $G_4$ pair was found by untying $G_1$ into $G_4$
+    - The work: The $G_1$ and $G_4$ pair was found by untying $G_1$ into $G_4$.
 
-![](https://i.imgur.com/10kIubm.png)
+![](https://i.imgur.com/6ZHchjB.png)
+
+Adjacency matrix for $G_4$. note: "$G_4 = G_4 = G_4$" is used to correct table alignment for a better visual. 
 
 | $G_4 = G_4 = G_4$ | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
 |-------|---|---|---|---|---|---|---|---|---|----|
@@ -320,8 +326,9 @@ isomorphism (you only need prove one of them).
 | 9     | 1 |   |   |   | 1 |   |   | 1 |   |    |
 | 10    | 1 |   |   | 1 |   |   | 1 |   |   |    |
 
+Adjacency matrix for $f: (G_4) \rightarrow G_1$ (matches $G_4$)
 
-| $f(G_4) \rightarrow G_1$ | 1 | 2 | 3 | 7 | 8 | 9 | 10 | 4 | 5 | 6 |
+| $f: V_{G_4} \rightarrow V_{G_1}$ | 1 | 2 | 3 | 7 | 8 | 9 | 10 | 4 | 5 | 6 |
 |--------------------------|---|---|---|---|---|---|----|---|---|---|
 | 1                        |   | 1 |   |   |   |   |    |   | 1 | 1 |
 | 2                        | 1 |   | 1 |   |   | 1 |    |   |   |   |
