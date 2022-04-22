@@ -22,6 +22,10 @@ desc: https://courses.csail.mit.edu/6.042/spring18/mcs.pdf (Links to an external
     
     Lighter weight on right.
 
+    Branching left is assigned a zero bit.
+
+    Branching right is assigned a one bit.
+
 ```
 a: 0.26    b: 0.02    c : 0.09    d : 0.08    e : 0.30    f : 0.14    g : 0.11
 
@@ -56,20 +60,44 @@ a: 0.26    fgcbd: 0.44    e : 0.30
              c  b
 
           eafgcbd: 1
-            / \
-           /   \
-          /     \
-         /\    / \           
-        e  a  /   \         
-             /     \
-            /\     /\                      
-           f  g   /\  d                   
-                 c  b   
+             /\
+            /  \
+          0/    \1
+          /      \
+        0/\1    / \           
+        e  a  0/   \1         
+              /     \
+            0/\1   0/ \1 
+            f  g  0/\1 \   
+                  c  b  d 
 ```
 A lower average number of bits used per character is $2(0.26) + 4(0.02) + 4(0.09) + 3(0.08) + 2(0.30) + 3(0.14) + 3(0.11) = 2.55$
 
+---
+---
 
-### 12.6
+### 12.23 
+![](https://i.imgur.com/vywqYuf.png)
+
+
+---
+---
+
+
+### 12.56ab
+
+---
+---
+
+
+### 12.57
+
+---
+---
+
+
+### 12.63
+
 
 ---
 ---
