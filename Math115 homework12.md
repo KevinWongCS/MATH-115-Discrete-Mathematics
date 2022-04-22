@@ -16,7 +16,7 @@ desc: https://courses.csail.mit.edu/6.042/spring18/mcs.pdf (Links to an external
 
 - b) The average number of bits used per character is $2(0.26) + 4(0.02) + 4(0.09) + 4(0.08) + 2(0.30) + 2(0.14) + 4(0.11) = 2.6 $
 
-- c) Using Hoffman coding to get the optimal encoding.
+- c) Using Hoffman coding to get the optimal encoding for characters into bit strings given their frequencies in a text.
 
     Heavier weight goes on left.
     
@@ -121,12 +121,30 @@ I think it's logical to work from a smaller chromatic number, $\chi(G)$ to a lar
 
 
 ### 12.63
-How many 5-vertex non-isomomorphic trees are there? Explain.
+How many 5-vertex non-isomorphic trees are there? Explain.
 
-| ```1---2---3---4---5``` |   |   |
-|----------|---|---|
-|          |   |   |
-|          |   |   |
+I believe there are only three non-isomorphic threes.
+
+```
+Starting with the lowest degree per vertex a line:
+
+1---2---3---4---5
+
+    5
+    |
+1---2---3---4
+
+and 
+
+    2
+    |
+1---5---3
+    |
+    4
+
+Any kind of deletion and addition of an edge must preserve the connectedness and acyclicness of the graph to still be a tree.
+```
+At this point I don't believe it is possible to find another non-isomorphic tree. Any other manipulation will lead to a connected graph, a disconnected graph, or an isomorphism. $\checkmark$
 
 ---
 ---

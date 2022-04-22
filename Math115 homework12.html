@@ -41,7 +41,7 @@ desc: <a href="https://courses.csail.mit.edu/6.042/spring18/mcs.pdf">https://cou
 <p dir="auto">b) The average number of bits used per character is <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo stretchy="false">(</mo><mn>0.26</mn><mo stretchy="false">)</mo><mo>+</mo><mn>4</mn><mo stretchy="false">(</mo><mn>0.02</mn><mo stretchy="false">)</mo><mo>+</mo><mn>4</mn><mo stretchy="false">(</mo><mn>0.09</mn><mo stretchy="false">)</mo><mo>+</mo><mn>4</mn><mo stretchy="false">(</mo><mn>0.08</mn><mo stretchy="false">)</mo><mo>+</mo><mn>2</mn><mo stretchy="false">(</mo><mn>0.30</mn><mo stretchy="false">)</mo><mo>+</mo><mn>2</mn><mo stretchy="false">(</mo><mn>0.14</mn><mo stretchy="false">)</mo><mo>+</mo><mn>4</mn><mo stretchy="false">(</mo><mn>0.11</mn><mo stretchy="false">)</mo><mo>=</mo><mn>2.6</mn></mrow><annotation encoding="application/x-tex">2(0.26) + 4(0.02) + 4(0.09) + 4(0.08) + 2(0.30) + 2(0.14) + 4(0.11) = 2.6 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mopen">(</span><span class="mord">0.26</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">4</span><span class="mopen">(</span><span class="mord">0.02</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">4</span><span class="mopen">(</span><span class="mord">0.09</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">4</span><span class="mopen">(</span><span class="mord">0.08</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mopen">(</span><span class="mord">0.30</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mopen">(</span><span class="mord">0.14</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">4</span><span class="mopen">(</span><span class="mord">0.11</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2.6</span></span></span></span></eq></p>
 </li>
 <li dir="auto">
-<p dir="auto">c) Using Hoffman coding to get the optimal encoding.</p>
+<p dir="auto">c) Using Hoffman coding to get the optimal encoding for characters into bit strings given their frequencies in a text.</p>
 <p dir="auto">Heavier weight goes on left.</p>
 <p dir="auto">Lighter weight on right.</p>
 <p dir="auto">Branching left is assigned a zero bit.</p>
@@ -134,7 +134,27 @@ a: 0.26    fgcbd: 0.44    e : 0.30
 <hr dir="auto">
 <hr dir="auto">
 <h3 dir="auto" id="1263">12.63</h3>
-<p dir="auto">How many 5-vertex non-isomomorphic trees are there? Explain.</p>
+<p dir="auto">How many 5-vertex non-isomorphic trees are there? Explain.</p>
+<p dir="auto">I believe there are only three non-isomorphic threes.</p>
+<pre><code dir="auto"><code><div>Starting with the lowest degree per vertex a line:
+
+1---2---3---4---5
+
+    5
+    |
+1---2---3---4
+
+and 
+
+    2
+    |
+1---5---3
+    |
+    4
+
+Any kind of deletion and addition of an edge must preserve the connectedness and acyclicness of the graph to still be a tree.
+</div></code></code></pre>
+<p dir="auto">At this point I don't believe it is possible to find another non-isomorphic tree. Any other manipulation will lead to a connected graph, a disconnected graph, or an isomorphism. <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">✓</mi></mrow><annotation encoding="application/x-tex">\checkmark</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69224em;vertical-align:0em;"></span><span class="mord amsrm">✓</span></span></span></span></eq></p>
 <hr dir="auto">
 <hr dir="auto">
 <p dir="auto"><em>END</em></p>
