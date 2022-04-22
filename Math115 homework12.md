@@ -91,10 +91,10 @@ I think it's logical to work from a smaller chromatic number, $\chi(G)$ to a lar
 ![](https://i.imgur.com/E2H6LNA.png)
 
 - a) 
-![](https://i.imgur.com/ROkU8Rx.png)
+![](https://i.imgur.com/nd8Zqxh.png)
 
 - b)
-![](https://i.imgur.com/yu1PLdx.png)
+![](https://i.imgur.com/hXmtjw3.png)
 
 
 ---
