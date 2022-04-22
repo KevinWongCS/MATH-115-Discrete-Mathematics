@@ -60,7 +60,6 @@ a: 0.26    fgcbd: 0.44    e : 0.30
              c  b
 
           eafgcbd: 1
-             /\
             /  \
           0/    \1
           /      \
@@ -79,7 +78,7 @@ A lower average number of bits used per character is $2(0.26) + 4(0.02) + 4(0.09
 ### 12.23 
 ![](https://i.imgur.com/vywqYuf.png)
 
-I think it's logical to work from a smaller chromatic number, $\chi(G)$ to a larger one. This graph has more than one edge, we know $\chi(G) \ne 1$. We can also conclude that $\chi(G) \ne 2$ because in this graph there exist a triangle and a pentagon, and we know $\chi(Cycle_{odd}) = 3$. If the most bottom edge wasn't there, $\chi(G) = 3$ would be the minimal colors needed for all adjacent vertices to not have the same colors, but since that edge exist one additional color has to be added to create a valid coloring of the graph $G$. So $\chi(G) = 4$.
+I think it's logical to work from a smaller chromatic number, $\chi(G)$ to a larger one. This graph has more than one edge, we know $\chi(G) \ne 1$. We can also conclude that $\chi(G) \ne 2$ because in this graph there exist a triangle and a pentagon, and we know $\chi(Cycle_{odd}) = 3$. If the most bottom edge wasn't there, the chromatic number of $3$ ($\chi(G) = 3$) would be the minimal colors needed for all adjacent vertices to not have the same colors, but since that edge exist one additional color has to be added to create a valid coloring for graph $G$. So $\chi(G) = 4$.
 
 
 ---
@@ -110,11 +109,13 @@ I think it's logical to work from a smaller chromatic number, $\chi(G)$ to a lar
     
 - b) If a connected component was has an odd number closed walk then we know that cycle requires a minimum of 3 colors for a valid coloring or else two adjacent vertices would have the same color. This can be used as a counter example to disprove or prove a graph is not 2-colorable or bipartite. $\checkmark$
 
-- c) To 2-color any tree, select two colors, $color_1$ and $color_2$. Assign the parent a color, then assign all descendants the other color. Then continuously alternate the colors each generation.
+- c) To 2-color any tree, select two colors, $color_1$ and $color_2$. Assign the parent a color, then assign all descendants the other color. Then continuously alternate the colors each generation. This is possible because tree graphs are acyclic, meaning there doesn't exist a cycle in the graph, so we don't have to account for even or odd cycles.
 
-- d) If $T$ has an edge that connects two same colored vertices, that means there exist an odd number closed cycle in $T$ and that isn't consistent with what the theorum states, so one side of the *iff* is false.
+- d) If all edges in $T$ connect different colored vertices(assuming we are only using two colors), then we know $T$ is 2-colorable and we know 2-colorable graphs have an even number of closed cycles. This is consistent with the theorum.
 
-    If all edges in $T$ connect different colored vertices(assuming we are only using two colors), then we know $T$ is 2-colorable and we know all 2-colorable graphs have only even number closed cycles. This is consistent with the theorum.$\checkmark$
+    If $T$ has an edge that connects two same colored vertices or an additional third color to get a valid coloring, that means there exist an odd number closed cycle in $T$ and that isn't consistent with what the theorum above, so the *iff* doesn't hold in these cases.$\checkmark$
+
+
 ---
 ---
 
