@@ -79,7 +79,8 @@ A lower average number of bits used per character is $2(0.26) + 4(0.02) + 4(0.09
 ### 12.23 
 ![](https://i.imgur.com/vywqYuf.png)
 
-I think it's logical to work from a smaller chromatic number, $\chi(G)$ to a larger one. This graph has more than one edge, we know $\chi(G) \ne 1$. We can also conclude that $\chi(G) \ne 2$ because in this graph there exist a triangle and a pentagon, and we know $\chi(Cycle_{odd}) = 3$. If the most bottom edge wasn't there, $\chi(G) = 3$ would be the minimal colors needed for all adjacent vertices to not have the same colors, but since that edge exist one additional color has to be added to create a valid coloring of the graph $G$. So $\chi(G) = 4$.                                                  
+I think it's logical to work from a smaller chromatic number, $\chi(G)$ to a larger one. This graph has more than one edge, we know $\chi(G) \ne 1$. We can also conclude that $\chi(G) \ne 2$ because in this graph there exist a triangle and a pentagon, and we know $\chi(Cycle_{odd}) = 3$. If the most bottom edge wasn't there, $\chi(G) = 3$ would be the minimal colors needed for all adjacent vertices to not have the same colors, but since that edge exist one additional color has to be added to create a valid coloring of the graph $G$. So $\chi(G) = 4$.
+
 
 ---
 ---
@@ -94,7 +95,7 @@ I think it's logical to work from a smaller chromatic number, $\chi(G)$ to a lar
 ![](https://i.imgur.com/ROkU8Rx.png)
 
 - b)
-![](https://i.imgur.com/6ckbL2X.png)
+![](https://i.imgur.com/yu1PLdx.png)
 
 
 ---
@@ -103,12 +104,28 @@ I think it's logical to work from a smaller chromatic number, $\chi(G)$ to a lar
 
 ### 12.57
 
+![](https://i.imgur.com/XycPU3u.png)
+
+- a) Assume the left side. Prove right side. If $G$ is 2-colorable that means we can select any vertex in a closed cycle and assign it a color ($color_1$) and it's adjacent vertex a different color ($color_2$). As we walk along the graph we assign $color_1$ and $color_2$ in an alternating fashion until we reach a point at the end of the cycle where every vertex is assigned either $color_1$ or $color_2$ and no adjacent vertex has the same color. This is only possible if the cycle is even because an odd cycle has an odd chromatic number ($\chi(C_{odd}) = 3$).$\checkmark$
+    
+- b) If a connected component was has an odd number closed walk then we know that cycle requires a minimum of 3 colors for a valid coloring or else two adjacent vertices would have the same color. This can be used as a counter example to disprove or prove a graph is not 2-colorable or bipartite. $\checkmark$
+
+- c) To 2-color any tree, select two colors, $color_1$ and $color_2$. Assign the parent a color, then assign all descendants the other color. Then continuously alternate the colors each generation.
+
+- d) If $T$ has an edge that connects two same colored vertices, that means there exist an odd number closed cycle in $T$ and that isn't consistent with what the theorum states, so one side of the *iff* is false.
+
+    If all edges in $T$ connect different colored vertices(assuming we are only using two colors), then we know $T$ is 2-colorable and we know all 2-colorable graphs have only even number closed cycles. This is consistent with the theorum.$\checkmark$
 ---
 ---
 
 
 ### 12.63
+How many 5-vertex non-isomomorphic trees are there? Explain.
 
+| ```1---2---3---4---5``` |   |   |
+|----------|---|---|
+|          |   |   |
+|          |   |   |
 
 ---
 ---
