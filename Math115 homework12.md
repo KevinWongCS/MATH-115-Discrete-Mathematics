@@ -79,12 +79,23 @@ A lower average number of bits used per character is $2(0.26) + 4(0.02) + 4(0.09
 ### 12.23 
 ![](https://i.imgur.com/vywqYuf.png)
 
+I think it's logical to work from a smaller chromatic number, $\chi(G)$ to a larger one. This graph has more than one edge, we know $\chi(G) \ne 1$. We can also conclude that $\chi(G) \ne 2$ because in this graph there exist a triangle and a pentagon, and we know $\chi(Cycle_{odd}) = 3$. If the most bottom edge wasn't there, $\chi(G) = 3$ would be the minimal colors needed for all adjacent vertices to not have the same colors, but since that edge exist one additional color has to be added to create a valid coloring of the graph $G$. So $\chi(G) = 4$.                                                  
 
 ---
 ---
 
 
 ### 12.56ab
+
+![](https://i.imgur.com/AxTNE7L.png)
+![](https://i.imgur.com/E2H6LNA.png)
+
+- a) 
+![](https://i.imgur.com/ROkU8Rx.png)
+
+- b)
+![](https://i.imgur.com/6ckbL2X.png)
+
 
 ---
 ---
