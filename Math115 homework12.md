@@ -105,9 +105,9 @@ I think it's logical to work from a smaller chromatic number, $\chi(G)$ to a lar
 
 ![](https://i.imgur.com/XycPU3u.png)
 
-- a) Assume the left side. Prove right side. If $G$ is 2-colorable that means we can select any vertex in a closed cycle and assign it a color ($color_1$) and it's adjacent vertex a different color ($color_2$). As we walk along the graph we assign $color_1$ and $color_2$ in an alternating fashion until we reach a point at the end of the cycle where every vertex is assigned either $color_1$ or $color_2$ and no adjacent vertex has the same color. This is only possible if the cycle is even because an odd cycle has an odd chromatic number ($\chi(C_{odd}) = 3$).$\checkmark$
+- a) Assume the left side. Prove right side. If $G$ is 2-colorable that means we can select any vertex in a closed cycle and assign it a color ($color_1$) and it's adjacent vertex a different color ($color_2$). As we walk along the graph we assign $color_1$ and $color_2$ in an alternating fashion until we reach a point at the end of the cycle where every vertex is assigned either $color_1$ or $color_2$ and no adjacent vertex has the same color. This is only possible if every closed cycle has an even length because an odd length closed cycle has an odd chromatic number ($\chi(C_{odd}) = 3$).$\checkmark$
     
-- b) If a connected component was has an odd number closed walk then we know that cycle requires a minimum of 3 colors for a valid coloring or else two adjacent vertices would have the same color. This can be used as a counter example to disprove or prove a graph is not 2-colorable or bipartite. $\checkmark$
+- b) If a connected component has an odd number closed walk then we know that cycle requires a minimum of 3 colors for a valid coloring or else two adjacent vertices would have the same color. This can be used as a counter example to disprove or prove a graph is not 2-colorable or bipartite. $\checkmark$
 
 - c) To 2-color any tree, select two colors, $color_1$ and $color_2$. Assign the parent a color, then assign all descendants the other color. Then continuously alternate the colors each generation. This is possible because tree graphs are acyclic, meaning there doesn't exist a cycle in the graph, so we don't have to account for even or odd cycles.
 
