@@ -48,14 +48,62 @@ In general, a *tournament digraph* is a digraph with exactly one edge between ea
 tournament is a king.
 
     The King Chicken Theorem means that if the player with the most victories is
-    defeated by another player x, then at least he/she defeats some third player that
-    defeats x. In this sense, the player with the most victories has some sort of bragging
-    rights over every other player. Unfortunately, as Figure 10.11 illustrates, there can
-    be many other players with such bragging rights, even some with fewer victories.
+    defeated by another player x, then at least he/she defeats some third player that defeats x. In this sense, the player with the most victories has some sort of bragging rights over every other player. Unfortunately, as Figure 10.11 illustrates, there can be many other players with such bragging rights, even some with fewer victories.
+
+    - This is true. If there are $n$ chickens and and there exist a chicken $a$ that has the maximum out-degree of $n - 1$. Then $a$ is a exclusive or the only king-chicken because no other chicken can have an edge pointing back at chicken $a$. $\checkmark$
 
 --- 
 ---
 
+### 10.57
+
+Prove Theorem 10.10.4: The equivalence classes of an equivalence relation form a
+partition of the domain.
+
+Namely, let $R$ be an equivalence relation on a set $A$ and define the equivalence
+class of an element $a \in A$ to be
+
+$[a]_R ::= \{b \in A |$ $a$ $R$ $b\}$
+
+That is, $[a]_R = R(a)$
+
+- a) Prove that every block is nonempty and every element of A is in some block.
+- b) Prove that if $ [a]_R \cap [b]_R \neq \emptyset $, then $a$ $R$ $b$. Conclude that the sets [a]_R for $a \in A$ are a partition of $A$.
+- c) Prove that $a$ $R$ $b$ iff $[a]_R = [b]_R$.
+
+
+- Theorem 10.10.4
+
+![](https://i.imgur.com/YZEu2Mv.png)
+
+---
+---
+### 3
+![](https://i.imgur.com/RULadVP.png)
+
+- a) $\forall x \in A$, $(x, x) \in R$ 
+    
+    Student x and student x are both students at CCSF, and the same student has obviously attended the same class, so reflexive. $\checkmark$
+
+    $\forall x, y \in A$, $(x, y) \in R \rightarrow (y,x) \in R$
+
+    $\forall x, y ,z \in A$ $(x,y) \in R \wedge (y,z) \in R \rightarrow (x,z) \in R$
+
+- b) $\forall s \in A$, $(s, s) \in R$ 
+
+    Bit string $s$ and $s$ are both bit strings of length ten. Since they are the same bit string they both also begin and end with the same bit, so reflexive. $\checkmark$
+
+    $\forall s_1, s_2 \in A$, $(s_1, s_2) \in R \rightarrow (s_2,s_1) \in R$
+
+    If two bit strings are of length ten and bit string $s_1$ begins or ends with the same bit as $s_2$, then $s_2$ would also begin or end with the same bit as $s_1$. This is valid, so symmetric.
+
+    $\forall x, y ,z \in A$ $(x,y) \in R \wedge (y,z) \in R \rightarrow (x,z) \in R$
+
+- c) $\forall x \in A$, $(x, x) \in R$ 
+
+    $\forall x, y \in A$, $(x, y) \in R \rightarrow (y,x) \in R$
+
+    $\forall x, y ,z \in A$ $(x,y) \in R \wedge (y,z) \in R \rightarrow (x,z) \in R$
 
 ---
 ---
