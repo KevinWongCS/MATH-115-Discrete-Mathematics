@@ -81,32 +81,65 @@ That is, $[a]_R = R(a)$
 ### 3
 ![](https://i.imgur.com/RULadVP.png)
 
-- a) $\forall x \in A$, $(x, x) \in R$ 
+- a) Reflexive: $\forall x \in A$, $(x, x) \in R$ 
     
     Student x and student x are both students at CCSF, and the same student has obviously attended the same class, so reflexive. $\checkmark$
 
-    $\forall x, y \in A$, $(x, y) \in R \rightarrow (y,x) \in R$
+    Symmetric: $\forall x, y \in A$, $(x, y) \in R \rightarrow (y,x) \in R$
 
-    $\forall x, y ,z \in A$ $(x,y) \in R \wedge (y,z) \in R \rightarrow (x,z) \in R$
+    If students $x, y$ are both at CCSF, if $x$ attends the same class as $y$, then $y$ would also attend the same class as $x$, so symmetric. $\checkmark$
 
-- b) $\forall s \in A$, $(s, s) \in R$ 
+    Transitive: $\forall x, y ,z \in A$ $(x,y) \in R \wedge (y,z) \in R \rightarrow (x,z) \in R$
+
+    For students $x, y, z$ at CCSF. If student $x$ and $y$ are both taking Math 115 and student $y$ and student $z$ are both taking Art 101, this is a counter example to transitivity, so not transitive. $\checkmark$
+
+- b) Reflexive: $\forall s \in A$, $(s, s) \in R$ 
 
     Bit string $s$ and $s$ are both bit strings of length ten. Since they are the same bit string they both also begin and end with the same bit, so reflexive. $\checkmark$
 
-    $\forall s_1, s_2 \in A$, $(s_1, s_2) \in R \rightarrow (s_2,s_1) \in R$
+    Symmetric: $\forall s_1, s_2 \in A$, $(s_1, s_2) \in R \rightarrow (s_2,s_1) \in R$
 
-    If two bit strings are of length ten and bit string $s_1$ begins or ends with the same bit as $s_2$, then $s_2$ would also begin or end with the same bit as $s_1$. This is valid, so symmetric.
+    If two bit strings are of length ten and bit string $s_1$ begins or ends with the same bit as $s_2$, then $s_2$ would also begin or end with the same bit as $s_1$. This is valid, so symmetric. $\checkmark$
 
-    $\forall x, y ,z \in A$ $(x,y) \in R \wedge (y,z) \in R \rightarrow (x,z) \in R$
+    Transitive: $\forall s_1, s_2 ,s_3 \in A$ $(s_1,s_2) \in R \wedge (s_2,s_3) \in R \rightarrow (s_1,s_3) \in R$
+    
+    If the first pair of bit strings $s_1$ and $s_2$ are $1...1$ and $1...0$ respectively and $s_2$ and $s_3$ are $1...0$ and $0...0$ respectively, then $s_1$ and $s_3$ are $1...0$ and $0...0$. So I'm concluding this claim is invalid and not transitive. $\checkmark$
 
-- c) $\forall x \in A$, $(x, x) \in R$ 
+- c) Reflexive: $\forall f \in A$, $(f, f) \in R$
 
-    $\forall x, y \in A$, $(x, y) \in R \rightarrow (y,x) \in R$
+    This claim is valid because $f$ maps from $\R$ to $\R$. But would $f$ satisfy $R$ such that $f(1) = f(2)$ and $f(2) = f(1)$. If $f = x^2$, then $f(1) = 1 \ne f(2) = 4$, So not reflexive. $\checkmark$
 
-    $\forall x, y ,z \in A$ $(x,y) \in R \wedge (y,z) \in R \rightarrow (x,z) \in R$
+    Symmetric: $\forall f, g \in A$, $(f, g) \in R \rightarrow (g,f) \in R$
+
+    So if $f, g$ both map from $\R$ to $\R$ and $f = x + 1$ and $g = x * 2$, $R$ such that $f(1) = g(2)$ and $g(2) $ ????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????
+
+    Transitive: $\forall f, g ,h \in A$ $(f,g) \in R \wedge (g,h) \in R \rightarrow (f,h) \in R$
+
+
+    ????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????
 
 ---
 ---
+
+### 4
+
+- a) State the definition of a graph isomorphism from a graph $G$ to a graph $H$.
+
+
+
+- b) Use that definition to prove that the relation $R = \{(G, H): G)$ $G$ is iso morphic to $H$ $\}$ is an equivalence relation on the set of undirected graphs.
+
+---
+---
+
+### 5
+
+![](https://i.imgur.com/TgXWJdz.png)
+
+
+---
+---
+
 
 *END*
 
