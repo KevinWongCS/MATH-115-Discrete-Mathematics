@@ -152,7 +152,8 @@ That is, $[a]_R = R(a)$
 
 ![](https://i.imgur.com/TgXWJdz.png)
 
-a) 
+- a)
+ 
 | $M$ | a | b | c | d | e |
 |---|---|---|---|---|---|
 | a | 0 | 1 | 0 | 0 | 1 |
@@ -161,7 +162,8 @@ a)
 | d | 1 | 0 | 0 | 0 | 1 |
 | e | 0 | 0 | 1 | 0 | 0 |
 
-b) 
+- b)
+
 | $M$ | a | b | c | d | e |   | $M$ | a | b | c | d | e |   | $M^2$ | a | b | c | d | e |
 |-----|---|---|---|---|---|---|-----|---|---|---|---|---|---|-------|---|---|---|---|---|
 | a   | 0 | 1 | 0 | 0 | 1 |   | a   | 0 | 1 | 0 | 0 | 1 |   | a     | 0 | 0 | 1 | 1 | 1 |
@@ -196,8 +198,10 @@ b)
 | d     | 3 | 2 | 1 | 2 | 4 |   | d   | 1 | 0 | 0 | 0 | 1 |   | d     | 3 | 4 | 4 | 3 | 7  |
 | e     | 1 | 1 | 3 | 1 | 3 |   | e   | 0 | 0 | 1 | 0 | 0 |   | e     | 4 | 4 | 3 | 4 | 3  |
 
+- c)
+There are three hamiltonian cycles that start and end at vertex $a$.
 
-
+- d) Yes, there is a closed walk of length five that isn't a Hamiltonian cycle. An example is $a \rightarrow e \rightarrow c \rightarrow d \rightarrow e \rightarrow a$.
 
 ---
 ---
