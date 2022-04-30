@@ -25,7 +25,7 @@ In general, a *tournament digraph* is a digraph with exactly one edge between ea
 
 - a) Define a 10-chicken tournament graph with a king chicken that has outdegree 1.
     
-    In the graph below all the edges between pairs not used in this problem were omitted to demonstrate a 1 outdegree king-chicken. So chicken $a$ is a king by only pecking an adjacent chicken $b$ and $b$ in turn pecks every other chicken $c, d, e, f, g, h, i$ and $j$. So as long as the digraph has outdegrees equivalent to $\{(a, b), (b,c), (b, d), (b, e), (b, f), (b, g), (b, h), (b, i), (b, j)\}$, this 1 outdegree king-chicken will exist.
+    In the graph below all the edges between pairs not used in this problem were omitted to demonstrate a 1 outdegree king-chicken. So chicken $a$ is a king by only pecking an adjacent chicken $b$ and $b$ in turn pecks every other chicken $c, d, e, f, g, h, i$ and $j$. So as long as a chicken in the digraph has outdegrees analogous to $\{(a, b), (b,c), (b, d), (b, e), (b, f), (b, g), (b, h), (b, i), (b, j)\}$, this 1 outdegree king-chicken will exist.
     
 ![](https://i.imgur.com/4NOUWEj.png)
 
@@ -125,9 +125,23 @@ That is, $[a]_R = R(a)$
 
 - a) State the definition of a graph isomorphism from a graph $G$ to a graph $H$.
 
-    
+    $G$ and $H$ are isomorphic if there is a bijection from the vertex set of $G$ to the vertex set of $H$ that preserves adjacency and nonadjacency.
 
-- b) Use that definition to prove that the relation $R = \{(G, H): G)$ $G$ is iso morphic to $H$ $\}$ is an equivalence relation on the set of undirected graphs.
+- b) Use that definition to prove that the relation $R = \{(G, H): G$ is isomorphic to $H$ $\}$ is an equivalence relation on the set of undirected graphs.
+
+    $A = \{G_{set} : G_{set}$ set of undirected graphs $\}$
+
+    Reflexive: $\forall G \in A$, $(G, G) \in R$ 
+    
+    If graph $G$ is an undirected graph, $G$ would map each vertex to itself in another $G$, so $G$ is isomorphic to $G$, so reflexive. $\checkmark$
+
+    Symmetric: $\forall G, H \in A$, $(G, H) \in R \rightarrow (H, G) \in R$
+
+    If graph $G$ and $H$ are undirected graphs and $G$ is isomorphic to $H$, then $H$ would also be isomorphic to $G$ via an inverse(or reverse) of the function that mapped $G$ to $H$. So symmetric. $\checkmark$
+
+    Transitive: $\forall G, H, I \in A$ $(G, H) \in R \wedge (H, I) \in R \rightarrow (G, I) \in R$
+
+    
 
 ---
 ---
