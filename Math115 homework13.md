@@ -137,11 +137,13 @@ That is, $[a]_R = R(a)$
 
     Symmetric: $\forall G, H \in A$, $(G, H) \in R \rightarrow (H, G) \in R$
 
-    If graph $G$ and $H$ are undirected graphs and $G$ is isomorphic to $H$, then $H$ would also be isomorphic to $G$ via an inverse(or reverse) of the function that mapped $G$ to $H$. So symmetric. $\checkmark$
+    If graph $G$ and $H$ are undirected graphs and ($G$, $H$) is isomorphic, then ($H$, $G$) would also be isomorphic via an inverse(or reverse) of the function that mapped $G$ to $H$. So symmetric. $\checkmark$
 
     Transitive: $\forall G, H, I \in A$ $(G, H) \in R \wedge (H, I) \in R \rightarrow (G, I) \in R$
 
-    
+    If $G$, $H$ and $I$ are undirected graphs and ($G$, $H$) and ($H$, $I$) are isomorphic, then ($G$, $I$) are isomorphic because of bijectivity and the preserved adjacencies. 
+
+    In a seperate case where ($G$, $H$) is only bijective and ($H$, $I$) is only bijective, it doesn't imply ($G$, $I$) is bijective, since the adjacencies and the non-adjacencies don't need to be preserved as the vertices are mapped.
 
 ---
 ---
