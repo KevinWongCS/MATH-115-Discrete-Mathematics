@@ -125,7 +125,7 @@ That is, $[a]_R = R(a)$
 
 - a) State the definition of a graph isomorphism from a graph $G$ to a graph $H$.
 
-
+    
 
 - b) Use that definition to prove that the relation $R = \{(G, H): G)$ $G$ is iso morphic to $H$ $\}$ is an equivalence relation on the set of undirected graphs.
 
