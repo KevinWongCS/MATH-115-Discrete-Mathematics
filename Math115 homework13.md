@@ -57,8 +57,7 @@ tournament is a king.
 
 ### 10.57
 
-Prove Theorem 10.10.4: The equivalence classes of an equivalence relation form a
-partition of the domain.
+Prove Theorem 10.10.4: The equivalence classes of an equivalence relation form a partition of the domain.
 
 Namely, let $R$ be an *equivalence relation($R$)* on a set $A$ and *define the equivalence class of an element* $a \in A$ to be
 
@@ -71,24 +70,41 @@ Visual of the problem
 
     similar to a file system
 
-domain("set A")
-    |
-    |__ equivalence class a ([a]_R)
-    |__ equivalence class b ([b]_R)
-    |__ equivalence class c ([c]_R)
-    |__ equivalence class d ([d]_R)
-    |__ etc...
+    Assume "set A" contains {a, b, c, d,...}
+
+    domain("set A")
+        |
+        |__ equivalence class a ([a]_R)
+        |        |
+        |        |__ [a]_R = {a, d}
+        |        so this means "a" and "d" have an equivalence relation.
+        |
+        |__ equivalence class b ([b]_R)
+        |        |
+        |        |__ [b]_R = {b}
+        |        so this means "b" only has an equivalence relation with itself.
+        |
+        |__ equivalence class c ([c]_R)
+        |        |
+        |        |__ [c]_R = {c}
+        |
+        |__ equivalence class d ([d]_R)
+        |        |
+        |        |__ [d]_R) = {d, a}
+        |
+        |__ etc...
+        |
+        |
     
-equivalence classes (or partitions or blocks) are formed based on equivalence relations of the elements in "set A".
+The equivalence classes (or partitions or blocks) are formed based on equivalence relations of the elements in "set A".
 
 So every equivalence class is a subset of the domain or "set A".
         
-
 ```
 
 - a) Prove that every block is nonempty and every element of A is in some block.
 
-    For an element $b \in A$, $b$ is reflexive, symmetric and transitive to itself or an equivalence relation. So at minimal $b$ is in a equivalence class by itself, $[b]_R$. $\checkmark$
+    Assuming $A \ne \emptyset$. For an element $b \in A$, $b$ is reflexive, symmetric and transitive to itself or an equivalence relation. So at minimal $b$ is in a equivalence class by itself, $[b]_R$ containing itself $b$. $\checkmark$
     
     - equivalence relation
         
@@ -100,18 +116,28 @@ So every equivalence class is a subset of the domain or "set A".
 
         so,
 
-        $[b]_R ::= \{b \in A |$ $b$ $R$ $b\}$ 
+        The equivalence class: $[b]_R ::= \{b \in A |$ $b$ $R$ $b\}$ 
+
+        and 
+
+        The equivalence class contains: $[b]_R = \{b\}$
+        - Also depicted in the visual above.
 
 - b) Prove that if $ [a]_R \cap [b]_R \neq \emptyset $, then $a$ $R$ $b$. Conclude that the sets $[a]_R$ for $a \in A$ are a partition of $A$.
 
-    If $ [a]_R \cap [b]_R = \emptyset $ then there does not exist a equivalence relation between equivalence classes $[a]_R$ and $[b]_R$. 
+    If $ [a]_R \cap [b]_R = \emptyset $ then there does not exist a equivalence relation $\forall a \in [a]_R$ and $\forall b \in [b]_R$.
 
-    So this means $ [a]_R \cap [b]_R \neq \emptyset $ implies there does exist elements $a \in [a]_R$ and $b \in [b]_R$ that have equivalence relations. $\checkmark$
+    - Case 1: $ [a]_R \cap [b]_R \neq \emptyset $ implies there does exist elements $a \in [a]_R$ and $b \in [b]_R$ that have equivalence relations. $\checkmark$
 
-    And sets $[a]_R$ for $a \in A$ are a partition of $A$ by the definition of a equivalence class or part A of this question.
+    ![](https://i.imgur.com/7hJlrzF.png)
 
-![](https://i.imgur.com/7hJlrzF.png)
- 
+    - Case 2: $[a]_R \cap [b]_R = [a]_R = [b]_R$. For this to occur $\forall a \in [a]_R$ and $\forall b \in [b]_R$ have to form equivalence relations.
+    
+    ![](https://i.imgur.com/iHPFSme.png)
+
+    - Case 3: I guess I can also consider a case where $[a]_R \cap [b]_R = A$. Which would imply case 2.
+
+    - And sets $[a]_R$ for $a \in A$ are a partition of $A$ by the definition of a equivalence class or part A of this question.
 
 - c) Prove that $a$ $R$ $b$ iff $[a]_R = [b]_R$.
     
@@ -123,7 +149,7 @@ So every equivalence class is a subset of the domain or "set A".
     
         For two equivalence classes $[a]_R$ and $[b]_R$ to be equal the equivalence classes elements $a$ and $b$ would have needed to have an equivalence relation to be a member of each others equivalent class according to the definition of an equivalence class. So $a \in [a]_R$ has to have an equivalence relation to $b \in [b]_R$, implying $(a, b) \in R$ or $a$ $R$ $b$. $\checkmark$
 
-- Theorem 10.10.4
+- Theorem 10.10.4 (for reference)
 
 ![](https://i.imgur.com/YZEu2Mv.png)
 
@@ -143,7 +169,7 @@ So every equivalence class is a subset of the domain or "set A".
 
     - Transitive: $\forall x, y ,z \in A$ $(x,y) \in R \wedge (y,z) \in R \rightarrow (x,z) \in R$
 
-        For students $x, y, z$ at CCSF. If student $x$ and $y$ are both taking Math 115 and student $y$ and student $z$ are both taking Art 101, this is a counter example to transitivity, so not transitive. $\checkmark$
+        For students $x, y, z$ at CCSF. If student $x$ and $y$ are both taking Math 115 and student $y$ and student $z$ are both taking Art 101, this is a counter example to transitivity, so not transitive. $\checkmark$D
 
 - b) 
     - Reflexive: $\forall s \in A$, $(s, s) \in R$ 
