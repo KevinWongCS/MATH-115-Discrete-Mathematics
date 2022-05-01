@@ -17,7 +17,7 @@ not both. We say that chicken $u$ virtually pecks chicken $v$ if either:
 A chicken that virtually pecks every other chicken is called a *king chicken*.
 
 We can model this situation with a chicken digraph whose vertices are chickens,
-with an edge from chicken $u$ to chicken $v$ precisely when $u$ pecks $v$. **In the graph in Figure 10.11, three of the four chickens are kings. Chicken $c$ is not a king in this example since it does not peck chicken $b$ and it does not peck any chicken that pecks chicken $b$. Chicken $a$ is a king since it pecks chicken $d$ , who in turn pecks chickens $b$ and $c$.**
+with an edge from chicken $u$ to chicken $v$ precisely when $u$ pecks $v$. *In the graph in Figure 10.11, three of the four chickens are kings. Chicken $c$ is not a king in this example since it does not peck chicken $b$ and it does not peck any chicken that pecks chicken $b$. Chicken $a$ is a king since it pecks chicken $d$ , who in turn pecks chickens $b$ and $c$.*
 
 In general, a *tournament digraph* is a digraph with exactly one edge between each pair of distinct vertices.
 
@@ -31,7 +31,7 @@ In general, a *tournament digraph* is a digraph with exactly one edge between ea
 
 - b) Describe a 5-chicken tournament graph in which every player is a king.
 
-    In the 5-chicken tournament graph below every chicken is king because every chicken pecks every other chicken either directly adjacent or indirectly via pecking an adjacent chicken that pecks the remaining chicken.
+    In the 5-chicken tournament graph below every chicken is king because every chicken pecks every other chicken either directly adjacent or indirectly via pecking an adjacent chicken that pecks the remaining chicken(s).
 
 ![](https://i.imgur.com/bBfvv6q.png)
 
@@ -50,7 +50,7 @@ tournament is a king.
     The King Chicken Theorem means that if the player with the most victories is
     defeated by another player x, then at least he/she defeats some third player that defeats x. In this sense, the player with the most victories has some sort of bragging rights over every other player. Unfortunately, as Figure 10.11 illustrates, there can be many other players with such bragging rights, even some with fewer victories.
 
-    - This is true. If there are $n$ chickens and and there exist a chicken $a$ that has the maximum out-degree of $n - 1$. Then $a$ is a exclusive or the only king-chicken because no other chicken can have an edge pointing back at chicken $a$. $\checkmark$
+    - This is true. If there are $n$ chickens and and there exist a chicken $a$ that has the maximum out-degree of $n - 1$. Then chicken $a$ is a exclusive or the only king-chicken because no other chicken can have an edge directed back at chicken $a$. $\checkmark$
 
 --- 
 ---
@@ -60,17 +60,68 @@ tournament is a king.
 Prove Theorem 10.10.4: The equivalence classes of an equivalence relation form a
 partition of the domain.
 
-Namely, let $R$ be an equivalence relation on a set $A$ and define the equivalence
-class of an element $a \in A$ to be
+Namely, let $R$ be an *equivalence relation($R$)* on a set $A$ and *define the equivalence class of an element* $a \in A$ to be
 
 $[a]_R ::= \{b \in A |$ $a$ $R$ $b\}$
 
 That is, $[a]_R = R(a)$
 
-- a) Prove that every block is nonempty and every element of A is in some block.
-- b) Prove that if $ [a]_R \cap [b]_R \neq \emptyset $, then $a$ $R$ $b$. Conclude that the sets [a]_R for $a \in A$ are a partition of $A$.
-- c) Prove that $a$ $R$ $b$ iff $[a]_R = [b]_R$.
+```
+Visual of the problem
 
+    similar to a file system
+
+domain("set A")
+    |
+    |__ equivalence class a ([a]_R)
+    |__ equivalence class b ([b]_R)
+    |__ equivalence class c ([c]_R)
+    |__ equivalence class d ([d]_R)
+    |__ etc...
+    
+equivalence classes (or partitions or blocks) are formed based on equivalence relations of the elements in "set A".
+
+So every equivalence class is a subset of the domain or "set A".
+        
+
+```
+
+- a) Prove that every block is nonempty and every element of A is in some block.
+
+    For an element $b \in A$, $b$ is reflexive, symmetric and transitive to itself or an equivalence relation. So at minimal $b$ is in a equivalence class by itself, $[b]_R$. $\checkmark$
+    
+    - equivalence relation
+        
+        Reflexive: $\forall b \in A$, $(b, b) \in R$
+
+        Symmetric: $\forall b, b \in A$, $(b, b) \in R \rightarrow (b,b) \in R$
+
+        Transitive: $\forall b, b , b \in A$ $(b,b) \in R \wedge (b,b) \in R \rightarrow (b,b) \in R$
+
+        so,
+
+        $[b]_R ::= \{b \in A |$ $b$ $R$ $b\}$ 
+
+- b) Prove that if $ [a]_R \cap [b]_R \neq \emptyset $, then $a$ $R$ $b$. Conclude that the sets $[a]_R$ for $a \in A$ are a partition of $A$.
+
+    If $ [a]_R \cap [b]_R = \emptyset $ then there does not exist a equivalence relation between equivalence classes $[a]_R$ and $[b]_R$. 
+
+    So this means $ [a]_R \cap [b]_R \neq \emptyset $ implies there does exist elements $a \in [a]_R$ and $b \in [b]_R$ that have equivalence relations. $\checkmark$
+
+    And sets $[a]_R$ for $a \in A$ are a partition of $A$ by the definition of a equivalence class or part A of this question.
+
+![](https://i.imgur.com/7hJlrzF.png)
+ 
+
+- c) Prove that $a$ $R$ $b$ iff $[a]_R = [b]_R$.
+    
+    - $a$ $R$ $b$ $\rightarrow$ $[a]_R = [b]_R$.
+    
+        If $a$ has an equivalence relation to $b$ then by the definition of a equivalence class $a$ is a member of $[a]_R$ and a member of $[b]_R$. Also by the same equivalence relation and by the definition of a equivalence class $b$ is a member of $[b]_R$ and a member of $[a]_R$. $\checkmark$
+    
+    - $a$ $R$ $b$ $\leftarrow$ $[a]_R = [b]_R$.
+    
+        For two equivalence classes $[a]_R$ and $[b]_R$ to be equal the equivalence classes elements $a$ and $b$ would have needed to have an equivalence relation to be a member of each others equivalent class according to the definition of an equivalence class. So $a \in [a]_R$ has to have an equivalence relation to $b \in [b]_R$, implying $(a, b) \in R$ or $a$ $R$ $b$. $\checkmark$
 
 - Theorem 10.10.4
 
@@ -81,29 +132,31 @@ That is, $[a]_R = R(a)$
 ### 3
 ![](https://i.imgur.com/RULadVP.png)
 
-- a) Reflexive: $\forall x \in A$, $(x, x) \in R$ 
+- a) 
+    - Reflexive: $\forall x \in A$, $(x, x) \in R$ 
     
-    Student x and student x are both students at CCSF, and the same student has obviously attended the same class, so reflexive. $\checkmark$
+        Student x and student x are both students at CCSF, and the same student has obviously attended the same class, so reflexive. $\checkmark$
 
-    Symmetric: $\forall x, y \in A$, $(x, y) \in R \rightarrow (y,x) \in R$
+    - Symmetric: $\forall x, y \in A$, $(x, y) \in R \rightarrow (y,x) \in R$
 
-    If students $x, y$ are both at CCSF, if $x$ attends the same class as $y$, then $y$ would also attend the same class as $x$, so symmetric. $\checkmark$
+        If students $x, y$ are both at CCSF, if $x$ attends the same class as $y$, then $y$ would also attend the same class as $x$, so symmetric. $\checkmark$
 
-    Transitive: $\forall x, y ,z \in A$ $(x,y) \in R \wedge (y,z) \in R \rightarrow (x,z) \in R$
+    - Transitive: $\forall x, y ,z \in A$ $(x,y) \in R \wedge (y,z) \in R \rightarrow (x,z) \in R$
 
-    For students $x, y, z$ at CCSF. If student $x$ and $y$ are both taking Math 115 and student $y$ and student $z$ are both taking Art 101, this is a counter example to transitivity, so not transitive. $\checkmark$
+        For students $x, y, z$ at CCSF. If student $x$ and $y$ are both taking Math 115 and student $y$ and student $z$ are both taking Art 101, this is a counter example to transitivity, so not transitive. $\checkmark$
 
-- b) Reflexive: $\forall s \in A$, $(s, s) \in R$ 
+- b) 
+    - Reflexive: $\forall s \in A$, $(s, s) \in R$ 
 
-    Bit string $s$ and $s$ are both bit strings of length ten. Since they are the same bit string they both also begin and end with the same bit, so reflexive. $\checkmark$
+        Bit string $s$ and $s$ are both bit strings of length ten. Since they are the same bit string they both also begin and end with the same bit, so reflexive. $\checkmark$
 
-    Symmetric: $\forall s_1, s_2 \in A$, $(s_1, s_2) \in R \rightarrow (s_2,s_1) \in R$
+    - Symmetric: $\forall s_1, s_2 \in A$, $(s_1, s_2) \in R \rightarrow (s_2,s_1) \in R$
 
-    If two bit strings are of length ten and bit string $s_1$ begins or ends with the same bit as $s_2$, then $s_2$ would also begin or end with the same bit as $s_1$. This is valid, so symmetric. $\checkmark$
+        If two bit strings are of length ten and bit string $s_1$ begins or ends with the same bit as $s_2$, then $s_2$ would also begin or end with the same bit as $s_1$. This is valid, so symmetric. $\checkmark$
 
-    Transitive: $\forall s_1, s_2 ,s_3 \in A$ $(s_1,s_2) \in R \wedge (s_2,s_3) \in R \rightarrow (s_1,s_3) \in R$
+    - Transitive: $\forall s_1, s_2 ,s_3 \in A$ $(s_1,s_2) \in R \wedge (s_2,s_3) \in R \rightarrow (s_1,s_3) \in R$
     
-    If the first pair of bit strings $s_1$ and $s_2$ are $1...1$ and $1...0$ respectively and $s_2$ and $s_3$ are $1...0$ and $0...0$ respectively, then $s_1$ and $s_3$ are $1...0$ and $0...0$. So I'm concluding this claim is invalid and not transitive. $\checkmark$
+        If the first pair of bit strings $s_1$ and $s_2$ are $1...1$ and $1...0$ respectively and $s_2$ and $s_3$ are $1...0$ and $0...0$ respectively, then $s_1$ and $s_3$ are $1...0$ and $0...0$. So I'm concluding this claim is invalid and not transitive. $\checkmark$
 
 - c) Reflexive: $\forall f \in A$, $(f, f) \in R$
 
@@ -131,19 +184,19 @@ That is, $[a]_R = R(a)$
 
     $A = \{G_{set} : G_{set}$ set of undirected graphs $\}$
 
-    Reflexive: $\forall G \in A$, $(G, G) \in R$ 
+    - Reflexive: $\forall G \in A$, $(G, G) \in R$ 
     
-    If graph $G$ is an undirected graph, $G$ would map each vertex to itself in another $G$, so $G$ is isomorphic to $G$, so reflexive. $\checkmark$
+        If graph $G$ is an undirected graph, $G$ would map each vertex to itself in another $G$, so $G$ is isomorphic to $G$, so reflexive. $\checkmark$
 
-    Symmetric: $\forall G, H \in A$, $(G, H) \in R \rightarrow (H, G) \in R$
+    - Symmetric: $\forall G, H \in A$, $(G, H) \in R \rightarrow (H, G) \in R$
 
-    If graph $G$ and $H$ are undirected graphs and ($G$, $H$) is isomorphic, then ($H$, $G$) would also be isomorphic via an inverse(or reverse) of the function that mapped $G$ to $H$. So symmetric. $\checkmark$
+        If graph $G$ and $H$ are undirected graphs and ($G$, $H$) is isomorphic, then ($H$, $G$) would also be isomorphic via an inverse(or reverse) of the function that mapped $G$ to $H$. So symmetric. $\checkmark$
 
-    Transitive: $\forall G, H, I \in A$ $(G, H) \in R \wedge (H, I) \in R \rightarrow (G, I) \in R$
+    - Transitive: $\forall G, H, I \in A$ $(G, H) \in R \wedge (H, I) \in R \rightarrow (G, I) \in R$
 
-    If $G$, $H$ and $I$ are undirected graphs and ($G$, $H$) and ($H$, $I$) are isomorphic, then ($G$, $I$) are isomorphic because of bijectivity and the preserved adjacencies. 
+        If $G$, $H$ and $I$ are undirected graphs and ($G$, $H$) and ($H$, $I$) are isomorphic, then ($G$, $I$) are isomorphic because of bijectivity and the preserved adjacencies. 
 
-    In a seperate case where ($G$, $H$) is only bijective and ($H$, $I$) is only bijective, it doesn't imply ($G$, $I$) is bijective, since the adjacencies and the non-adjacencies don't need to be preserved as the vertices are mapped.
+        In a different scenario where ($G$, $H$) is only bijective and ($H$, $I$) is only bijective, and ($G$, $I$) is bijective. This doesn't imply ($G$, $I$) is isomorphic, because a bijection only requires a one to one mapping of vertices and that every vertex in the other graph is mapped. These alone doesn't meet the extra requirements for an isomorphism.
 
 ---
 ---
