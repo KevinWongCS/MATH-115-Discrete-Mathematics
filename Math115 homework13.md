@@ -279,7 +279,15 @@ So every equivalence class is a subset of the domain or "set A".
 - c)
 There are three hamiltonian cycles that start and end at vertex $a$.
 
-- d) Yes, there is a closed walk of length five that isn't a Hamiltonian cycle. An example is $a \rightarrow e \rightarrow c \rightarrow d \rightarrow e \rightarrow a$.
+- d) No, there is not a closed walk of length five that isn't a Hamiltonian cycle. The reason requires two cases.
+
+    - case 1: 
+        A hamiltonian cycle of length 3 and length 2 would have to exist. But the $M^2$ matrix shows there isn't a hamiltonian cycle of length 2.
+
+    - case 2:
+        A hamiltonian cycle of length 4 and length 1 would have to exist. But the $M^1$ or $M$ matrix shows there isn't a hamiltonian cycle of length 1.
+
+    I believe these two cases are enough to justify there is not a closed walk of length five.
 
 ---
 ---
