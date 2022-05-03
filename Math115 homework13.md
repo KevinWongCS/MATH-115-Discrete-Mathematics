@@ -144,7 +144,7 @@ So every equivalence class is a subset of the domain or "set A".
     - $a$ $R$ $b$ $\rightarrow$ $[a]_R = [b]_R$.
     
         If $a$ has an equivalence relation to $b$ then by the definition of a equivalence class $a$ is a member of $[a]_R$ and a member of $[b]_R$. Also by the same equivalence relation and by the definition of a equivalence class $b$ is a member of $[b]_R$ and a member of $[a]_R$. $\checkmark$
-    
+
     - $a$ $R$ $b$ $\leftarrow$ $[a]_R = [b]_R$.
     
         For two equivalence classes $[a]_R$ and $[b]_R$ to be equal the equivalence classes elements $a$ and $b$ would have needed to have an equivalence relation to be a member of each others equivalent class according to the definition of an equivalence class. So $a \in [a]_R$ has to have an equivalence relation to $b \in [b]_R$, implying $(a, b) \in R$ or $a$ $R$ $b$. $\checkmark$
@@ -158,7 +158,8 @@ So every equivalence class is a subset of the domain or "set A".
 ### 3
 ![](https://i.imgur.com/RULadVP.png)
 
-- a) 
+- a) $A = \{x : x$ is a student at CCSF $\}$, $R = \{(x, y) : x$ and $y$ attend the same class $\}$
+
     - Reflexive: $\forall x \in A$, $(x, x) \in R$ 
     
         Student x and student x are both students at CCSF, and the same student has obviously attended the same class, so reflexive. $\checkmark$
@@ -169,10 +170,13 @@ So every equivalence class is a subset of the domain or "set A".
 
     - Transitive: $\forall x, y ,z \in A$ $(x,y) \in R \wedge (y,z) \in R \rightarrow (x,z) \in R$
 
-        For students $x, y, z$ at CCSF. If student $x$ and $y$ are both taking Math 115 and student $y$ and student $z$ are both taking Art 101, this is a counter example to transitivity, so not transitive. $\checkmark$D
+        For students $x, y, z$ at CCSF. If student $x$ and $y$ are both taking Math 115 and student $y$ and student $z$ are both taking Art 101, this is a counter example to transitivity, so not transitive. $\checkmark$
 
-- b) 
-    - Reflexive: $\forall s \in A$, $(s, s) \in R$ 
+    - Conclusion: It's not an equivalence relation $\checkmark$
+
+- b) $A = \{s : s$ is a bit string of length 10 $\}$, $R = \{(s_1, s_2) : s_1$ and $s_2$ have same first bit or the same last bit $\}$
+
+    - Reflexive: $\forall s \in A$, $(s, s) \in R$
 
         Bit string $s$ and $s$ are both bit strings of length ten. Since they are the same bit string they both also begin and end with the same bit, so reflexive. $\checkmark$
 
@@ -182,19 +186,25 @@ So every equivalence class is a subset of the domain or "set A".
 
     - Transitive: $\forall s_1, s_2 ,s_3 \in A$ $(s_1,s_2) \in R \wedge (s_2,s_3) \in R \rightarrow (s_1,s_3) \in R$
     
-        If the first pair of bit strings $s_1$ and $s_2$ are $1...1$ and $1...0$ respectively and $s_2$ and $s_3$ are $1...0$ and $0...0$ respectively, then $s_1$ and $s_3$ are $1...0$ and $0...0$. So I'm concluding this claim is invalid and not transitive. $\checkmark$
+        If the first pair of bit strings $s_1$ and $s_2$ are $1...1$ and $1...0$ respectively and $s_2$ and $s_3$ are $1...0$ and $0...0$ respectively, then $s_1$ and $s_3$ are $1...0$ and $0...0$. So I'm concluding this function is not transitive. $\checkmark$
 
-- c) Reflexive: $\forall f \in A$, $(f, f) \in R$
+    - Conclusion: It's not an equivalence relation $\checkmark$
 
-    This claim is valid because $f$ maps from $\R$ to $\R$. But would $f$ satisfy $R$ such that $f(1) = f(2)$ and $f(2) = f(1)$. If $f = x^2$, then $f(1) = 1 \ne f(2) = 4$, So not reflexive. $\checkmark$
+- c) $A = \{f : \R \rightarrow \R \}$, $R = \{(f, g) : f(1) = g(2)$ and $f(2) = g(1) \}$
 
-    Symmetric: $\forall f, g \in A$, $(f, g) \in R \rightarrow (g,f) \in R$ $\checkmark$
+    - Reflexive: $\forall f \in A$, $(f, f) \in R$
 
-    If not reflexive, then symmetry doesn't hold.
+        If $f$ maps from $\R$ to $\R$. But would $f$ satisfy $R$ such that $f(1) = f(2)$ and $f(2) = f(1)$. If $f = x^2$, then $f(1) = 1 \ne f(2) = 4$, So not reflexive. $\checkmark$
 
-    Transitive: $\forall f, g ,h \in A$ $(f,g) \in R \wedge (g,h) \in R \rightarrow (f,h) \in R$
+    - Symmetric: $\forall f, g \in A$, $(f, g) \in R \rightarrow (g,f) \in R$ $\checkmark$
 
-    If not symmetric, then transitive doesn't hold. $\checkmark$
+        If $f, g \in A$ and $f, g \in R$, then $f(1) = g(2)$ and $f(2) = g(1)$ is true. The reverse is also true $g(1) = f(2)$ and $g(2) = f(1)$. So this is symmetric. $\checkmark$
+
+    - Transitive: $\forall f, g ,h \in A$ $(f,g) \in R \wedge (g,h) \in R \rightarrow (f,h) \in R$
+
+        If $f, g ,h \in A$ and $(f,g) \in R \wedge (g,h) \in R$, then $f(1) = g(2)$ and $f(2) = g(1)$ is true and $g(1) = h(2)$ and $g(2) = h(1)$ is true. Then we have $f(1) = h(2)$ and $f(2) = h(1)$, substituting in the above expression we get $f(1) = g(1)$ and $f(2) = g(2)$. There is cases where this might be true, but there are cases where this is also false. So not transitive. $\checkmark$
+
+    - Conclusion: It's not an equivalence relation $\checkmark$
 
 ---
 ---
@@ -219,9 +229,11 @@ So every equivalence class is a subset of the domain or "set A".
 
     - Transitive: $\forall G, H, I \in A$ $(G, H) \in R \wedge (H, I) \in R \rightarrow (G, I) \in R$
 
-        If $G$, $H$ and $I$ are undirected graphs and ($G$, $H$) and ($H$, $I$) are isomorphic, then ($G$, $I$) are isomorphic because of bijectivity and the preserved adjacencies. 
+        If $G$, $H$ and $I$ are undirected graphs and ($G$, $H$) and ($H$, $I$) are isomorphic, then ($G$, $I$) are isomorphic because of bijectivity and the preserved adjacencies. So transitive. $\checkmark$
 
         In a different scenario where ($G$, $H$) is only bijective and ($H$, $I$) is only bijective, and ($G$, $I$) is bijective. This doesn't imply ($G$, $I$) is isomorphic, because a bijection only requires a one to one mapping of vertices and that every vertex in the other graph is mapped. These alone doesn't meet the extra requirements for an isomorphism.
+    
+    - Conclusion: It's an equivalence relation $\checkmark$
 
 ---
 ---
