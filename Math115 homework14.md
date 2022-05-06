@@ -23,7 +23,7 @@ In how many different ways is it possible to answer the next chapter’s practic
 
     Third problem: $15, 16, 17, 18, 19, 20$ results in $6$ different ways to answer.
 
-- This results in $16 * 4 * 6 = 384$ different ways to answer the next chapter’s practice problems.
+- This results in $16 * 4 * 6 = 384$ different ways to answer the next chapter’s practice problems via rule of product.
 
 ---
 ---
@@ -33,7 +33,45 @@ In how many different ways is it possible to answer the next chapter’s practic
 Let $X$ be the six element set $\{x_1, x_2, x_3, x_4, x_5, x_6\}$.
 
 - a) How many subsets of $X$ contain $x_1$?
+
+    - Considering subsets of $X$ of size zero through the max number of elements, six.
+
+        Subset with zero elements of $X$: $0$ ways
+
+        Subset with one elements of $X$: $1$ way
+
+        Subset with two elements of $X$: $1 * 6 = 6$ ways
+
+        Subset with three elements of $X$: $1 * 6 * 6 = 36$ ways
+
+        Subset with four elements of $X$: $1 * 6 * 6 * 6 = 216$ ways
+
+        Subset with five elements of $X$: $1 * 6 * 6 * 6 * 6 = 1296$ ways
+
+        Subset with six elements of $X$: $1 * 6 * 6 * 6 * 6 * 6 = 7776$ ways
+
+    - So there are $1 + 6 + 36 + 216 + 1296 + 7776 = 9331$ possible subsets of $X$ that can contain $x_1$ via rule of sum.
+
+
 - b) How many subsets of $X$ contain $x_2$ and $x_3$ but do not contain $x_6$?
+
+    - Considering subsets of $X$ of size zero through the max number of elements, six.
+
+        Subset with zero elements of $X$: $0$ ways
+
+        Subset with one elements of $X$: $0$ ways
+
+        Subset with two elements of $X$: $1 * 1 = 1$ way
+
+        Subset with three elements of $X$: $1 * 1 * 5 = 5$ ways
+
+        Subset with four elements of $X$: $1 * 1 * 5  * 5= 25$ ways
+
+        Subset with five elements of $X$: $1 * 1 * 5  * 5 * 5 = 125$ ways
+
+        Subset with six elements of $X$: $1 * 1 * 5  * 5 * 5 * 5 = 625$ ways
+
+    - So there are $1 + 5 + 25 + 125 + 625 = 781$ possible subsets of $X$ containing $x_2$ and $x_3$ but do not containing $x_6$ via rule of sum.
 
 ---
 ---
