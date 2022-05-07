@@ -13,15 +13,15 @@ In how many different ways is it possible to answer the next chapter’s practic
 
 - the first problem has four *true/false* questions,
 
-    First problem: $2 * 2 * 2 * 2 = 16$ different ways to answer.
+    First problem: $2 * 2 * 2 * 2 = 16$ different ways.
 
 - the second problem requires choosing one of four alternatives, and
 
-    Second problem: $4$ different ways to answer.
+    Second problem: $4$ different ways.
 
 - the answer to the third problem is an $integer \ge 15$ and $\le 20$?
 
-    Third problem: $15, 16, 17, 18, 19, 20$ results in $6$ different ways to answer.
+    Third problem: $15, 16, 17, 18, 19, 20$ results in $6$ different ways.
 
 - This results in $16 * 4 * 6 = 384$ different ways to answer the next chapter’s practice problems via rule of product.
 
@@ -35,8 +35,6 @@ Let $X$ be the six element set $\{x_1, x_2, x_3, x_4, x_5, x_6\}$.
 - a) How many subsets of $X$ contain $x_1$?
 
     - Considering subsets of $X$ of size zero through the max number of elements, six.
-
-        Subset with zero elements of $X$: $0$ ways
 
         Subset with one elements of $X$: $1$ way
 
@@ -56,8 +54,6 @@ Let $X$ be the six element set $\{x_1, x_2, x_3, x_4, x_5, x_6\}$.
 - b) How many subsets of $X$ contain $x_2$ and $x_3$ but do not contain $x_6$?
 
     - Considering subsets of $X$ of size zero through the max number of elements, six.
-
-        Subset with zero elements of $X$: $0$ ways
 
         Subset with one elements of $X$: $0$ ways
 
@@ -79,6 +75,44 @@ Let $X$ be the six element set $\{x_1, x_2, x_3, x_4, x_5, x_6\}$.
 ### 15.5
 
 ![](https://i.imgur.com/7CRgn4v.png)
+
+A license plate consists of either:
+
+- 3 letters followed by 3 digits(standard plate)
+
+    combinations: $26 * 26 * 26 * 10 * 10 * 10 = 17576000$ .
+
+- 5 letter (vanity plate)
+
+    combinations: $26 * 26 * 26 * 26 * 26 = 11881376$.
+
+- 2 characters-letters or numbers (big shot plate)
+
+    case 1: 2 characters-letters: $26 * 26 = 676$ combinations.
+
+    case 2: 2 numbers: $10 * 10 = 100$ combinations.
+
+    case 3: 1 character-letter and 1 number: $26 * 10 = 260$ combinations.
+
+    case 4: 1 number and 1 character-letter: $10 * 26 = 260$ combinations.
+
+    Total combinations for 2 characters-letters or numbers: $676 + 100 + 260 + 260 = 1296$.
+
+Let $L$ be the set of all possible license plates.
+
+- a) Express $L$ in terms of 
+
+    $\mathcal{A} = \{A, B, C,...,Z\}$
+
+    $\mathcal{D} = \{0, 1, 2,...,9\}$
+
+    using unions $(\cup)$ and set products $(\times)$.
+
+    - $L = (\mathcal{A}^3 \times \mathcal{D}^3) \cup (\mathcal{A}^5)\cup ((\mathcal{A}^2 \cup \mathcal{D}^2) \cup (\mathcal{A} \times \mathcal{D}) \cup (\mathcal{D} \times \mathcal{A}))$
+
+- b) Compute $|L|$, the number of different license plates, using the sum and product rules.
+
+    - The total number of combinations for different license plates is $17576000 + 11881376 + 1296 = 29458672$.
 
 ---
 ---
