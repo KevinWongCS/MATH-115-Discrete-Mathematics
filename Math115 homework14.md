@@ -108,11 +108,12 @@ Let $L$ be the set of all possible license plates.
 
     using unions $(\cup)$ and set products $(\times)$.
 
-    - $L = (\mathcal{A}^3 \times \mathcal{D}^3) \cup (\mathcal{A}^5)\cup ((\mathcal{A}^2 \cup \mathcal{D}^2) \cup (\mathcal{A} \times \mathcal{D}) \cup (\mathcal{D} \times \mathcal{A}))$
+    - $L = (\mathcal{A}^3 \times \mathcal{D}^3) \cup (\mathcal{A}^5)\cup ((\mathcal{A}^2) \cup (\mathcal{D}^2) \cup (\mathcal{A} \times \mathcal{D}) \cup (\mathcal{D} \times \mathcal{A}))$
 
 - b) Compute $|L|$, the number of different license plates, using the sum and product rules.
 
     - The total number of combinations for different license plates is $17576000 + 11881376 + 1296 = 29458672$.
+    - or $|L| = 29458672$
 
 ---
 ---
@@ -122,9 +123,20 @@ Let $L$ be the set of all possible license plates.
 Eight students—Anna, Brian, Caine,. . . —are to be seated around a circular table in a circular room. Two seatings are regarded as defining the same *arrangement* if each student has the same student on his or her right in both seatings: it does not matter which way they face. We’ll be interested in counting how many arrangements there are of these 8 students, given some restrictions.
 
 - a) As a start, how many different arrangements of these 8 students around the table are there without any restrictions?
+ 
+     Each arrangement has 8 equivalent arrangements because of the circular table. No restrictions combinations: $8!/8 =  7! = 5040$ ways with unique arrangements.
+
 - b) How many arrangements of these 8 students are there with Anna sitting next to Brian?
+
+    There are $(1 * 2 * 6!) / 8 = 180$ ways.
+
 - c) How many arrangements are there with if Brian sitting next to both Anna AND Caine?
+
+    There are $(1 * 2 * 1 * 5!) / 8 = 30$ ways.
+
 - d) How many arrangements are there with Brian sitting next to Anna OR Caine?
+
+    combinations with Brian sitting next to Anna OR Caine: $(180 - 30) + (180 - 30) + 30 = 330$ ways.
 
 ---
 ---
