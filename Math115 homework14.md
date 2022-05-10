@@ -23,7 +23,7 @@ In how many different ways is it possible to answer the next chapter’s practic
 
     Third problem: $15, 16, 17, 18, 19, 20$ results in $6$ different ways.
 
-- This results in $16 * 4 * 6 = 384$ different ways to answer the next chapter’s practice problems via rule of product.
+- This results in $16 * 4 * 6 = 384$ different ways.
 
 ---
 ---
@@ -94,7 +94,7 @@ Eight students—Anna, Brian, Caine,. . . —are to be seated around a circular 
 
 - a) As a start, how many different arrangements of these 8 students around the table are there without any restrictions?
  
-     Each arrangement has 8 equivalent arrangements because of the circular table. No restrictions combinations: $8!/8 =  7! = 5040$ ways with unique arrangements.
+     Each arrangement has 8 equivalent arrangements because of the circular table. No restrictions combinations: $8!/8 =  7! = 5040$ ways.
 
 - b) How many arrangements of these 8 students are there with Anna sitting next to Brian?
 
@@ -129,13 +129,13 @@ Compute the probability that...
 
     Let $E_1$ be the event that A comes in first and $E_2$ be the event that B comes in first.
 
-    $P(E_1 \cup E_2) = \frac{(1 * 6! + 1 * 6!)}{7!} = 0.28$
+    $P(E_1 \cup E_2) = \frac{(1 * 6! + 1 * 6!- 0)}{7!} = 0.28$
 
 - c. A comes in first or last.
     
     Let $E_1$ be the event that A comes in first and $E_2$ be the event that A comes in last.
 
-    $P(E_1 \cup E_2) = \frac{1 * 6! + 6! * 1}{7!} = 0.28$
+    $P(E_1 \cup E_2) = \frac{(1 * 6! + 6! * 1-0)}{7!} = 0.28$
 
 - d. A comes in first or B comes in last.
     
@@ -153,38 +153,27 @@ Compute the probability that...
 
     Let $E$ be the event that A finishes before B.
     
-    Case A is 1st: $6!$ outcomes have B after.
+    Case: A is 1st: $6!$ outcomes have B after.
 
-    Case A is 2nd: $5 * 5!$ outcomes have B after.
+    Case: A is 2nd: $5 * 5!$ outcomes have B after.
 
-    Case A is 3rd: $4 * 5!$ outcomes have B after.
+    Case: A is 3rd: $4 * 5!$ outcomes have B after.
 
-    Case A is 4th: $3 * 5!$ outcomes have B after.
+    Case: A is 4th: $3 * 5!$ outcomes have B after.
 
-    Case A is 5th: $2 * 5!$ outcomes have B after.
+    Case: A is 5th: $2 * 5!$ outcomes have B after.
 
-    Case A is 6th: $1 * 5!$ outcomes have B after.
+    Case: A is 6th: $1 * 5!$ outcomes have B after.
 
-    Case A is 7th: $0 * 5!$ outcomes have B after.
+    Case: A is 7th: $0 * 5!$ outcomes have B after.
     
     $P(E) = \frac{5!(6 + 5 + 4 + 3 + 2 + 1)}{7!} = 0.50$
 
 - g. A finishes before B, given that B is not last.
+    
+    Let $E_1$ be the event that A finishes before B and $E_2$ be the event that B is not last.
 
-    Case A is 1st: $6!$ outcomes have B after.
-    Case A is 2nd: $5 * 5!$ outcomes have B after.
-
-    Case A is 3rd: $4 * 5!$ outcomes have B after.
-
-    Case A is 4th: $3 * 5!$ outcomes have B after.
-
-    Case A is 5th: $2 * 5!$ outcomes have B after.
-
-    Case A is 6th: $0 * 5!$ outcomes have B after.
-
-    Case A is 7th: $0 * 5!$ outcomes have B after.
-
-    $P(E) = \frac{5!(5 + 4 + 3 + 2 + 1)}{7!} = 0.35$
+    $P(E_1 \cap E_2) = 0.50 - 0.14 = 0.36$
 
 ---
 ---
