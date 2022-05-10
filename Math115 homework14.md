@@ -33,48 +33,18 @@ In how many different ways is it possible to answer the next chapter’s practic
 Let $X$ be the six element set $\{x_1, x_2, x_3, x_4, x_5, x_6\}$.
 
 - a) How many subsets of $X$ contain $x_1$?
-
-    - Considering subsets of $X$ of size zero through the max number of elements, six.
-
-        Subset with one elements of $X$: $1$ way
-
-        Subset with two elements of $X$: $1 * 6 = 6$ ways
-
-        Subset with three elements of $X$: $1 * 6 * 6 = 36$ ways
-
-        Subset with four elements of $X$: $1 * 6 * 6 * 6 = 216$ ways
-
-        Subset with five elements of $X$: $1 * 6 * 6 * 6 * 6 = 1296$ ways
-
-        Subset with six elements of $X$: $1 * 6 * 6 * 6 * 6 * 6 = 7776$ ways
-
-    - So there are $1 + 6 + 36 + 216 + 1296 + 7776 = 9331$ possible subsets of $X$ that can contain $x_1$ via rule of sum.
+ 
+    Subsets of $X$ containing $x_1$: $1 * 2 * 2 * 2 * 2 * 2 = 2^5 = 32$ ways.
 
 
 - b) How many subsets of $X$ contain $x_2$ and $x_3$ but do not contain $x_6$?
 
-    - Considering subsets of $X$ of size zero through the max number of elements, six.
-
-        Subset with one elements of $X$: $0$ ways
-
-        Subset with two elements of $X$: $1 * 1 = 1$ way
-
-        Subset with three elements of $X$: $1 * 1 * 5 = 5$ ways
-
-        Subset with four elements of $X$: $1 * 1 * 5  * 5= 25$ ways
-
-        Subset with five elements of $X$: $1 * 1 * 5  * 5 * 5 = 125$ ways
-
-        Subset with six elements of $X$: $1 * 1 * 5  * 5 * 5 * 5 = 625$ ways
-
-    - So there are $1 + 5 + 25 + 125 + 625 = 781$ possible subsets of $X$ containing $x_2$ and $x_3$ but do not containing $x_6$ via rule of sum.
+    Subsets of $X$ containing $x_2$ and $x_3$ but do not containing $x_6$: $(1 * 1 * 2 * 2 * 2 * 2) - (1 * 1 * 2 * 2 * 2) = 2^4 - 2^3 = 8$ ways.
 
 ---
 ---
 
 ### 15.5
-
-![](https://i.imgur.com/7CRgn4v.png)
 
 A license plate consists of either:
 
@@ -136,15 +106,85 @@ Eight students—Anna, Brian, Caine,. . . —are to be seated around a circular 
 
 - d) How many arrangements are there with Brian sitting next to Anna OR Caine?
 
-    combinations with Brian sitting next to Anna OR Caine: $(180 - 30) + (180 - 30) + 30 = 330$ ways.
+    combinations with Brian sitting next to Anna OR Caine: $180 + 180 - 30 = 330$ ways.
 
 ---
 ---
 
-### additional problem
+### 5
 
-![](https://i.imgur.com/XNztcJf.png)
+Students A, B, C, D, E, F, G are running a footrace.
 
+One possible outcome to the race is (G, D, F, A, E, D, C).
+
+Compute the probability that...
+
+- a. A comes in first.
+
+    Let $E$ be the event that A comes in first.
+
+    $P(E) = \frac{6!}{7!} = 0.14$
+
+- b. A or B come in first.
+
+    Let $E_1$ be the event that A comes in first and $E_2$ be the event that B comes in first.
+
+    $P(E_1 \cup E_2) = \frac{(1 * 6! + 1 * 6!)}{7!} = 0.28$
+
+- c. A comes in first or last.
+    
+    Let $E_1$ be the event that A comes in first and $E_2$ be the event that A comes in last.
+
+    $P(E_1 \cup E_2) = \frac{1 * 6! + 6! * 1}{7!} = 0.28$
+
+- d. A comes in first or B comes in last.
+    
+    Let $E_1$ be the event that A comes in first and $E_2$ be the event that B comes in last.
+
+    $P(E_1 \cup E_2) = \frac{((1 * 6!) + (1 * 6!) - (1 * 5! * 1))}{7!} = 0.26$
+
+- e. A doesn't finish in the top four.
+
+    Let $E$ be the event that A doesn't finish in the top four.
+
+    $P(E) = \frac{(6! * 1) * 3}{7!} = 0.42$
+
+- f. A finishes before B.
+
+    Let $E$ be the event that A finishes before B.
+    
+    Case A is 1st: $6!$ outcomes have B after.
+
+    Case A is 2nd: $5 * 5!$ outcomes have B after.
+
+    Case A is 3rd: $4 * 5!$ outcomes have B after.
+
+    Case A is 4th: $3 * 5!$ outcomes have B after.
+
+    Case A is 5th: $2 * 5!$ outcomes have B after.
+
+    Case A is 6th: $1 * 5!$ outcomes have B after.
+
+    Case A is 7th: $0 * 5!$ outcomes have B after.
+    
+    $P(E) = \frac{5!(6 + 5 + 4 + 3 + 2 + 1)}{7!} = 0.50$
+
+- g. A finishes before B, given that B is not last.
+
+    Case A is 1st: $6!$ outcomes have B after.
+    Case A is 2nd: $5 * 5!$ outcomes have B after.
+
+    Case A is 3rd: $4 * 5!$ outcomes have B after.
+
+    Case A is 4th: $3 * 5!$ outcomes have B after.
+
+    Case A is 5th: $2 * 5!$ outcomes have B after.
+
+    Case A is 6th: $0 * 5!$ outcomes have B after.
+
+    Case A is 7th: $0 * 5!$ outcomes have B after.
+
+    $P(E) = \frac{5!(5 + 4 + 3 + 2 + 1)}{7!} = 0.35$
 
 ---
 ---
